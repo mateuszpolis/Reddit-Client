@@ -10,6 +10,10 @@
   /* Background and font colors */
   background-color: var(--background-dark);
   color: var(--background-light);
+
+  /* Font families */
+  --serif-font: 'Roboto Serif';
+  --sans-serif-font: 'Roboto';
 }
 
 @media (prefers-color-scheme: dark) {
