@@ -8,8 +8,8 @@
   --accent: hsl(179, 100%, 33%);
 
   /* Background and font colors */
-  background-color: var(--background-dark);
-  color: var(--background-light);
+  background-color: var(--background-light);
+  color: var(--background-dark);
 
   /* Font families */
   --serif-font: 'Roboto Serif';
