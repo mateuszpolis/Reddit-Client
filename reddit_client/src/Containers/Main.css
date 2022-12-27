@@ -1,0 +1,8 @@
+main {
+    /* Main display */
+    display: block;
+
+    /* Main dimensions */
+    width: 100%;
+    height: 70vh;
+}

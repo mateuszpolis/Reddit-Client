@@ -1,0 +1,8 @@
+header {
+    /* Header display */
+    display: block;
+    
+    /* Header dimensions */
+    width: 100%;
+    height: 15vh;
+}
