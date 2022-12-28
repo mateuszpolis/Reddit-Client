@@ -1,0 +1,9 @@
+footer {
+  /* Footer position */
+  position: absolute;
+  top: 90vh;
+
+  /* Footer dimensions */
+  width: 100%;
+  height: 10vh;
+}
