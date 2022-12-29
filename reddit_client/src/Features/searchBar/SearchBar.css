@@ -24,6 +24,7 @@
   /* search font style */
   color: var(--background-dark);
   font-family: var(--sans-serif-font);
+  font-size: 125%;
 
   /* search transition */
   transition: 0.3s;

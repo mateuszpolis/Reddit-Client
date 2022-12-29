@@ -1,10 +1,11 @@
 import React from "react";
+import { PostInformation } from "../Features/postInformation/PostInformation";
 import "./Main.css";
 
 export const Main = () => {
   return (
     <main>
-      <div id="postInfo"></div>
+      <PostInformation />
       <div id="previousPost" className="post"></div>
       <div id="currentPost" className="post"></div>
       <div id="nextPost" className="post"></div>

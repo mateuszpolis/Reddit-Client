@@ -1,11 +1,17 @@
 :root {
-  /* Color variables */
+  /* Color and gradient variables */
   --orange: hsl(16, 100%, 50%);
   --background-dark: hsl(195, 46%, 5%);
   --background-light: hsl(0, 29%, 97%);
   --gray: hsl(0, 0%, 50%);
   --gray-light: hsl(0, 0%, 75%);
-  --accent: hsl(179, 100%, 33%);
+  --accent: hsl(209, 54%, 59%);
+  --loading-gradient: linear-gradient(
+    90deg,
+    var(--gray) 40%,
+    var(--gray-light) 60%,
+    var(--gray) 100%
+  );
 
   /* Background and font colors */
   background-color: var(--background-light);
@@ -15,7 +21,11 @@
   --serif-font: "Roboto Serif";
   --sans-serif-font: "Roboto";
 
+  /* Overflow setting */
   overflow: hidden;
+
+  /* Animations */
+  --loading-animation: loading 2s ease infinite;
 }
 
 p,
@@ -32,18 +42,6 @@ h5,
 h6 {
   /* Font family of headers */
   font-family: var(--sans-serif-font);
-}
-
-@keyframes loading {
-  0% {
-    background-position: 100% 50%;
-  }
-  50% {
-    background-position: 50% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
