@@ -1,0 +1,20 @@
+#feed::-webkit-scrollbar {
+  /* scrollbar dimensions */
+  width: 0.6vw;
+}
+
+#feed::-webkit-scrollbar-thumb {
+  /* scrollbar thumb styling */
+  background-color: var(--accent-lighter);
+  border-radius: 7px;
+}
+
+#feed::-webkit-scrollbar-thumb:hover {
+  /* scrollbar thumb on hover behaviour */
+  background-color: var(--accent);
+}
+
+#feed::-webkit-scrollbar-track {
+  /* scrollbar track styling */
+  background-color: transparent;
+}
