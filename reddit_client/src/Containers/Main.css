@@ -13,8 +13,12 @@ main {
 
 .post {
   /* Post background */
-  /* background: linear-gradient(-45deg, var(--gray), var(--gray-light)); */
-  background: linear-gradient(90deg, var(--gray) 40%, var(--gray-light) 60%, var(--gray) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--gray) 40%,
+    var(--gray-light) 60%,
+    var(--gray) 100%
+  );
   background-size: 400% 400%;
 
   /* Post dimensions */
@@ -24,7 +28,7 @@ main {
   /* Post border */
   border-radius: 7px;
 
-  animation: loading 2s ease infinite;
+  /* animation: loading 2s ease infinite; */
 }
 
 #currentPost {

@@ -71,6 +71,7 @@
   color: var(--background-light);
   font-family: var(--sans-serif-font);
   font-size: 100%;
+  font-weight: bold;
 
   /* submitSearch transition */
   transition: 0.3s;
