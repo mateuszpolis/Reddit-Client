@@ -6,7 +6,7 @@ import imageTest from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 
 export const Feed = () => {
   return (
-    <div id="feed">
+    <div id="feed" className="canLoad">
       <Post
         header="Lorem ipsum dolor sit amet, consectetur adipiscing."
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ante sem, lobortis at diam sit amet, convallis consequat ipsum. Etiam ac dictum nulla, eu sagittis purus. Morbi nec orci ac quam consectetur dictum feugiat et neque. Nulla facilisi. Cras leo diam, molestie ut elit id, facilisis porta leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque tempus pretium quam, sit amet egestas erat pretium a."

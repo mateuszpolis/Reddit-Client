@@ -27,7 +27,7 @@
   font-size: 125%;
 
   /* search transition */
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 #search:hover {
@@ -75,7 +75,7 @@
   font-weight: bold;
 
   /* submitSearch transition */
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 #submitSearch:hover {

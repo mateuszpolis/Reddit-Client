@@ -5,19 +5,15 @@ export const PostInformation = () => {
   return (
     <div id="postInfo">
       <div className="informationPart">
-        <div id="subredditImgPlaceholder"></div>
-        <div id="subredditNamePlaceholder"></div>
-        <div id="userNamePlaceholder"></div>
-        <div id="datePlaceholder"></div>
+        <div id="subredditImgPlaceholder" className="canLoad"></div>
+        <div id="subredditNamePlaceholder" className="canLoad"></div>
+        <div id="userNamePlaceholder" className="canLoad"></div>
+        <div id="datePlaceholder" className="canLoad"></div>
       </div>
       <div className="informationPart">
-        <div id="upvotes">
-          <i className="fa-solid fa-up"></i>
-        </div>
-        <div id="numberOfUpvotesPlaceholder"></div>
-        <div id="downvotes">
-          <i className="fa-solid fa-down"></i>
-        </div>
+        <i id="upvotes" className="fa-solid fa-heart"></i>
+        <div id="numberOfUpvotesPlaceholder" className="canLoad"></div>
+        <i id="downvotes" className="fa-solid fa-heart-crack"></i>
       </div>
     </div>
   );

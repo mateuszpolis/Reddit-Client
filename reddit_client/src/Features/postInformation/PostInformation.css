@@ -49,11 +49,6 @@
   height: 15%;
   width: 15%;
   border-radius: 50%;
-
-  background-size: 400% 400%;
-  background: var(--loading-gradient);
-  background-size: 400% 400%;
-  animation: var(--loading-animation);
 }
 
 #subredditNamePlaceholder {
@@ -66,11 +61,6 @@
   height: 15%;
   width: 70%;
   border-radius: 7px;
-
-  background-size: 400% 400%;
-  background: var(--loading-gradient);
-  background-size: 400% 400%;
-  animation: var(--loading-animation);
 }
 
 #userNamePlaceholder {
@@ -83,11 +73,6 @@
   height: 15%;
   width: 42.5%;
   border-radius: 7px;
-
-  background-size: 400% 400%;
-  background: var(--loading-gradient);
-  background-size: 400% 400%;
-  animation: var(--loading-animation);
 }
 
 #datePlaceholder {
@@ -100,11 +85,6 @@
   height: 15%;
   width: 42.5%;
   border-radius: 7px;
-
-  background-size: 400% 400%;
-  background: var(--loading-gradient);
-  background-size: 400% 400%;
-  animation: var(--loading-animation);
 }
 
 #upvotes {
@@ -117,10 +97,6 @@
   height: 15%;
   width: 15%;
   border-radius: 7px;
-
-  background: var(--loading-gradient);
-  background-size: 400% 400%;
-  animation: var(--loading-animation);
 }
 
 #downvotes {
@@ -133,11 +109,6 @@
   height: 15%;
   width: 15%;
   border-radius: 7px;
-
-  background-size: 400% 400%;
-  background: var(--loading-gradient);
-  background-size: 400% 400%;
-  animation: var(--loading-animation);
 }
 
 #numberOfUpvotesPlaceholder {
@@ -150,11 +121,11 @@
   height: 15%;
   width: 50%;
   border-radius: 7px;
+}
 
-  background-size: 400% 400%;
-  background: var(--loading-gradient);
-  background-size: 400% 400%;
-  animation: var(--loading-animation);
+i {
+  /* reaction icons size */
+  font-size: 150%;
 }
 
 @keyframes loading {
