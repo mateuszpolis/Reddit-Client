@@ -11,45 +11,6 @@ main {
   overflow: hidden;
 }
 
-.post {
-  /* Post background */
-  background: linear-gradient(
-    90deg,
-    var(--gray) 40%,
-    var(--gray-light) 60%,
-    var(--gray) 100%
-  );
-  background-size: 400% 400%;
-
-  /* Post dimensions */
-  height: 70%;
-  width: 50%;
-
-  /* Post border */
-  border-radius: 7px;
-}
-
-#currentPost {
-  /* currentPost position */
-  position: absolute;
-  right: 29%;
-  top: 10%;
-}
-
-#nextPost {
-  /* nextPost position */
-  position: absolute;
-  right: 29%;
-  top: 82%;
-}
-
-#previousPost {
-  /* previousPost position */
-  position: absolute;
-  right: 29%;
-  top: -62%;
-}
-
 #postComments {
   /* postComments position */
   position: absolute;
@@ -61,7 +22,7 @@ main {
 
   /* postComments dimensions */
   height: 100%;
-  width: 25%;
+  width: 24.5%;
 
   /* postComments border */
   border-radius: 7px;

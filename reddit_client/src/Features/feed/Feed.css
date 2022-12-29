@@ -1,0 +1,19 @@
+#feed {
+  /* feed position */
+  position: absolute;
+  right: 28.5%;
+
+  /* feed dimensions */
+  height: 100%;
+  width: 50.5%;
+
+  /* feed border */
+  border-radius: 7px;
+
+  /* feed overflow */
+  overflow-y: scroll;
+
+  /* background: var(--loading-gradient);
+  background-size: 400% 400%;
+  animation: var(--loading-animation); */
+}

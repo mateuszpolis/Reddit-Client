@@ -1,4 +1,5 @@
 import React from "react";
+import { Feed } from "../Features/feed/Feed";
 import { PostInformation } from "../Features/postInformation/PostInformation";
 import "./Main.css";
 
@@ -6,9 +7,7 @@ export const Main = () => {
   return (
     <main>
       <PostInformation />
-      <div id="previousPost" className="post"></div>
-      <div id="currentPost" className="post"></div>
-      <div id="nextPost" className="post"></div>
+      <Feed />
       <div id="postComments"></div>
     </main>
   );
