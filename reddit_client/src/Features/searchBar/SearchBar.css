@@ -1,0 +1,106 @@
+#searchBehind {
+  /* searchBehind position */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#search {
+  /* search dimensions */
+  height: 8vh;
+  width: 35vw;
+
+  /* search border */
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--gray-light);
+
+  /* search background color */
+  background-color: transparent;
+
+  /* search font style */
+  color: var(--background-dark);
+  font-family: var(--sans-serif-font);
+
+  /* search transition */
+  transition: 0.3s;
+}
+
+#search:hover {
+  /* border color on hover */
+  border-color: var(--orange);
+}
+
+#search:focus {
+  /* disable outline on focus on search */
+  outline: none;
+
+  /* border on focus */
+  border-color: var(--orange);
+}
+
+#search::-webkit-search-cancel-button {
+  /* search cancel button position */
+  position: relative;
+  right: 0.5vw;
+
+  /* search cancel button remove default style */
+  -webkit-appearance: none;
+}
+
+#submitSearch {
+  /* submitSearch dimensions */
+  height: 8vh;
+  width: 8vw;
+
+  /* submitSearch vertical align */
+  vertical-align: top;
+
+  /* submitSearch border */
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: var(--gray-light);
+
+  /* submitSearch style */
+  background-color: var(--gray-light);
+  color: var(--background-light);
+  font-family: var(--sans-serif-font);
+  font-size: 100%;
+
+  /* submitSearch transition */
+  transition: 0.3s;
+}
+
+#submitSearch:hover {
+  /* submitSearch background on hover */
+  background-color: var(--orange);
+
+  /* change cursor on hover */
+  cursor: pointer;
+}
+
+#submitSearch:active {
+  /* submitSearch background when active */
+  background-color: var(--orange);
+}
+
+form {
+  /* form style */
+  padding: 2px 0 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  #search {
+    border-color: var(--gray);
+    color: var(--background-light);
+  }
+
+  #submitSearch {
+    background-color: var(--gray);
+  }
+}

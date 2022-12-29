@@ -1,6 +1,6 @@
 :root {
   /* Color variables */
-  --orange: 	hsl(16, 100%, 50%);
+  --orange: hsl(16, 100%, 50%);
   --background-dark: hsl(195, 46%, 5%);
   --background-light: hsl(0, 29%, 97%);
   --gray: hsl(0, 0%, 50%);
@@ -12,20 +12,38 @@
   color: var(--background-dark);
 
   /* Font families */
-  --serif-font: 'Roboto Serif';
-  --sans-serif-font: 'Roboto';
+  --serif-font: "Roboto Serif";
+  --sans-serif-font: "Roboto";
 
   overflow: hidden;
 }
 
-p, span {
+p,
+span {
   /* Font family of p and span */
   font-family: var(--serif-font);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   /* Font family of headers */
   font-family: var(--sans-serif-font);
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
