@@ -68,7 +68,7 @@
   border-color: var(--gray-light);
 
   /* submitSearch style */
-  background-color: var(--gray-light);
+  background-color: var(--orange);
   color: var(--background-light);
   font-family: var(--sans-serif-font);
   font-size: 100%;
@@ -79,9 +79,6 @@
 }
 
 #submitSearch:hover {
-  /* submitSearch background on hover */
-  background-color: var(--orange);
-
   /* change cursor on hover */
   cursor: pointer;
 }

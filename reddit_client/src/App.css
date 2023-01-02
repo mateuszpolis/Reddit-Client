@@ -6,6 +6,7 @@
   --background-light: hsl(0, 29%, 97%);
   --gray: hsl(0, 0%, 50%);
   --gray-light: hsl(0, 0%, 75%);
+  --gray-light-hover: hsl(0, 0%, 85%);
   --accent: hsl(209, 54%, 59%);
   --accent-lighter: hsl(210, 75%, 89%);
   --loading-gradient: linear-gradient(
