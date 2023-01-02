@@ -1,0 +1,22 @@
+.comment {
+  height: fit-content;
+  width: 98%;
+
+  margin: 2% 0;
+
+  background-color: var(--gray-light);
+
+  border-radius: 7px;
+  border-bottom-right-radius: 0px;
+}
+
+.comment h5,
+.comment p {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .comment {
+    background-color: var(--gray);
+  }
+}

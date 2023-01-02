@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./Components/ScrollBar.css";
 import { Header } from "./Containers/Header";
 import { Main } from "./Containers/Main";
 import { Footer } from "./Containers/Footer";

@@ -83,6 +83,15 @@
   color: var(--background-light);
 }
 
+#comments {
+  position: relative;
+
+  height: 84%;
+  width: 100%;
+
+  overflow-y: scroll;
+}
+
 @media (prefers-color-scheme: dark) {
   #commentsInfo {
     background-color: var(--gray);

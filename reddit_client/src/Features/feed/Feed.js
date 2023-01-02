@@ -1,7 +1,6 @@
 import React from "react";
 import { Post } from "../../Components/Post";
 import "./Feed.css";
-import "./ScrollBar.css";
 import imageTest from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 
 export const Feed = () => {
