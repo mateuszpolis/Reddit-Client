@@ -98,8 +98,4 @@ form {
     border-color: var(--gray);
     color: var(--background-light);
   }
-
-  #submitSearch {
-    background-color: var(--gray);
-  }
 }
