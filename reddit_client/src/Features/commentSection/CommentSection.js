@@ -16,20 +16,23 @@ export const CommentSection = () => {
         </div>
       </div>
       <div id="comments">
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
-        <Comment author="test" commentContent="test"/>
+        <Comment
+          author="test"
+          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+        />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" />
       </div>
       <div id="showMore">
-        <i class="fa-solid fa-caret-down"></i>
+        <i className="fa-solid fa-caret-down"></i>
       </div>
     </div>
   );
