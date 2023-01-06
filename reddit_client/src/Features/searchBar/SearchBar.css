@@ -53,6 +53,11 @@
 }
 
 #submitSearch {
+  /* submitSearch display */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
   /* submitSearch dimensions */
   height: 8vh;
   width: 8vw;

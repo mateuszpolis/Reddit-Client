@@ -8,6 +8,9 @@ export const searchBarSlice = createSlice({
   reducers: {
     setSearchTerm: (state, action) => {
       state.value = action.payload;
+    },
+    clearSearchTerm: (state, action) => {
+      state.value = "";
     }
   }
 })
@@ -17,7 +20,8 @@ export const selectSearchTerm = (state) => {
 }
 
 export const {
-  setSearchTerm
+  setSearchTerm,
+  clearSearchTerm
 } = searchBarSlice.actions;
 
 export default searchBarSlice.reducer;
