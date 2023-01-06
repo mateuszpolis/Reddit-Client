@@ -109,12 +109,16 @@
 }
 
 #comments {
+  /* comments position */
   position: relative;
 
+  /* comments dimensions */
   height: 84%;
   width: 100%;
 
+  /* comments overflow */
   overflow-y: scroll;
+
 }
 
 @media (prefers-color-scheme: dark) {

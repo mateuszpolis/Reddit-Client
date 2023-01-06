@@ -5,10 +5,10 @@ import p from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 
 export const CommentSection = () => {
 
-  const handleScrollDown = () => {
+  const handleScrollTop = () => {
     const parentElement = document.getElementById("comments");
     parentElement.scroll({
-      top: parentElement.scrollHeight,
+      top: 0,
       behavior: "smooth"
     });
   }
@@ -25,7 +25,7 @@ export const CommentSection = () => {
           <h3>5000</h3>
         </div>
       </div>
-      <div id="comments">
+      <div id="comments" className="canLoad">
         <Comment
           author="test"
           commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
@@ -42,8 +42,8 @@ export const CommentSection = () => {
         <Comment author="test" commentContent="test" />
         <Comment author="test" commentContent="test" />
       </div>
-      <div id="showMore" onClick={handleScrollDown}>
-        <i className="fa-solid fa-caret-down"></i>
+      <div id="showMore" onClick={handleScrollTop}>
+        <i className="fa-solid fa-caret-up"></i>
       </div>
     </div>
   );
