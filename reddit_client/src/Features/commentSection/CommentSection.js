@@ -4,6 +4,15 @@ import { Comment } from "../../Components/Comment";
 import p from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 
 export const CommentSection = () => {
+
+  const handleScrollDown = () => {
+    const parentElement = document.getElementById("comments");
+    parentElement.scroll({
+      top: parentElement.scrollHeight,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div id="postComments">
       <div id="commentsInfo">
@@ -33,7 +42,7 @@ export const CommentSection = () => {
         <Comment author="test" commentContent="test" />
         <Comment author="test" commentContent="test" />
       </div>
-      <div id="showMore">
+      <div id="showMore" onClick={handleScrollDown}>
         <i className="fa-solid fa-caret-down"></i>
       </div>
     </div>

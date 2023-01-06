@@ -79,7 +79,7 @@
 .commentContentWrapper {
   /* content wrapper display */
   display: grid;
-  grid-template-columns: 1fr 9fr;
+  grid-template-columns: 1fr 8fr;
 }
 
 .commentUpvotesNumber {

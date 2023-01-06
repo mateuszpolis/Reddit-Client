@@ -2,13 +2,13 @@
   /* postComments position */
   position: absolute;
   right: 2%;
-  top: 0;
+  top: 5%;
 
   /* postComments background */
   background-color: transparent;
 
   /* postComments dimensions */
-  height: 100%;
+  height: 90%;
   width: 24.5%;
 
   /* postComments border */
@@ -34,11 +34,16 @@
   border-top-right-radius: 7px;
 
   /* commentsInfo background */
-  background-color: var(--gray-light);
+  background-color: transparent;
 
   /* commentsInfo text */
   text-align: center;
-  color: var(--background-light);
+  color: var(--background-dark);
+
+  /* commentsInfo shadow */
+  -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
+  -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
+  box-shadow: 0px -10px 20px 0px var(--gray-light);
 }
 
 #commentsInfo h3 {
@@ -52,6 +57,8 @@
 #numOfCommentsPlaceholder {
   justify-self: center;
 
+  border-radius: 7px;
+
   width: 70%;
 }
 
@@ -60,33 +67,45 @@
 }
 
 #showMore {
+  /* scroll down position */
   position: absolute;
   bottom: 0;
 
+  /* scroll down dimensions */
   height: 7%;
   width: 100%;
 
+  /* scroll down border */
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 
-  background-color: var(--gray-light);
-}
+  /* scroll down background */
+  background-color: transparent;
 
-#showMore:hover {
-  background-color: var(--gray-light-hover);
+  /* scroll down text */
+  color: var(--background-dark);
 
-  cursor: pointer;
+  /* scroll down shadow */
+  -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
+  -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
+  box-shadow: 0px 10px 20px 0px var(--gray-light);
 
+  /* scroll down transition */
   transition: 0.2s;
 }
 
+#showMore:hover {
+  /* scroll down on hover */
+  background-color: var(--gray-light-hover);
+  cursor: pointer;
+}
+
 #showMore i {
+  /* scroll down button position */
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  color: var(--background-light);
 }
 
 #comments {
@@ -100,14 +119,28 @@
 
 @media (prefers-color-scheme: dark) {
   #commentsInfo {
-    background-color: var(--gray);
+    /* comment info on dark scheme */
+    color: var(--background-light);
+
+    -webkit-box-shadow: inset 0px 0px 0px 2px var(--accent);
+    -moz-box-shadow: inset 0px 0px 0px 2px var(--accent);
+    box-shadow: inset 0px 0px 0px 2px var(--accent);
   }
 
   #showMore {
-    background-color: var(--gray);
+    /* scroll down on dark scheme */
+    color: var(--background-light);
+
+    -webkit-box-shadow: inset 0px 0px 0px 2px var(--accent);
+    -moz-box-shadow: inset 0px 0px 0px 2px var(--accent);
+    box-shadow: inset 0px 0px 0px 2px var(--accent);
   }
 
   #showMore:hover {
-    background-color: var(--gray-light);
+    background-color: transparent;
+
+    -webkit-box-shadow: inset 0px 0px 0px 3px var(--accent);
+    -moz-box-shadow: inset 0px 0px 0px 3px var(--accent);
+    box-shadow: inset 0px 0px 0px 3px var(--accent);
   }
 }
