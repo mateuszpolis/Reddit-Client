@@ -5,6 +5,7 @@ import {
   selectSearchTerm,
   clearSearchTerm,
 } from "./searchBarSlice";
+import { loadPosts } from "../feed/feedSlice";
 import "./SearchBar.css";
 
 export const SearchBar = () => {
@@ -17,6 +18,7 @@ export const SearchBar = () => {
   };
 
   const handleSubmit = () => {
+    dispatch(loadPosts());
     dispatch(clearSearchTerm());
   };
 

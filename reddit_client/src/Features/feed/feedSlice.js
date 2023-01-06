@@ -25,6 +25,8 @@ export const feedSlice = createSlice({
     [loadPosts.fulfilled]: (state, action) => {
       state.isLoadingPosts = false;
       state.failedToLoadPosts = true;
+      state.posts = action.payload;
+      console.log(state.posts);
     },
     [loadPosts.rejected]: (state, action) => {
       state.isLoadingPosts = true;
@@ -36,5 +38,9 @@ export const feedSlice = createSlice({
 export const isLoadingPosts = state => {
   return state.feed.isLoadingPosts;
 }
+
+export const selectPosts = state => {
+  return state.posts;
+} 
 
 export default feedSlice.reducer;
