@@ -16,21 +16,27 @@
 }
 
 #commentsInfo {
+  /* commentsInfo display */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
+  /* commentsInfo position */
   position: relative;
   top: 0;
 
+  /* commentsInfo dimensions */
   height: 9%;
   width: 100%;
 
+  /* commentsInfo border */
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 
+  /* commentsInfo background */
   background-color: var(--gray-light);
 
+  /* commentsInfo text */
   text-align: center;
   color: var(--background-light);
 }

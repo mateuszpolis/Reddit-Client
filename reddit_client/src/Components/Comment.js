@@ -8,7 +8,19 @@ export const Comment = (props) => {
         <img alt="profile_picture" src={props.authorPicture}></img>
         <h5>{props.author}</h5>
       </div>
-      <p>{props.commentContent}</p>
+      <div className="commentContentWrapper">
+        <div className="commentUpvoteInfo">
+          <i className="fa-solid fa-heart commentUpvote"></i>
+          <div className="commentUpvotesNumber canLoad">
+            {props.upvotesNumber}
+            994.6k
+          </div>
+          <i className="fa-solid fa-heart-crack commentDownvote"></i>
+        </div>
+        <div className="commentContent">
+          <p>{props.commentContent}</p>
+        </div>
+      </div>
     </div>
   );
 };

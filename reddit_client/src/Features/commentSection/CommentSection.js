@@ -1,6 +1,7 @@
 import React from "react";
 import "./CommentSection.css";
 import { Comment } from "../../Components/Comment";
+import p from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 
 export const CommentSection = () => {
   return (
@@ -19,8 +20,9 @@ export const CommentSection = () => {
         <Comment
           author="test"
           commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+          authorPicture={p}
         />
-        <Comment author="test" commentContent="test" />
+        <Comment author="test" commentContent="test" authorPicture={p} />
         <Comment author="test" commentContent="test" />
         <Comment author="test" commentContent="test" />
         <Comment author="test" commentContent="test" />
