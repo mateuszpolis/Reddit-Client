@@ -31,16 +31,6 @@ export const CommentSection = () => {
           commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
           authorPicture={p}
         />
-        <Comment author="test" commentContent="test" authorPicture={p} />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
-        <Comment author="test" commentContent="test" />
       </div>
       <div id="showMore" onClick={handleScrollTop}>
         <i className="fa-solid fa-caret-up"></i>
