@@ -4,14 +4,13 @@ import { Comment } from "../../Components/Comment";
 import p from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 
 export const CommentSection = () => {
-
   const handleScrollTop = () => {
     const parentElement = document.getElementById("comments");
     parentElement.scroll({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
-  }
+  };
 
   return (
     <div id="postComments">
@@ -26,6 +25,36 @@ export const CommentSection = () => {
         </div>
       </div>
       <div id="comments" className="canLoad">
+        <Comment
+          author="test"
+          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+          authorPicture={p}
+        />
+        <Comment
+          author="test"
+          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+          authorPicture={p}
+        />
+        <Comment
+          author="test"
+          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+          authorPicture={p}
+        />
+        <Comment
+          author="test"
+          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+          authorPicture={p}
+        />
+        <Comment
+          author="test"
+          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+          authorPicture={p}
+        />
+        <Comment
+          author="test"
+          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
+          authorPicture={p}
+        />
         <Comment
           author="test"
           commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "

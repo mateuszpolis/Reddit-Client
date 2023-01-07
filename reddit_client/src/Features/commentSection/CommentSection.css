@@ -118,7 +118,6 @@
 
   /* comments overflow */
   overflow-y: scroll;
-
 }
 
 @media (prefers-color-scheme: dark) {
