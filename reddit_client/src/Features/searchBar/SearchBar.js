@@ -18,7 +18,12 @@ export const SearchBar = () => {
   };
 
   const handleSubmit = () => {
-    dispatch(loadPosts());
+    const data = {
+      searchTerm: searchTerm,
+      sortBy: "relevance",
+      searchLimit: "25",
+    };
+    dispatch(loadPosts(data));
     dispatch(clearSearchTerm());
   };
 

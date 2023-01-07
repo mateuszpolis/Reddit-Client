@@ -4,9 +4,12 @@ import "./Post.css";
 export const Post = (props) => {
   return (
     <div className="post">
-      <h1>{props.header}</h1>
+      <h3>{props.header}</h3>
       <p>{props.text}</p>
-      <img alt={props.id} src={props.image}/>
+      <a href={props.link} target="blank">
+        See post
+      </a>
+      <img alt={props.id} src={props.image} />
     </div>
-  )
-}
+  );
+};

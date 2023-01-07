@@ -12,6 +12,7 @@
 
   /* feed overflow and scroll snapping */
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-padding-top: 3%;
 }

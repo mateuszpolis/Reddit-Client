@@ -1,14 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 import { selectSearchTerm } from "../searchBar/searchBarSlice";
 
-export const loadPosts = createAsyncThunk(
-  "feed/loadPosts",
-  async (id, thunkAPI) => {
-    const response = await fetch(`http://www.reddit.com/search.json?q=${selectSearchTerm}`);
-    const json = await response.json();
-    return json;
-  }
-);
+export const loadPosts = createAsyncThunk("feed/loadPosts", async (data) => {
+  const { searchTerm, sortBy, searchLimit } = data;
+  const response = await fetch(
+    `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`
+  );
+
+  const json = await response.json();
+  return json;
+});
 
 export const feedSlice = createSlice({
   name: "feed",
@@ -24,23 +26,26 @@ export const feedSlice = createSlice({
     },
     [loadPosts.fulfilled]: (state, action) => {
       state.isLoadingPosts = false;
-      state.failedToLoadPosts = true;
+      state.failedToLoadPosts = false;
       state.posts = action.payload;
-      console.log(state.posts);
     },
     [loadPosts.rejected]: (state, action) => {
-      state.isLoadingPosts = true;
-      state.failedToLoadPosts = false;
+      state.isLoadingPosts = false;
+      state.failedToLoadPosts = true;
     },
   },
 });
 
-export const isLoadingPosts = state => {
+export const isLoadingPosts = (state) => {
   return state.feed.isLoadingPosts;
-}
+};
 
-export const selectPosts = state => {
-  return state.posts;
-} 
+export const failedLoadingPosts = (state) => {
+  return state.feed.failedToLoadPosts;
+};
+
+export const selectPosts = (state) => {
+  return state.feed.posts;
+};
 
 export default feedSlice.reducer;

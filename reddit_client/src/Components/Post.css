@@ -18,6 +18,10 @@
 
   /* post scrolling snap */
   scroll-snap-align: start;
+
+  /* post overflow */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .post img {
