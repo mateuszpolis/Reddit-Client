@@ -48,11 +48,12 @@ export const Feed = () => {
           <Post
             header={post.title}
             text={truncateText(post.selftext, 1500)}
-            link={post.url}
+            link={"https://www.reddit.com/" + post.permalink}
             key={post.id}
+            // image={post.preview.images[0].source.url}
           />
         );
-      })}
+      })} 
     </div>
   );
 };

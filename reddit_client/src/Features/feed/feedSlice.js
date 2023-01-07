@@ -1,6 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
-import { selectSearchTerm } from "../searchBar/searchBarSlice";
 
 export const loadPosts = createAsyncThunk("feed/loadPosts", async (data) => {
   const { searchTerm, sortBy, searchLimit } = data;
@@ -28,6 +26,11 @@ export const feedSlice = createSlice({
       state.isLoadingPosts = false;
       state.failedToLoadPosts = false;
       state.posts = action.payload;
+      console.log(
+        state.posts.data.children.map((post) => {
+          return post.data;
+        })
+      );
     },
     [loadPosts.rejected]: (state, action) => {
       state.isLoadingPosts = false;
