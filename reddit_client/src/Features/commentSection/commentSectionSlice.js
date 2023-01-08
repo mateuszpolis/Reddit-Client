@@ -1,6 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
-import { selectCurrentPostId } from "../postInformation/postinformationSlice";
 
 export const loadComments = createAsyncThunk(
   "commentSection/loadComments",

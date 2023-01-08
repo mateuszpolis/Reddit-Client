@@ -1,7 +1,6 @@
 import React from "react";
 import "./CommentSection.css";
 import { Comment } from "../../Components/Comment";
-import p from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCurrentPostId,
