@@ -4,7 +4,6 @@
 
   /* post dimentions */
   width: 91%;
-  height: 86%;
   padding: 2%;
 
   /* post border */
@@ -18,6 +17,7 @@
 
   /* post scrolling snap */
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   /* post overflow */
   overflow-y: hidden;
@@ -27,6 +27,17 @@
 .post img {
   /* image sizing */
   width: 100%;
+  height: 100%;
+}
+
+.postText {
+  width: 100%;
+  height: 28%;
+}
+
+.postMedia {
+  width: 100%;
+  height: 68%;
 }
 
 @media (prefers-color-scheme: dark) {

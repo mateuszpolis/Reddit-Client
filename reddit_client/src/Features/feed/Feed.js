@@ -50,10 +50,10 @@ export const Feed = () => {
             text={truncateText(post.selftext, 1500)}
             link={"https://www.reddit.com/" + post.permalink}
             key={post.id}
-            // image={post.preview.images[0].source.url}
+            image_src={post.url_overridden_by_dest}
           />
         );
-      })} 
+      })}
     </div>
   );
 };
