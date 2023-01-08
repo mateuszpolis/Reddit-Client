@@ -1,32 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { selectPosts } from "../feed/feedSlice";
 
 export const postInformationSlice = createSlice({
   name: "postInformation",
   initialState: {
-    currentPost: {},
-    isLoadingPostData: false,
-    failedToLoadPostData: false,
+    currentPostId: -1,
   },
   reducers: {
     findCurrentPost: (state, action) => {
-      for (const post of action.payload) {
-        const distanceToTop =
-          window.pageYOffset + post.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        console.log(distanceToTop);
-        console.log(windowHeight);
-        if (distanceToTop / windowHeight <= 0.2) {
-          state.currentPost = post;
-          console.log(post);
-          break;
-        }
-      }
+      const feedElement = document.getElementById("feed");
+      const feedHeight = feedElement.scrollHeight;
+      const scrolled = feedElement.scrollTop;
+      const id = Math.floor(scrolled / (feedHeight / 25));
+      state.currentPostId = id;
     },
   },
 });
 
-export const selectCurrentPost = (state) => {
-  return state.postInformation.currentPost;
+export const selectCurrentPostId = (state) => {
+  return state.postInformation.currentPostId;
+};
+
+export const selectPostInformation = (state) => {
+  const id = state.postInformation.currentPostId;
+  if (id === -1) {
+    return null;
+  }
+  const post = state.feed.posts.data.children.map((post) => {
+    return post.data;
+  })[id];
+  const data = {
+    subredditImg: "",
+    subredditName: post.subreddit_name_prefixed,
+    userName: post.author,
+    date: post.created,
+    votes: post.ups,
+  };
+  return data;
 };
 
 export const { findCurrentPost } = postInformationSlice.actions;

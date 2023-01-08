@@ -16,6 +16,7 @@ export const feedSlice = createSlice({
     posts: {},
     isLoadingPosts: false,
     failedToLoadPosts: false,
+    hasLoadedPosts: false,
   },
   extraReducers: {
     [loadPosts.pending]: (state, action) => {
@@ -25,6 +26,7 @@ export const feedSlice = createSlice({
     [loadPosts.fulfilled]: (state, action) => {
       state.isLoadingPosts = false;
       state.failedToLoadPosts = false;
+      state.hasLoadedPosts = true;
       state.posts = action.payload;
       console.log(
         state.posts.data.children.map((post) => {
@@ -46,6 +48,10 @@ export const isLoadingPosts = (state) => {
 export const failedLoadingPosts = (state) => {
   return state.feed.failedToLoadPosts;
 };
+
+export const hasLoadedPosts = (state) => {
+  return state.feed.hasLoadedPosts;
+}
 
 export const selectPosts = (state) => {
   return state.feed.posts;

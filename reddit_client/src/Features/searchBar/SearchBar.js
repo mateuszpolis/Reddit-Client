@@ -7,6 +7,7 @@ import {
 } from "./searchBarSlice";
 import { loadPosts } from "../feed/feedSlice";
 import "./SearchBar.css";
+import { findCurrentPost } from "../postInformation/postinformationSlice";
 
 export const SearchBar = () => {
   const searchTerm = useSelector(selectSearchTerm);

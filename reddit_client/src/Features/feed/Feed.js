@@ -15,14 +15,9 @@ import { findCurrentPost } from "../postInformation/postinformationSlice";
 export const Feed = () => {
   const dispatch = useDispatch();
   let posts = useSelector(selectPosts);
+  let firstLoad = false;
   if (Object.keys(posts).length === 0) {
-    const data = {
-      searchTerm: " ",
-      sortBy: "relevance",
-      searchLimit: "25",
-    };
-    dispatch(loadPosts(data));
-    dispatch(clearSearchTerm());
+    firstLoad = true;
   } else {
     posts = posts.data.children.map((post) => {
       return post.data;
@@ -31,9 +26,8 @@ export const Feed = () => {
   const isLoading = useSelector(isLoadingPosts);
   const failedLoading = useSelector(failedLoadingPosts);
 
-  const findPostData = () => {
-    const posts = document.getElementsByClassName("post");
-    dispatch(findCurrentPost(posts));
+  const findPostId = () => {
+    dispatch(findCurrentPost());
   };
 
   useEffect(() => {}, [dispatch]);
@@ -46,9 +40,11 @@ export const Feed = () => {
         <h1 style={{ color: "red" }}>Error: Failed to load data. Try again.</h1>
       </div>
     );
+  } else if (firstLoad) {
+    return <div id="feed"></div>;
   }
   return (
-    <div id="feed" onScroll={findPostData}>
+    <div id="feed" onScroll={findPostId}>
       {posts.map((post) => {
         return (
           <Post

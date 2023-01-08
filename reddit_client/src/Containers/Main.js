@@ -7,8 +7,8 @@ import "./Main.css";
 export const Main = () => {
   return (
     <main>
-      <PostInformation />
       <Feed />
+      <PostInformation />
       <CommentSection />
     </main>
   );

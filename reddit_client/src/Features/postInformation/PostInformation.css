@@ -37,6 +37,14 @@
   /* informationPart dimensions */
   height: 50%;
   width: 100%;
+
+  /* information text */
+  text-align: center;
+  font-weight: bold;
+}
+
+#subredditNamePlaceholder {
+  text-align: start;
 }
 
 #subredditImgPlaceholder {
