@@ -10,6 +10,7 @@ import {
 } from "./feedSlice";
 import { clearSearchTerm } from "../searchBar/searchBarSlice";
 import { truncateText } from "../../helperFunctions/functions";
+import { findCurrentPost } from "../postInformation/postinformationSlice";
 
 export const Feed = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,11 @@ export const Feed = () => {
   const isLoading = useSelector(isLoadingPosts);
   const failedLoading = useSelector(failedLoadingPosts);
 
+  const findPostData = () => {
+    const posts = document.getElementsByClassName("post");
+    dispatch(findCurrentPost(posts));
+  };
+
   useEffect(() => {}, [dispatch]);
 
   if (isLoading) {
@@ -42,7 +48,7 @@ export const Feed = () => {
     );
   }
   return (
-    <div id="feed">
+    <div id="feed" onScroll={findPostData}>
       {posts.map((post) => {
         return (
           <Post
