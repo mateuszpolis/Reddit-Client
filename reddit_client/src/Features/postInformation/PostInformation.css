@@ -63,6 +63,12 @@
   border-radius: 50%;
 }
 
+#subredditImgPlaceholder img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
 #subredditNamePlaceholder {
   /* subreddit name position */
   position: absolute;
@@ -140,6 +146,12 @@
 i {
   /* reaction icons size */
   font-size: 150%;
+}
+
+.centerText {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 @keyframes loading {

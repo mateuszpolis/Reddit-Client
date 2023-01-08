@@ -6,11 +6,11 @@ export const SortBy = () => {
     <div id="sortWrapper">
       <div id="sort" className="dropdownButton">
         <h4>Sort</h4>
-        <i class="fa-solid fa-sort-down"></i>
+        <i className="fa-solid fa-sort-down"></i>
       </div>
       <div id="relevance" className="dropdownButton">
         <h4>All time</h4>
-        <i class="fa-solid fa-sort-down"></i>
+        <i className="fa-solid fa-sort-down"></i>
       </div>
     </div>
   );
