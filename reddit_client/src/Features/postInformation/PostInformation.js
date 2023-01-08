@@ -41,7 +41,7 @@ export const PostInformation = () => {
           <div id="subredditImgPlaceholder"></div>
           <div id="subredditNamePlaceholder">{data.subredditName}</div>
           <div id="userNamePlaceholder">u/{data.userName}</div>
-          <div id="datePlaceholder">{data.date}</div>
+          <div id="datePlaceholder">Added: {data.date}</div>
         </div>
         <div className="informationPart">
           <i id="upvotes" className="fa-solid fa-heart"></i>

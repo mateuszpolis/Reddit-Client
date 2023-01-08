@@ -39,6 +39,17 @@ export const selectPostInformation = (state) => {
   return data;
 };
 
+export const selectNumOfComments = (state) => {
+  const id = state.postInformation.currentPostId;
+  if (id === -1) {
+    return null;
+  }
+  const post = state.feed.posts.data.children.map((post) => {
+    return post.data;
+  })[id];
+  return post.num_comments;
+}
+
 export const { findCurrentPost } = postInformationSlice.actions;
 
 export default postInformationSlice.reducer;

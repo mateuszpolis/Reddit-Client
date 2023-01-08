@@ -2,7 +2,7 @@
   /* postInfo position */
   position: absolute;
   right: 81%;
-  top: 0%;
+  top: 15%;
 
   /* postInfo dimensions */
   width: 17%;
@@ -18,7 +18,7 @@
 #postInfo::before {
   /* Divider position */
   position: absolute;
-  top: 50%;
+  top: 65%;
 
   /* Divider display */
   display: inline-block;
@@ -39,7 +39,7 @@
   width: 100%;
 
   /* information text */
-  text-align: center;
+  text-align: start;
   font-weight: bold;
   font-family: var(--sans-serif-font);
 
@@ -83,26 +83,26 @@
 
   /* user name dimensions */
   height: 15%;
-  width: 42.5%;
+  width: 90%;
   border-radius: 7px;
 }
 
 #datePlaceholder {
   /* date position */
   position: absolute;
-  top: 25%;
-  left: 52.5%;
+  top: 45%;
+  left: 5%;
 
   /* date dimensions */
   height: 15%;
-  width: 42.5%;
+  width: 90%;
   border-radius: 7px;
 }
 
 #upvotes {
   /* upvotes icon position */
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   left: 5%;
 
   /* upvotes icon dimensions */
@@ -114,7 +114,7 @@
 #downvotes {
   /* downvotes icon position */
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   right: 5%;
 
   /* downvotes icon dimensions */
@@ -126,13 +126,15 @@
 #numberOfUpvotesPlaceholder {
   /* upvotes icon position */
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   right: 25%;
 
   /* upvotes icon dimensions */
   height: 15%;
   width: 50%;
   border-radius: 7px;
+
+  text-align: center;
 }
 
 i {

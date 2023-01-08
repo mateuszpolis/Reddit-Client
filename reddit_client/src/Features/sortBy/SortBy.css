@@ -1,0 +1,76 @@
+#sortWrapper {
+  /* sortWrapper display */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  /* sortWrapper position */
+  position: absolute;
+  right: 81%;
+  top: 0%;
+
+  /* sortWrapper dimensions */
+  width: 17%;
+  height: 25%;
+
+  /* sortWrapper background */
+  background-color: transparent;
+
+  /* sortWrapper border */
+  border-radius: 7px;
+}
+
+.dropdownButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* buttons positioning */
+  width: 42.5%;
+  height: 30%;
+  margin: 0 5%;
+
+  /* buttons border */
+  border-radius: 7px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--gray);
+
+  /* buttons background */
+  background-color: var(--gray-light);
+
+  text-align: center;
+  color: var(--background-light);
+}
+
+.dropdownButton h4,
+.dropdownButton i {
+  margin: 0;
+}
+
+.dropdownButton:hover {
+  background-color: var(--gray);
+  cursor: pointer;
+  border-color: var(--gray-light);
+}
+
+.dropdownButton i {
+  transform: translate(50%, -20%);
+  transition: 200ms;
+}
+
+.dropdownButton:hover i {
+  transform: rotate(-180deg) translate(-50%, -20%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dropdownButton {
+    background-color: var(--gray);
+    border-color: var(--gray-light);
+  }
+
+  .dropdownButton:hover {
+    background-color: var(--gray-light);
+    border-color: var(--gray);
+  }
+}

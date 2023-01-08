@@ -2,8 +2,13 @@ import React from "react";
 import "./CommentSection.css";
 import { Comment } from "../../Components/Comment";
 import p from "../../images/photo-1481349518771-20055b2a7b24.jpg";
+import { useSelector } from "react-redux";
+import { selectNumOfComments } from "../postInformation/postinformationSlice";
 
 export const CommentSection = () => {
+
+  const numOfComments = useSelector(selectNumOfComments);
+
   const handleScrollTop = () => {
     const parentElement = document.getElementById("comments");
     parentElement.scroll({
@@ -21,7 +26,7 @@ export const CommentSection = () => {
           </h3>
         </div>
         <div id="numOfCommentsPlaceholder" className="canLoad">
-          <h3>5000</h3>
+          <h3>{numOfComments}</h3>
         </div>
       </div>
       <div id="comments" className="canLoad">
