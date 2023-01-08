@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
-import { selectPosts } from "../feed/feedSlice";
+import { convertDate } from "../../helperFunctions/functions";
 
 export const postInformationSlice = createSlice({
   name: "postInformation",
@@ -34,7 +33,7 @@ export const selectPostInformation = (state) => {
     subredditImg: "",
     subredditName: post.subreddit_name_prefixed,
     userName: post.author,
-    date: post.created,
+    date: convertDate(post.created),
     votes: post.ups,
   };
   return data;

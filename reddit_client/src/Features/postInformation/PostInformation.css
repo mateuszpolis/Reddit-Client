@@ -41,6 +41,10 @@
   /* information text */
   text-align: center;
   font-weight: bold;
+  font-family: var(--sans-serif-font);
+
+  /* transition */
+  transition: 0.2s;
 }
 
 #subredditNamePlaceholder {

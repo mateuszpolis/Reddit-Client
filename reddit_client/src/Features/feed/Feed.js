@@ -6,9 +6,7 @@ import {
   isLoadingPosts,
   selectPosts,
   failedLoadingPosts,
-  loadPosts,
 } from "./feedSlice";
-import { clearSearchTerm } from "../searchBar/searchBarSlice";
 import { truncateText } from "../../helperFunctions/functions";
 import { findCurrentPost } from "../postInformation/postinformationSlice";
 
@@ -50,7 +48,7 @@ export const Feed = () => {
           <Post
             header={post.title}
             text={truncateText(post.selftext, 1500)}
-            link={"https://www.reddit.com/" + post.permalink}
+            link={"https://www.reddit.com" + post.permalink}
             key={post.id}
             image_src={post.url_overridden_by_dest}
           />

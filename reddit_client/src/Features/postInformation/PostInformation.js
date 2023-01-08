@@ -3,7 +3,6 @@ import "./PostInformation.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   findCurrentPost,
-  selectCurrentPostId,
   selectPostInformation,
 } from "./postinformationSlice";
 import { hasLoadedPosts, isLoadingPosts } from "../feed/feedSlice";

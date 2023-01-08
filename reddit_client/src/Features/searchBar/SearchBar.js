@@ -7,7 +7,6 @@ import {
 } from "./searchBarSlice";
 import { loadPosts } from "../feed/feedSlice";
 import "./SearchBar.css";
-import { findCurrentPost } from "../postInformation/postinformationSlice";
 
 export const SearchBar = () => {
   const searchTerm = useSelector(selectSearchTerm);
@@ -19,13 +18,16 @@ export const SearchBar = () => {
   };
 
   const handleSubmit = () => {
-    const data = {
-      searchTerm: searchTerm,
-      sortBy: "relevance",
-      searchLimit: "25",
-    };
-    dispatch(loadPosts(data));
-    dispatch(clearSearchTerm());
+    if (searchTerm === "") {
+    } else {
+      const data = {
+        searchTerm: searchTerm,
+        sortBy: "relevance",
+        searchLimit: "25",
+      };
+      dispatch(loadPosts(data));
+      dispatch(clearSearchTerm());
+    }
   };
 
   return (
