@@ -50,15 +50,15 @@ export const commentSectionSlice = createSlice({
 });
 
 export const isLoadingComments = (state) => {
-  return state.feed.isLoadingComments;
+  return state.commentSection.isLoadingComments;
 };
 
 export const failedLoadingComments = (state) => {
-  return state.feed.failedToLoadComments;
+  return state.commentSection.failedToLoadComments;
 };
 
 export const hasLoadedComments = (state) => {
-  return state.feed.hasLoadedComments;
+  return state.commentSection.hasLoadedComments;
 };
 
 export const selectComments = (state) => {

@@ -13,7 +13,6 @@ export const Comment = (props) => {
           <i className="fa-solid fa-heart commentUpvote"></i>
           <div className="commentUpvotesNumber canLoad">
             {props.upvotesNumber}
-            994.6k
           </div>
           <i className="fa-solid fa-heart-crack commentDownvote"></i>
         </div>

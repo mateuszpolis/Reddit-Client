@@ -12,6 +12,8 @@ import {
   selectCommentsForPostId,
   loadComments,
   selectComments,
+  isLoadingComments,
+  hasLoadedComments,
 } from "./commentSectionSlice";
 import { changeId } from "./commentSectionSlice";
 
@@ -25,7 +27,9 @@ export const CommentSection = () => {
     dispatch(loadComments(permalink));
     dispatch(changeId());
   }
-  const comments = useSelector(selectComments);
+  let comments = useSelector(selectComments);
+  const isLoading = useSelector(isLoadingComments);
+  const hasLoaded = useSelector(hasLoadedComments);
 
   const handleScrollTop = () => {
     const parentElement = document.getElementById("comments");
@@ -35,28 +39,76 @@ export const CommentSection = () => {
     });
   };
 
-  return (
-    <div id="postComments">
-      <div id="commentsInfo">
-        <div id="commentsName">
-          <h3>
-            <i className="fa-solid fa-comments"></i> Comments
-          </h3>
+  if (isLoading) {
+    return (
+      <div id="postComments">
+        <div id="commentsInfo">
+          <div id="commentsName">
+            <h3>
+              <i className="fa-solid fa-comments"></i> Comments
+            </h3>
+          </div>
+          <div id="numOfCommentsPlaceholder" className="canLoad">
+            <h3>{numOfComments}</h3>
+          </div>
         </div>
-        <div id="numOfCommentsPlaceholder" className="canLoad">
-          <h3>{numOfComments}</h3>
+        <div id="comments" className="isLoading"></div>
+        <div id="showMore" onClick={handleScrollTop}>
+          <i className="fa-solid fa-caret-up"></i>
         </div>
       </div>
-      <div id="comments" className="canLoad">
-        <Comment
-          author="test"
-          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
-          authorPicture={p}
-        />
+    );
+  } else if (hasLoaded) {
+    comments = comments[1].data.children;
+
+    return (
+      <div id="postComments">
+        <div id="commentsInfo">
+          <div id="commentsName">
+            <h3>
+              <i className="fa-solid fa-comments"></i> Comments
+            </h3>
+          </div>
+          <div id="numOfCommentsPlaceholder">
+            <h3>{numOfComments}</h3>
+          </div>
+        </div>
+        <div id="comments">
+          {comments.map((comment) => {
+            console.log(comment.data);
+            return (
+              <Comment
+                author={comment.data.author}
+                upvotesNumber={comment.data.ups}
+                commentContent={comment.data.body}
+                key={comment.data.id}
+              />
+            );
+          })}
+        </div>
+        <div id="showMore" onClick={handleScrollTop}>
+          <i className="fa-solid fa-caret-up"></i>
+        </div>
       </div>
-      <div id="showMore" onClick={handleScrollTop}>
-        <i className="fa-solid fa-caret-up"></i>
+    );
+  } else {
+    return (
+      <div id="postComments">
+        <div id="commentsInfo">
+          <div id="commentsName">
+            <h3>
+              <i className="fa-solid fa-comments"></i> Comments
+            </h3>
+          </div>
+          <div id="numOfCommentsPlaceholder">
+            <h3>{numOfComments}</h3>
+          </div>
+        </div>
+        <div id="comments"></div>
+        <div id="showMore" onClick={handleScrollTop}>
+          <i className="fa-solid fa-caret-up"></i>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
