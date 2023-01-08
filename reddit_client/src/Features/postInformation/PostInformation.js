@@ -1,7 +1,12 @@
 import React from "react";
 import "./PostInformation.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentPost } from "./postinformationSlice";
 
 export const PostInformation = () => {
+  const dispatch = useDispatch();
+  const currentPost = useSelector(selectCurrentPost);
+
   return (
     <div id="postInfo">
       <div className="informationPart">
