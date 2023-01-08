@@ -48,7 +48,18 @@ export const selectNumOfComments = (state) => {
     return post.data;
   })[id];
   return post.num_comments;
-}
+};
+
+export const selectPostPermalink = (state) => {
+  const id = state.postInformation.currentPostId;
+  if (id === -1) {
+    return null;
+  }
+  const post = state.feed.posts.data.children.map((post) => {
+    return post.data;
+  })[id];
+  return post.permalink;
+};
 
 export const { findCurrentPost } = postInformationSlice.actions;
 

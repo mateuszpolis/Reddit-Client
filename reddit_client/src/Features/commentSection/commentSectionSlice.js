@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { selectCurrentPostId } from "../postInformation/postinformationSlice";
 
 export const loadComments = createAsyncThunk(
   "commentSection/loadComments",
@@ -14,9 +16,19 @@ export const commentSectionSlice = createSlice({
   name: "commentSection",
   initialState: {
     comments: {},
+    commentsForPostId: -1,
     isLoadingComments: false,
     failedToLoadComments: false,
     hasLoadedComments: false,
+  },
+  reducers: {
+    changeId: (state, action) => {
+      const feedElement = document.getElementById("feed");
+      const feedHeight = feedElement.scrollHeight;
+      const scrolled = feedElement.scrollTop;
+      const id = Math.floor(scrolled / (feedHeight / 25));
+      state.commentsForPostId = id;
+    }
   },
   extraReducers: {
     [loadComments.pending]: (state, action) => {
@@ -52,5 +64,11 @@ export const hasLoadedComments = (state) => {
 export const selectComments = (state) => {
   return state.commentSection.comments;
 };
+
+export const selectCommentsForPostId = (state) => {
+  return state.commentSection.commentsForPostId;
+}
+
+export const { changeId } = commentSectionSlice.actions;
 
 export default commentSectionSlice.reducer;

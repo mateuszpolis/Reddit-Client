@@ -2,12 +2,30 @@ import React from "react";
 import "./CommentSection.css";
 import { Comment } from "../../Components/Comment";
 import p from "../../images/photo-1481349518771-20055b2a7b24.jpg";
-import { useSelector } from "react-redux";
-import { selectNumOfComments } from "../postInformation/postinformationSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCurrentPostId,
+  selectNumOfComments,
+  selectPostPermalink,
+} from "../postInformation/postinformationSlice";
+import {
+  selectCommentsForPostId,
+  loadComments,
+  selectComments,
+} from "./commentSectionSlice";
+import { changeId } from "./commentSectionSlice";
 
 export const CommentSection = () => {
-
+  const dispatch = useDispatch();
   const numOfComments = useSelector(selectNumOfComments);
+  const permalink = useSelector(selectPostPermalink);
+  const currentId = useSelector(selectCommentsForPostId);
+  const newId = useSelector(selectCurrentPostId);
+  if (permalink !== null && currentId !== newId) {
+    dispatch(loadComments(permalink));
+    dispatch(changeId());
+  }
+  const comments = useSelector(selectComments);
 
   const handleScrollTop = () => {
     const parentElement = document.getElementById("comments");
@@ -30,36 +48,6 @@ export const CommentSection = () => {
         </div>
       </div>
       <div id="comments" className="canLoad">
-        <Comment
-          author="test"
-          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
-          authorPicture={p}
-        />
-        <Comment
-          author="test"
-          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
-          authorPicture={p}
-        />
-        <Comment
-          author="test"
-          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
-          authorPicture={p}
-        />
-        <Comment
-          author="test"
-          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
-          authorPicture={p}
-        />
-        <Comment
-          author="test"
-          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
-          authorPicture={p}
-        />
-        <Comment
-          author="test"
-          commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
-          authorPicture={p}
-        />
         <Comment
           author="test"
           commentContent="Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. "
