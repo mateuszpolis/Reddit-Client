@@ -7,3 +7,8 @@
   width: 100%;
   height: 68%;
 }
+
+.postMedia video, .postMedia iframe {
+  height: 100%;
+  width: 100%;
+}

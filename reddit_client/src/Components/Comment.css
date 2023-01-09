@@ -21,6 +21,8 @@
 .comment h5,
 .comment p {
   margin: 0;
+  width: 20.7vw;
+  overflow-wrap: break-word;
 }
 
 .commentAuthor img,

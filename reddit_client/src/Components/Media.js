@@ -17,27 +17,21 @@ export const Media = (props) => {
   } else if (post_hint === "rich:video") {
     return (
       <div className="postMedia">
-        <video autoPlay controls>
-          <source src={source} type="video/mp4" />
-        </video>
+        <video loop autoPlay controls muted>
+					<source src={post.url} type='video/mp4'></source>
+				</video>
       </div>
     );
   } else if (post_hint === "rich:iframe") {
     return (
       <div className="postMedia">
-        <iframe src={source} title={post_id}></iframe>
+        <iframe src={source} title={post_id} autoPlay muted></iframe>
       </div>
     );
   } else if (post_hint === "hosted:video") {
     return (
       <div className="postMedia">
-        <img />
-      </div>
-    );
-  } else if (post_hint === "rich:video") {
-    return (
-      <div className="postMedia">
-        <img />
+        <iframe src={post.media.reddit_video.fallback_url} title={post.title} autoPlay muted/>
       </div>
     );
   } else {
