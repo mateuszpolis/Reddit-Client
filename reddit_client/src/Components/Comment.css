@@ -95,6 +95,7 @@
 
   font-size: 0.7rem;
   font-weight: bold;
+  font-family: var(--serif-font);
 }
 
 @media (prefers-color-scheme: dark) {

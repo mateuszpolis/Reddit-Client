@@ -1,4 +1,5 @@
 import React from "react";
+import { intToString } from "../helperFunctions/functions";
 import "./Comment.css";
 
 export const Comment = (props) => {
@@ -12,7 +13,7 @@ export const Comment = (props) => {
         <div className="commentUpvoteInfo">
           <i className="fa-solid fa-heart commentUpvote"></i>
           <div className="commentUpvotesNumber canLoad">
-            {props.upvotesNumber}
+            {intToString(props.upvotesNumber)}
           </div>
           <i className="fa-solid fa-heart-crack commentDownvote"></i>
         </div>
