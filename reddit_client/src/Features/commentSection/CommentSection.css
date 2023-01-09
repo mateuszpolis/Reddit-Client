@@ -2,13 +2,13 @@
   /* postComments position */
   position: absolute;
   right: 2%;
-  top: 5%;
+  top: 0%;
 
   /* postComments background */
   background-color: transparent;
 
   /* postComments dimensions */
-  height: 90%;
+  height: 92%;
   width: 24.5%;
 
   /* postComments border */
@@ -43,7 +43,7 @@
   /* commentsInfo shadow */
   -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
   -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
-  box-shadow: 0px -10px 20px 0px var(--gray-light);
+  box-shadow: 0px 10px 20px 0px var(--gray-light);
 }
 
 #commentsInfo h3 {
@@ -86,9 +86,9 @@
   color: var(--background-dark);
 
   /* scroll down shadow */
-  -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
-  -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
-  box-shadow: 0px 10px 20px 0px var(--gray-light);
+  -webkit-box-shadow: 0px -10px 20px 0px var(--gray-light);
+  -moz-box-shadow: 0px -10px 20px 0px var(--gray-light);
+  box-shadow: 0px -10px 20px 0px var(--gray-light);
 
   /* scroll down transition */
   transition: 0.2s;

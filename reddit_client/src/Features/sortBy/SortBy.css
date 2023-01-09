@@ -33,8 +33,6 @@
   /* buttons border */
   border-radius: 7px;
   border-style: solid;
-  border-width: 2px;
-  border-color: var(--gray);
 
   /* buttons background */
   background-color: var(--gray-light);
@@ -51,7 +49,6 @@
 .dropdownButton:hover {
   background-color: var(--gray);
   cursor: pointer;
-  border-color: var(--gray-light);
 }
 
 .dropdownButton i {
@@ -66,11 +63,9 @@
 @media (prefers-color-scheme: dark) {
   .dropdownButton {
     background-color: var(--gray);
-    border-color: var(--gray-light);
   }
 
   .dropdownButton:hover {
     background-color: var(--gray-light);
-    border-color: var(--gray);
   }
 }
