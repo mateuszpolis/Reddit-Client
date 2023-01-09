@@ -51,6 +51,7 @@ export const Feed = () => {
             link={"https://www.reddit.com" + post.permalink}
             key={post.id}
             image_src={post.url_overridden_by_dest}
+            post={post}
           />
         );
       })}

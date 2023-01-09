@@ -26,7 +26,7 @@ export const commentSectionSlice = createSlice({
       const scrolled = feedElement.scrollTop;
       const id = Math.floor(scrolled / (feedHeight / 25));
       state.commentsForPostId = id;
-    }
+    },
   },
   extraReducers: {
     [loadComments.pending]: (state, action) => {
@@ -38,7 +38,6 @@ export const commentSectionSlice = createSlice({
       state.failedToLoadComments = false;
       state.hasLoadedComments = true;
       state.comments = action.payload;
-      console.log(action.payload[1].data.children);
     },
     [loadComments.rejected]: (state, action) => {
       state.isLoadingComments = false;
@@ -65,7 +64,7 @@ export const selectComments = (state) => {
 
 export const selectCommentsForPostId = (state) => {
   return state.commentSection.commentsForPostId;
-}
+};
 
 export const { changeId } = commentSectionSlice.actions;
 

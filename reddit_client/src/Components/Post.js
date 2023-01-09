@@ -1,6 +1,6 @@
 import React from "react";
 import "./Post.css";
-
+import { Media } from "./Media";
 export const Post = (props) => {
   return (
     <div className="post">
@@ -11,9 +11,7 @@ export const Post = (props) => {
           See post
         </a>
       </div>
-      <div className="postMedia">
-        <img src={props.image_src} alt={props.id} />
-      </div>
+      <Media post={props.post}/>
     </div>
   );
 };

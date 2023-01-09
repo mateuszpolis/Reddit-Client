@@ -74,7 +74,6 @@ export const CommentSection = () => {
         </div>
         <div id="comments">
           {comments.map((comment) => {
-            console.log(comment.data);
             return (
               <Comment
                 author={comment.data.author}
