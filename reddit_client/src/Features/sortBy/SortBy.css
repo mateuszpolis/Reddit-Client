@@ -33,6 +33,7 @@
   /* buttons border */
   border-radius: 7px;
   border-style: solid;
+  border-width: 0px;
 
   /* buttons background */
   background-color: var(--gray-light);
