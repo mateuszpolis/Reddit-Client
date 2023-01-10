@@ -82,6 +82,8 @@
 .isImage h2 {
   max-height: 20%;
 
+  margin: 0;
+
   animation: background-pan 3s linear infinite;
 
   background: rgb(210, 23, 219);
@@ -97,6 +99,8 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200%;
+
+  overflow-y: scroll;
 }
 
 .isImageText {
@@ -122,9 +126,9 @@
   justify-content: center;
 
   margin: 0.5% auto;
-  height: 64%;
+  height: 63%;
   width: fit-content;
-  padding: 0.5% 2%;
+  padding: 1% 2%;
   border-radius: 7px;
 
   transition: 200ms;
@@ -138,6 +142,105 @@
 .imageWrapper img {
   height: 100%;
   max-width: 100%;
+
+  border-radius: 3px;
+}
+
+.imageFullWrapper {
+  display: flex;
+  justify-content: center;
+
+  margin: 0 auto;
+  height: 78%;
+  width: fit-content;
+  padding: 1% 2%;
+  border-radius: 7px;
+
+  transition: 200ms;
+}
+
+.imageFullWrapper img {
+  height: 100%;
+  max-width: 100%;
+
+  border-radius: 3px;
+}
+
+.imageFullWrapper:hover {
+  background-color: var(--gray-light);
+  cursor: pointer;
+}
+
+.isImageFull h2 {
+  max-height: 20%;
+
+  margin: 0;
+
+  animation: background-pan 3s linear infinite;
+
+  background: rgb(58, 161, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(58, 161, 180, 1) 0%,
+    rgba(243, 29, 253, 1) 50%,
+    rgba(58, 161, 180, 1) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+
+  overflow-y: scroll;
+}
+
+.isIframe h2 {
+  max-height: 20%;
+
+  margin: 0;
+
+  animation: background-pan 3s linear infinite;
+
+  background: rgb(231, 157, 39);
+  background: linear-gradient(
+    90deg,
+    rgba(231, 157, 39, 1) 0%,
+    rgba(253, 39, 29, 1) 50%,
+    rgba(231, 157, 39, 1) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+
+  overflow-y: scroll;
+}
+
+.iframeWrapper {
+  display: flex;
+  justify-content: center;
+
+  margin: 0 auto;
+  height: 78%;
+  width: fit-content;
+  padding: 1% 2%;
+  border-radius: 7px;
+
+  transition: 200ms;
+}
+
+.iframeWrapper iframe {
+  height: 100%;
+  max-width: 100%;
+
+  border: 0px;
+  border-radius: 3px;
+}
+
+.iframeWrapper:hover {
+  background-color: var(--gray-light);
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -146,5 +249,20 @@
     -webkit-box-shadow: inset 0px 0px 0px 2px var(--accent);
     -moz-box-shadow: inset 0px 0px 0px 2px var(--accent);
     box-shadow: inset 0px 0px 0px 2px var(--accent);
+  }
+  .isImageText:hover {
+    background-color: var(--gray);
+  }
+  .isSelftext:hover {
+    background-color: var(--gray);
+  }
+  .imageWrapper:hover {
+    background-color: var(--gray);
+  }
+  .imageFullWrapper:hover {
+    background-color: var(--gray);
+  }
+  .iframeWrapper:hover {
+    background-color: var(--gray);
   }
 }
