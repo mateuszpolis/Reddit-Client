@@ -15,7 +15,6 @@ import {
   hasLoadedComments,
 } from "./commentSectionSlice";
 import { changeId } from "./commentSectionSlice";
-import { truncateText } from "../../helperFunctions/functions";
 
 export const CommentSection = () => {
   const dispatch = useDispatch();

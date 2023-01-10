@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setSearchTerm,
   selectSearchTerm,
-  clearSearchTerm,
   selectSortBy,
   setSortBy,
 } from "./searchBarSlice";
