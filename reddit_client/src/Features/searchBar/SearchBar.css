@@ -175,4 +175,10 @@ form {
     border-color: var(--gray);
     color: var(--background-light);
   }
+  #sort {
+    background-color: var(--gray);
+  }
+  #sort:hover {
+    background-color: var(--gray-light);
+  }
 }
