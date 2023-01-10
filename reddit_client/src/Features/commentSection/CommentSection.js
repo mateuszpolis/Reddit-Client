@@ -15,6 +15,7 @@ import {
   hasLoadedComments,
 } from "./commentSectionSlice";
 import { changeId } from "./commentSectionSlice";
+import { truncateText } from "../../helperFunctions/functions";
 
 export const CommentSection = () => {
   const dispatch = useDispatch();
@@ -30,12 +31,11 @@ export const CommentSection = () => {
   const isLoading = useSelector(isLoadingComments);
   const hasLoaded = useSelector(hasLoadedComments);
 
-  const handleScrollTop = () => {
-    const parentElement = document.getElementById("comments");
-    parentElement.scroll({
-      top: 0,
-      behavior: "smooth",
-    });
+  const handleHide = () => {
+    const hideButton = document.getElementById("showMore");
+    const commentsInfo = document.getElementById("commentsInfo");
+    hideButton.setAttribute("isHidden", "true");
+    commentsInfo.setAttribute("isHidden", "true");
   };
 
   if (isLoading) {
@@ -52,7 +52,7 @@ export const CommentSection = () => {
           </div>
         </div>
         <div id="comments" className="isLoading"></div>
-        <div id="showMore" onClick={handleScrollTop}>
+        <div id="showMore" onClick={handleHide}>
           <i className="fa-solid fa-caret-up"></i>
         </div>
       </div>
@@ -84,7 +84,7 @@ export const CommentSection = () => {
             );
           })}
         </div>
-        <div id="showMore" onClick={handleScrollTop}>
+        <div id="showMore" onClick={handleHide}>
           <i className="fa-solid fa-caret-up"></i>
         </div>
       </div>
@@ -92,19 +92,10 @@ export const CommentSection = () => {
   } else {
     return (
       <div id="postComments">
-        <div id="commentsInfo">
-          <div id="commentsName">
-            <h3>
-              <i className="fa-solid fa-comments"></i> Comments
-            </h3>
-          </div>
-          <div id="numOfCommentsPlaceholder">
-            <h3>{numOfComments}</h3>
-          </div>
-        </div>
+        <div id="commentsInfo" isHidden="true"></div>
         <div id="comments"></div>
-        <div id="showMore" onClick={handleScrollTop}>
-          <i className="fa-solid fa-caret-up"></i>
+        <div id="showMore" onClick={handleHide} isHidden="true">
+          <i className="fa-solid fa-caret-down"></i>
         </div>
       </div>
     );
