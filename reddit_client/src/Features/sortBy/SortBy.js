@@ -23,15 +23,6 @@ export const SortBy = () => {
         <h4>Sort</h4>
         <i className="fa-solid fa-sort-down"></i>
       </div>
-      <div
-        id="relevance"
-        className="dropdownButton"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <h4>All time</h4>
-        <i className="fa-solid fa-sort-down"></i>
-      </div>
     </div>
   );
 };

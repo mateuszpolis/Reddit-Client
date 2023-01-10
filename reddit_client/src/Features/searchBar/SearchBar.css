@@ -8,7 +8,7 @@
 
 #search {
   /* search dimensions */
-  height: 8vh;
+  height: 6vh;
   width: 35vw;
 
   /* search border */
@@ -59,8 +59,8 @@
   align-items: center;
 
   /* submitSearch dimensions */
-  height: 8vh;
-  width: 8vw;
+  height: 6vh;
+  width: 6vw;
 
   /* submitSearch vertical align */
   vertical-align: top;

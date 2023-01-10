@@ -246,9 +246,10 @@
 @media (prefers-color-scheme: dark) {
   .post {
     /* post shadow at dark scheme */
-    -webkit-box-shadow: inset 0px 0px 0px 2px var(--accent);
-    -moz-box-shadow: inset 0px 0px 0px 2px var(--accent);
-    box-shadow: inset 0px 0px 0px 2px var(--accent);
+    background-color: var(--gray-darker);
+    -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
+    -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
+    box-shadow: 0px 10px 20px 0px var(--gray-darker);
   }
   .isImageText:hover {
     background-color: var(--gray);

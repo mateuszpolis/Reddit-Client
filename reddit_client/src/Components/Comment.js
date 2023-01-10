@@ -6,8 +6,7 @@ export const Comment = (props) => {
   return (
     <div className="comment">
       <div className="commentAuthor">
-        <img alt="profile_picture" src={props.authorPicture}></img>
-        <h5>{props.author}</h5>
+        <h5>u/{props.author}</h5>
       </div>
       <div className="commentContentWrapper">
         <div className="commentUpvoteInfo">

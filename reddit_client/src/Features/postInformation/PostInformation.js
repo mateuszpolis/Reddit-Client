@@ -7,6 +7,7 @@ import {
 } from "./postinformationSlice";
 import { hasLoadedPosts, isLoadingPosts } from "../feed/feedSlice";
 import picture from "../../images/photo-1481349518771-20055b2a7b24.jpg";
+import { intToString } from "../../helperFunctions/functions";
 
 export const PostInformation = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ export const PostInformation = () => {
         </div>
         <div className="informationPart">
           <i id="upvotes" className="fa-solid fa-heart"></i>
-          <div id="numberOfUpvotesPlaceholder">{data.votes}</div>
+          <div id="numberOfUpvotesPlaceholder">{intToString(data.votes)}</div>
           <i id="downvotes" className="fa-solid fa-heart-crack"></i>
         </div>
       </div>

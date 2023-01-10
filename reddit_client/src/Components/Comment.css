@@ -14,7 +14,7 @@
 
   /* comment border */
   border-bottom-color: var(--gray-light);
-  border-bottom-width: 0.5%;
+  border-bottom-width: 1px;
   border-bottom-style: solid;
 }
 
@@ -25,20 +25,14 @@
   overflow-wrap: break-word;
 }
 
-.commentAuthor img,
+.comment i {
+  color: red;
+}
+
 .commentAuthor h5 {
   /* image inline with comment author */
   display: inline-block;
-}
-
-.commentAuthor img {
-  /* comment author's image dimensions */
-  width: 1.5vw;
-  height: 1.5vw;
-  border-radius: 0.75vw;
-
-  /* margin to author's name */
-  margin-right: 0.5vw;
+  margin-left: 0%;
 }
 
 .commentAuthor {
@@ -68,7 +62,7 @@
   display: inline-block;
 
   /* icons size */
-  font-size: 50%;
+  font-size: 60%;
 }
 
 .commentUpvoteInfo i {

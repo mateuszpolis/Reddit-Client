@@ -5,6 +5,7 @@
   --background-dark-lighter: hsl(195, 46%, 10%);
   --background-light: hsl(0, 29%, 97%);
   --gray: hsl(0, 0%, 50%);
+  --gray-darker: hsl(0, 0%, 10%);
   --gray-light: hsl(0, 0%, 75%);
   --gray-light-hover: hsl(0, 0%, 85%);
   --accent: hsl(209, 54%, 59%);
