@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const loadPosts = createAsyncThunk("feed/loadPosts", async (data) => {
   const { searchTerm, sortBy, searchLimit } = data;
   const response = await fetch(
-    `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`
+    `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}raw_json=1`
   );
 
   const json = await response.json();
@@ -51,7 +51,7 @@ export const failedLoadingPosts = (state) => {
 
 export const hasLoadedPosts = (state) => {
   return state.feed.hasLoadedPosts;
-}
+};
 
 export const selectPosts = (state) => {
   return state.feed.posts;

@@ -1,9 +1,13 @@
-.post {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@keyframes background-pan {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
 
+.post {
   /* post position */
   margin: 6% auto;
 
@@ -30,18 +34,110 @@
   overflow-x: hidden;
 }
 
-.post img {
-  /* image sizing */
-  max-height: 100%;
-  max-width: 100%;
-}
-
 .postText {
   width: 100%;
 }
 
 .post h3 {
   margin-top: 20px;
+}
+
+.isSelf h2 {
+  max-height: 20%;
+
+  animation: background-pan 3s linear infinite;
+
+  background: rgb(23, 195, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 195, 219, 1) 0%,
+    rgba(41, 236, 184, 1) 30%,
+    rgba(41, 236, 184, 1) 70%,
+    rgba(23, 195, 219, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+}
+
+.isSelftext {
+  height: fit-content;
+  max-height: 75%;
+  width: 96%;
+  padding: 0.5% 2%;
+
+  border-radius: 7px;
+
+  overflow-y: hidden;
+
+  transition: 200ms;
+}
+
+.isSelftext:hover {
+  background-color: var(--gray-light);
+  cursor: pointer;
+}
+
+.isImage h2 {
+  max-height: 20%;
+
+  animation: background-pan 3s linear infinite;
+
+  background: rgb(210, 23, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(210, 23, 219, 1) 0%,
+    rgba(236, 41, 62, 1) 30%,
+    rgba(236, 41, 62, 1) 70%,
+    rgba(210, 23, 219, 1) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200%;
+}
+
+.isImageText {
+  height: fit-content;
+  max-height: 15%;
+  width: 96%;
+  padding: 0.5% 2%;
+
+  border-radius: 7px;
+
+  overflow-y: hidden;
+
+  transition: 200ms;
+}
+
+.isImageText:hover {
+  background-color: var(--gray-light);
+  cursor: pointer;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+
+  margin: 0.5% auto;
+  height: 64%;
+  width: fit-content;
+  padding: 0.5% 2%;
+  border-radius: 7px;
+
+  transition: 200ms;
+}
+
+.imageWrapper:hover {
+  background-color: var(--gray-light);
+  cursor: pointer;
+}
+
+.imageWrapper img {
+  height: 100%;
+  max-width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

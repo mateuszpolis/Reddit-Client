@@ -1,5 +1,5 @@
 export const truncateText = (text, limit) => {
-  return text.length > limit ? text.slice(0, limit - 1) + "(...);" : text;
+  return text.length > limit ? text.slice(0, limit - 1) + "... (Click to show more)" : text;
 };
 
 export const convertDate = (val) => {
