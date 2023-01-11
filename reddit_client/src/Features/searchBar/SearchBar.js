@@ -62,7 +62,6 @@ export const SearchBar = () => {
       sortBy: newValue.toLowerCase(),
       searchLimit: "25",
     };
-    console.log(newValue.toLowerCase());
     dispatch(loadPosts(data));
   };
 

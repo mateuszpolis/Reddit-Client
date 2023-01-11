@@ -7,7 +7,6 @@ export const Post = ({ post }) => {
   const handleShowMore = () => {
     const pWrapper = document.getElementById(post.id + "d");
     const p = document.getElementById(post.id + "p");
-    console.log(pWrapper.style.height);
     if (
       pWrapper.style.height === "fit-content" ||
       pWrapper.style.height === ""
