@@ -132,7 +132,7 @@
   width: 15%;
   border-radius: 7px;
 
-  color: black;
+  color: var(--background-dark);
 }
 
 #numberOfUpvotesPlaceholder {
@@ -169,5 +169,11 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #downvotes {
+    color: var(--background-light);
   }
 }

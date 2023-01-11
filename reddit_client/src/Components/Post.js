@@ -40,10 +40,12 @@ export const Post = ({ post }) => {
   const mediaToFullScreen = (e) => {
     const parent = e.target.parentElement;
     if (parent.hasAttribute("magnified")) {
-      console.log("zmniejszam");
       parent.removeAttribute("magnified");
+      setTimeout(() => {
+        parent.style.transition = "200ms";  
+      }, 20);
     } else {
-      console.log("powiekszam");
+      parent.style.transition = "0s";
       parent.setAttribute("magnified", "true");
     }
   };

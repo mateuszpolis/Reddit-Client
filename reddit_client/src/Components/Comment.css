@@ -30,7 +30,7 @@
 }
 
 .commentDownvote {
-  color: black;
+  color: var(--background-dark);
 }
 
 .commentAuthor h5 {
@@ -93,8 +93,11 @@
 
   font-size: 0.7rem;
   font-weight: bold;
-  font-family: var(--serif-font);
+  font-family: var(--sans-serif-font);
 }
 
 @media (prefers-color-scheme: dark) {
+  .commentDownvote {
+    color: var(--background-light);
+  }
 }

@@ -243,7 +243,7 @@
   cursor: pointer;
 }
 
-[magnified=true] {
+[magnified="true"] {
   position: fixed;
   top: 0;
   left: 0;
@@ -259,7 +259,7 @@
   z-index: 10;
 }
 
-[magnified=true]:hover {
+[magnified="true"]:hover {
   backdrop-filter: blur(5px);
   background-color: var(--gray-transparent);
 }
@@ -286,5 +286,9 @@
   }
   .iframeWrapper:hover {
     background-color: var(--gray);
+  }
+  [magnified="true"]:hover {
+    backdrop-filter: blur(5px);
+    background-color: var(--gray-transparent);
   }
 }
