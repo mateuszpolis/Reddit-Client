@@ -58,8 +58,8 @@
   vertical-align: top;
 
   /* submitSearch border */
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
+  border-top-right-radius: 3vh;
+  border-bottom-right-radius: 3vh;
   border-width: 0px;
   border-style: solid;
   border-color: var(--gray-light);
@@ -99,8 +99,8 @@ form {
   height: 6vh;
   padding: 0 1vw;
 
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
+  border-top-left-radius: 3vh;
+  border-bottom-left-radius: 3vh;
 
   background-color: var(--gray-light);
   color: var(--background-light);
@@ -122,8 +122,6 @@ form {
 #sort:hover {
   cursor: pointer;
   background-color: var(--gray);
-
-  border-bottom-left-radius: 0;
 }
 
 #sortOptions {

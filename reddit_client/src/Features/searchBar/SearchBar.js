@@ -39,7 +39,7 @@ export const SearchBar = () => {
       sort.style.borderBottomLeftRadius = "0";
     } else {
       dropdown.style.display = "none";
-      sort.style.borderBottomLeftRadius = "7px";
+      sort.style.borderBottomLeftRadius = "3vh";
     }
   };
 

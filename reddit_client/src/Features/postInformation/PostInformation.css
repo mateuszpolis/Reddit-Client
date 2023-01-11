@@ -117,6 +117,8 @@
   height: 15%;
   width: 15%;
   border-radius: 7px;
+
+  color: red;
 }
 
 #downvotes {
@@ -129,6 +131,8 @@
   height: 15%;
   width: 15%;
   border-radius: 7px;
+
+  color: black;
 }
 
 #numberOfUpvotesPlaceholder {
@@ -148,7 +152,6 @@
 #postInfo i {
   /* reaction icons size */
   font-size: 150%;
-  color: red;
 }
 
 .centerText {
