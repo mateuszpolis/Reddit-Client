@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PopularPost } from "../../Components/PopularPost";
 import "./Popular.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  hasLoadedPopularPosts,
+  isLoadingPopularPosts,
+  loadPopular,
+  selectPopularPosts,
+} from "./popularSlice";
 
 export const Popular = () => {
+  const isLoading = useSelector(isLoadingPopularPosts);
+  const hasLoaded = useSelector(hasLoadedPopularPosts);
+  let posts = useSelector(selectPopularPosts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const data = {
+      geoFilter: "US",
+      searchLimit: "10",
+    };
+    dispatch(loadPopular(data));
+  }, []);
+
   const handleScrollRight = () => {
     const wrapper = document.getElementById("popularPosts");
     wrapper.scroll({
@@ -12,29 +31,43 @@ export const Popular = () => {
     });
   };
 
-  return (
-    <div id="popularPostsContainer">
-      <div id="popularPostsTitle">
-        <h5>
-          Popular <i class="fa-solid fa-fire"></i>
-        </h5>
+  if (hasLoaded) {
+    posts = posts.data.children.map((post) => {
+      return post.data;
+    });
+  }
+
+  if (isLoading) {
+    return (
+      <div id="popularPostsContainer">
+        <div id="popularPosts" className="isLoading"></div>
       </div>
-      <div id="popularPosts">
-        <PopularPost />
-        <PopularPost />
-        <PopularPost />
-        <PopularPost />
-        <PopularPost />
-        <PopularPost />
-        <PopularPost />
-        <PopularPost />
-        <PopularPost />
+    );
+  } else if (hasLoaded) {
+    return (
+      <div id="popularPostsContainer">
+        <div id="popularPostsTitle">
+          <h5>
+            Popular <i class="fa-solid fa-fire"></i>
+          </h5>
+        </div>
+        <div id="popularPosts">
+          {posts.map((post) => {
+            return <PopularPost post={post} key={post.id} />;
+          })}
+        </div>
+        <div id="clickToScrollRight" onClick={handleScrollRight}>
+          <h5>
+            <i class="fa-solid fa-caret-right"></i>
+          </h5>
+        </div>
       </div>
-      <div id="clickToScrollRight" onClick={handleScrollRight}>
-        <h5>
-          <i class="fa-solid fa-caret-right"></i>
-        </h5>
+    );
+  } else {
+    return (
+      <div id="popularPostsContainer">
+        <div id="popularPosts" className="isLoading"></div>
       </div>
-    </div>
-  );
+    );
+  }
 };
