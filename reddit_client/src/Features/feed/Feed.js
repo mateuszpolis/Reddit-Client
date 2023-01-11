@@ -2,13 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Post } from "../../Components/Post";
 import "./Feed.css";
-import {
-  isLoadingPosts,
-  selectPosts,
-  failedLoadingPosts,
-} from "./feedSlice";
+import { isLoadingPosts, selectPosts, failedLoadingPosts } from "./feedSlice";
 import { truncateText } from "../../helperFunctions/functions";
 import { findCurrentPost } from "../postInformation/postinformationSlice";
+import { selectSearchTerm } from "../../Features/searchBar/searchBarSlice";
 
 export const Feed = () => {
   const dispatch = useDispatch();
@@ -23,6 +20,7 @@ export const Feed = () => {
   }
   const isLoading = useSelector(isLoadingPosts);
   const failedLoading = useSelector(failedLoadingPosts);
+  const searchTerm = useSelector(selectSearchTerm);
 
   const findPostId = () => {
     dispatch(findCurrentPost());
@@ -31,7 +29,11 @@ export const Feed = () => {
   useEffect(() => {}, [dispatch]);
 
   if (isLoading) {
-    return <div id="feed" className="isLoading"></div>;
+    return (
+      <div id="feedWrapper">
+        <div id="feed" className="isLoading"></div>
+      </div>
+    );
   } else if (failedLoading) {
     return (
       <div id="feed" style={{ textAlign: "center" }}>
@@ -42,19 +44,27 @@ export const Feed = () => {
     return <div id="feed"></div>;
   }
   return (
-    <div id="feed" onScroll={findPostId}>
-      {posts.map((post) => {
-        return (
-          <Post
-            header={post.title}
-            text={truncateText(post.selftext, 1500)}
-            link={"https://www.reddit.com" + post.permalink}
-            key={post.id}
-            image_src={post.url_overridden_by_dest}
-            post={post}
-          />
-        );
-      })}
+    <div id="feedWrapper">
+      <div id="resultsFor">
+        <h5>
+          <i class="fa-solid fa-magnifying-glass"></i> Results for:{" "}
+          <u>{searchTerm}</u>
+        </h5>
+      </div>
+      <div id="feed" onScroll={findPostId}>
+        {posts.map((post) => {
+          return (
+            <Post
+              header={post.title}
+              text={truncateText(post.selftext, 1500)}
+              link={"https://www.reddit.com" + post.permalink}
+              key={post.id}
+              image_src={post.url_overridden_by_dest}
+              post={post}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

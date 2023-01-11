@@ -13,17 +13,14 @@
 
   /* post dimentions */
   width: 96%;
-  height: 86%;
+  height: 96%;
   padding: 2%;
 
   /* post border */
   border-radius: 7px;
   border: 0;
 
-  /* post shadow */
-  -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
-  -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
-  box-shadow: 0px 10px 20px 0px var(--gray-light);
+  background-color: var(--background-light-darker);
 
   /* post scrolling snap */
   scroll-snap-align: start;
@@ -268,9 +265,6 @@
   .post {
     /* post shadow at dark scheme */
     background-color: var(--gray-darker);
-    -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
-    -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
-    box-shadow: 0px 10px 20px 0px var(--gray-darker);
   }
   .isImageText:hover {
     background-color: var(--gray);
