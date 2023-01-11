@@ -1,0 +1,23 @@
+#popularPosts {
+  overflow-x: scroll;
+  white-space: nowrap;
+
+  position: absolute;
+  height: 18vh;
+  width: 46vw;
+  left: 25vw;
+}
+
+.popularPost {
+  display: inline-block;
+
+  height: 17vh;
+  min-width: 10vw;
+  padding: 0.5vh 0.5vw;
+
+  margin-right: 2vw;
+
+  border-radius: 7px;
+
+  background-color: var(--gray-light);
+}

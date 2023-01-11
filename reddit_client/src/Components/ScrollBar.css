@@ -1,6 +1,7 @@
 ::-webkit-scrollbar {
   /* scrollbar dimensions */
-  width: 0.6vw;
+  width: 0vw;
+  height: 0vh;
 }
 
 ::-webkit-scrollbar-thumb {
