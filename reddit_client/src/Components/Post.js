@@ -37,6 +37,17 @@ export const Post = ({ post }) => {
     }
   };
 
+  const mediaToFullScreen = (e) => {
+    const parent = e.target.parentElement;
+    if (parent.hasAttribute("magnified")) {
+      console.log("zmniejszam");
+      parent.removeAttribute("magnified");
+    } else {
+      console.log("powiekszam");
+      parent.setAttribute("magnified", "true");
+    }
+  };
+
   if (post.is_self) {
     return (
       <div className="post isSelf" id={post.id}>
@@ -58,7 +69,7 @@ export const Post = ({ post }) => {
           <p id={post.id + "p"}>{truncateText(post.selftext, 100)} </p>
         </div>
         <div className="imageWrapper" id={post.id + "img"}>
-          <img src={post.url} alt={post.id} />
+          <img src={post.url} alt={post.id} onClick={mediaToFullScreen} />
         </div>
       </div>
     );
@@ -67,7 +78,7 @@ export const Post = ({ post }) => {
       <div className="post isImageFull" id={post.id}>
         <h2>{post.title}</h2>
         <div className="imageFullWrapper" id={post.id + "img"}>
-          <img src={post.url} alt={post.id} />
+          <img src={post.url} alt={post.id} onClick={mediaToFullScreen} />
         </div>
       </div>
     );
@@ -76,7 +87,7 @@ export const Post = ({ post }) => {
       <div className="post isVideo" id={post.id}>
         <h2>{post.title}</h2>
         <div className="videoWrapper" id={post.id + "vid"}>
-          <video autoPlay controls>
+          <video autoPlay controls onClick={mediaToFullScreen}>
             <source src={post.url} type="video/mp4"></source>
           </video>
         </div>
@@ -92,6 +103,7 @@ export const Post = ({ post }) => {
             title={post.title}
             autoPlay
             controls
+            onClick={mediaToFullScreen}
           />
         </div>
       </div>

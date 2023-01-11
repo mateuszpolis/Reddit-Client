@@ -141,7 +141,7 @@
 
 .imageWrapper img {
   height: 100%;
-  max-width: 100%;
+  max-width: 98%;
 
   border-radius: 3px;
 }
@@ -160,7 +160,7 @@
 }
 
 .imageFullWrapper img {
-  height: 100%;
+  height: 98%;
   max-width: 100%;
 
   border-radius: 3px;
@@ -231,7 +231,7 @@
 }
 
 .iframeWrapper iframe {
-  height: 100%;
+  height: 98%;
   max-width: 100%;
 
   border: 0px;
@@ -241,6 +241,27 @@
 .iframeWrapper:hover {
   background-color: var(--gray-light);
   cursor: pointer;
+}
+
+[magnified=true] {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 96vh;
+  width: 96vw;
+  padding: 2vh 2vw;
+  margin: 0;
+
+  background-color: var(--gray-transparent);
+  backdrop-filter: blur(5px);
+
+  z-index: 10;
+}
+
+[magnified=true]:hover {
+  backdrop-filter: blur(5px);
+  background-color: var(--gray-transparent);
 }
 
 @media (prefers-color-scheme: dark) {
