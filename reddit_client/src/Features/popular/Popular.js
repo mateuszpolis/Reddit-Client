@@ -8,10 +8,15 @@ import {
   loadPopular,
   selectPopularPosts,
 } from "./popularSlice";
+import { hasLoadedPosts, isLoadingPosts } from "../feed/feedSlice";
 
 export const Popular = () => {
   const isLoading = useSelector(isLoadingPopularPosts);
   const hasLoaded = useSelector(hasLoadedPopularPosts);
+  const isLoadingContent = useSelector(isLoadingPosts);
+  console.log(isLoadingContent);
+  const hasLoadedContent = useSelector(hasLoadedPosts);
+  console.log(hasLoadedContent);
   let posts = useSelector(selectPopularPosts);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +24,7 @@ export const Popular = () => {
   }, [dispatch]);
 
   const handleScrollRight = () => {
-    const wrapper = document.getElementById("popularPosts");
+    const wrapper = document.getElementsByClassName("popularPosts")[0];
     wrapper.scroll({
       top: 0,
       left: wrapper.scrollLeft + wrapper.offsetWidth / 4,
@@ -33,28 +38,58 @@ export const Popular = () => {
     });
   }
 
-  if (isLoading) {
+  if (isLoading && (hasLoadedContent || isLoadingContent)) {
     return (
       <div id="popularPostsContainer">
-        <div id="popularPosts" className="isLoading"></div>
+        <div className="popularPosts isLoading"></div>
       </div>
     );
-  } else if (hasLoaded) {
+  } else if (isLoading && !hasLoadedContent) {
     return (
       <div id="popularPostsContainer">
-        <div id="popularPostsTitle">
+        <div className="popularPosts isLoading" id="firstLoadPopular"></div>
+      </div>
+    );
+  } else if (hasLoaded && (hasLoadedContent || isLoadingContent)) {
+    return (
+      <div id="popularPostsContainer">
+        <div className="popularPostsTitle">
           <h5>
-            Popular <i class="fa-solid fa-fire"></i>
+            Popular <i className="fa-solid fa-fire"></i>
           </h5>
         </div>
-        <div id="popularPosts">
+        <div className="popularPosts">
           {posts.map((post) => {
             return <PopularPost post={post} key={post.id} />;
           })}
         </div>
-        <div id="clickToScrollRight" onClick={handleScrollRight}>
+        <div className="clickToScrollRight" onClick={handleScrollRight}>
           <h5>
-            <i class="fa-solid fa-caret-right"></i>
+            <i className="fa-solid fa-caret-right"></i>
+          </h5>
+        </div>
+      </div>
+    );
+  } else if (hasLoaded && !hasLoadedContent) {
+    return (
+      <div id="popularPostsContainer">
+        <div className="popularPostsTitle" id="popularPostsTitleFirstLoad">
+          <h5>
+            Popular <i className="fa-solid fa-fire"></i>
+          </h5>
+        </div>
+        <div className="popularPosts" id="firstLoadPopular">
+          {posts.map((post) => {
+            return <PopularPost post={post} key={post.id} />;
+          })}
+        </div>
+        <div
+          className="clickToScrollRight"
+          id="clickToScrollRightFirstLoad"
+          onClick={handleScrollRight}
+        >
+          <h5>
+            <i className="fa-solid fa-caret-right"></i>
           </h5>
         </div>
       </div>

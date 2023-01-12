@@ -139,7 +139,7 @@ form {
   border-radius: 7px;
   border-top-left-radius: 0;
 
-  z-index: 2;
+  z-index: 3;
 }
 
 #sortOptions ul {
@@ -165,7 +165,7 @@ form {
   border-top: 1px solid var(--background-light);
 }
 
-#sortOptions li[selected=true] {
+#sortOptions li[selectedOption=true] {
   font-weight: bold;
 }
 

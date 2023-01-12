@@ -49,11 +49,11 @@ export const SearchBar = () => {
     handleShowSortOptions();
     const dropdown = document.getElementById("sortOptionsUl");
     for (const child of dropdown.children) {
-      if (child.hasAttribute("selected")) {
-        child.setAttribute("selected", "false");
+      if (child.hasAttribute("selectedOption")) {
+        child.setAttribute("selectedOption", "false");
       }
     }
-    e.target.setAttribute("selected", "true");
+    e.target.setAttribute("selectedOption", "true");
     dispatch(setSortBy(newValue));
     if (newValue === "Most Comments") {
       newValue = "comments";
@@ -74,9 +74,7 @@ export const SearchBar = () => {
     <div>
       <div id="sortOptions">
         <ul id="sortOptionsUl">
-          <li onClick={handleSelectOption} selected="true">
-            Relevance
-          </li>
+          <li onClick={handleSelectOption}>Relevance</li>
           <li onClick={handleSelectOption}>Hot</li>
           <li onClick={handleSelectOption}>Top</li>
           <li onClick={handleSelectOption}>New</li>
@@ -94,11 +92,12 @@ export const SearchBar = () => {
           left: "62.5vw",
           height: "6vh",
           zIndex: "2",
+          color: "red",
         }}
         onClick={handleClearSearch}
       >
         <h3 style={{ margin: "0" }}>
-          <i class="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </h3>
       </div>
       <div id="searchBehind">

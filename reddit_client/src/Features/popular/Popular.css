@@ -1,4 +1,4 @@
-#popularPosts {
+.popularPosts {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -9,9 +9,17 @@
   left: 25vw;
 
   border-radius: 7px;
+
+  z-index: 1;
 }
 
-#popularPostsTitle {
+#firstLoadPopular {
+  height: 40vh;
+  width: 70vw;
+  left: 15vw;
+}
+
+.popularPostsTitle {
   position: absolute;
   height: 2.3vh;
   left: 25vw;
@@ -25,14 +33,18 @@
 
   color: var(--background-light);
 
-  z-index: 1;
+  z-index: 2;
 }
 
-#popularPostsTitle h5 {
+#popularPostsTitleFirstLoad {
+  left: 15vw;
+}
+
+.popularPostsTitle h5 {
   margin: 0;
 }
 
-#clickToScrollRight {
+.clickToScrollRight {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,9 +57,17 @@
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
   transition: 200ms;
+
+  z-index: 2;
 }
 
-#clickToScrollRight:hover {
+#clickToScrollRightFirstLoad {
+  height: 40vh;
+  width: 3vw;
+  left: 82vw;
+}
+
+.clickToScrollRight:hover {
   background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }

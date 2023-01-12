@@ -63,7 +63,7 @@ export const Feed = () => {
               animation: "searchAnimation 3s linear infinite",
             }}
           >
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </h1>
           <h1 style={{ animation: "magnifyForSearch 3s linear infinite" }}>
             Search for something...
@@ -76,7 +76,7 @@ export const Feed = () => {
     <div id="feedWrapper">
       <div id="resultsFor">
         <h5>
-          <i class="fa-solid fa-magnifying-glass"></i> Results for:{" "}
+          <i className="fa-solid fa-magnifying-glass"></i> Results for:{" "}
           <u>{searchTerm}</u>
         </h5>
       </div>
