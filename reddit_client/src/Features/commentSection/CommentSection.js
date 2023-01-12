@@ -16,6 +16,7 @@ import {
 } from "./commentSectionSlice";
 import { changeId } from "./commentSectionSlice";
 import { intToString } from "../../helperFunctions/functions";
+import { isLoadingPosts } from "../feed/feedSlice";
 
 export const CommentSection = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ export const CommentSection = () => {
   let comments = useSelector(selectComments);
   const isLoading = useSelector(isLoadingComments);
   const hasLoaded = useSelector(hasLoadedComments);
+  const isLoadingContent = useSelector(isLoadingPosts);
 
   const handleHide = () => {
     const hideButton = document.getElementById("showMore");
@@ -38,17 +40,15 @@ export const CommentSection = () => {
     commentsInfo.setAttribute("isHidden", "true");
   };
 
-  if (isLoading) {
+  if (isLoading || isLoadingContent) {
     return (
       <div id="postComments">
         <div id="commentsInfo">
           <div id="commentsName">
-            <h3>
-              <i className="fa-solid fa-comments"></i> Comments
-            </h3>
-          </div>
-          <div id="numOfCommentsPlaceholder" className="canLoad">
-            <h3>{numOfComments}</h3>
+            <h4>
+              <i className="fa-solid fa-comments"></i>{" "}
+              {intToString(numOfComments)} Comments
+            </h4>
           </div>
         </div>
         <div id="comments" className="isLoading"></div>
@@ -83,16 +83,6 @@ export const CommentSection = () => {
           })}
         </div>
         <div id="showMore" onClick={handleHide}>
-          <i className="fa-solid fa-caret-down"></i>
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div id="postComments">
-        <div id="commentsInfo" isHidden="true"></div>
-        <div id="comments"></div>
-        <div id="showMore" onClick={handleHide} isHidden="true">
           <i className="fa-solid fa-caret-down"></i>
         </div>
       </div>

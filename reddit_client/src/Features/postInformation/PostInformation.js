@@ -3,7 +3,6 @@ import "./PostInformation.css";
 import { useDispatch, useSelector } from "react-redux";
 import { findCurrentPost, selectPostInformation } from "./postinformationSlice";
 import { hasLoadedPosts, isLoadingPosts } from "../feed/feedSlice";
-import picture from "../../images/photo-1481349518771-20055b2a7b24.jpg";
 import { intToString } from "../../helperFunctions/functions";
 
 export const PostInformation = () => {
@@ -49,7 +48,5 @@ export const PostInformation = () => {
         </div>
       </div>
     );
-  } else {
-    return <div id="postInfo"></div>;
   }
 };

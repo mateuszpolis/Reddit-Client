@@ -35,4 +35,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  #postInfo {
+    background-color: var(--gray-darker);
+  }
 }
