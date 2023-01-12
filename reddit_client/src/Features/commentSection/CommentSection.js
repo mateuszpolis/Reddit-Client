@@ -15,6 +15,7 @@ import {
   hasLoadedComments,
 } from "./commentSectionSlice";
 import { changeId } from "./commentSectionSlice";
+import { intToString } from "../../helperFunctions/functions";
 
 export const CommentSection = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ export const CommentSection = () => {
         </div>
         <div id="comments" className="isLoading"></div>
         <div id="showMore" onClick={handleHide}>
-          <i className="fa-solid fa-caret-up"></i>
+          <i className="fa-solid fa-caret-down"></i>
         </div>
       </div>
     );
@@ -63,12 +64,10 @@ export const CommentSection = () => {
       <div id="postComments">
         <div id="commentsInfo">
           <div id="commentsName">
-            <h3>
-              <i className="fa-solid fa-comments"></i> Comments
-            </h3>
-          </div>
-          <div id="numOfCommentsPlaceholder">
-            <h3>{numOfComments}</h3>
+            <h4>
+              <i className="fa-solid fa-comments"></i>{" "}
+              {intToString(numOfComments)} Comments
+            </h4>
           </div>
         </div>
         <div id="comments">
@@ -84,7 +83,7 @@ export const CommentSection = () => {
           })}
         </div>
         <div id="showMore" onClick={handleHide}>
-          <i className="fa-solid fa-caret-up"></i>
+          <i className="fa-solid fa-caret-down"></i>
         </div>
       </div>
     );

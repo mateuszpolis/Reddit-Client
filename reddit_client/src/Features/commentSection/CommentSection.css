@@ -2,13 +2,13 @@
   /* postComments position */
   position: absolute;
   right: 2%;
-  top: 0%;
+  top: 18vh;
 
   /* postComments background */
   background-color: transparent;
 
   /* postComments dimensions */
-  height: 92%;
+  height: 67vh;
   width: 24.5vw;
 
   /* postComments border */
@@ -26,42 +26,25 @@
   top: 0;
 
   /* commentsInfo dimensions */
-  height: 6vh;
+  height: 4vh;
   width: 24.5vw;
 
   /* commentsInfo border */
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
+  border-top-left-radius: 2vh;
+  border-top-right-radius: 2vh;
 
   /* commentsInfo background */
-  background-color: transparent;
+  background-color: var(--background-light-darker);
 
   /* commentsInfo text */
   text-align: center;
   color: var(--background-dark);
 
-  /* commentsInfo shadow */
-  -webkit-box-shadow: 0px 10px 20px 0px var(--gray-light);
-  -moz-box-shadow: 0px 10px 20px 0px var(--gray-light);
-  box-shadow: 0px 10px 20px 0px var(--gray-light);
-
   transition: 200ms;
 }
 
-#commentsInfo h3 {
+#commentsInfo h4 {
   margin: auto 0;
-}
-
-#commentsInfo i {
-  font-size: 1.1rem;
-}
-
-#numOfCommentsPlaceholder {
-  justify-self: center;
-
-  border-radius: 7px;
-
-  width: 70%;
 }
 
 #commentsName {
@@ -74,23 +57,15 @@
   bottom: 0;
 
   /* scroll down dimensions */
-  height: 6vh;
+  height: 4vh;
   width: 24.5vw;
 
-  /* scroll down border */
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-
   /* scroll down background */
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
 
   /* scroll down text */
   color: var(--background-dark);
-
-  /* scroll down shadow */
-  -webkit-box-shadow: 0px -10px 20px 0px var(--gray-light);
-  -moz-box-shadow: 0px -10px 20px 0px var(--gray-light);
-  box-shadow: 0px -10px 20px 0px var(--gray-light);
+  backdrop-filter: blur(15px);
 
   /* scroll down transition */
   transition: 0.2s;
@@ -98,7 +73,7 @@
 
 #showMore:hover {
   /* scroll down on hover */
-  background-color: var(--gray-light-hover);
+  background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
@@ -112,28 +87,14 @@
 
 #comments {
   /* comments position */
-  position: relative;
+  position: absolute;
 
   /* comments dimensions */
-  height: 84%;
+  height: 63vh;
   width: 100%;
 
   /* comments overflow */
   overflow-y: scroll;
-}
-
-#commentsInfo[isHidden="true"] {
-  position: fixed;
-  top: 2vh;
-
-  border-radius: 7px;
-}
-
-#showMore[isHidden="true"] {
-  position: fixed;
-  top: 2vh;
-
-  border-radius: 7px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -141,27 +102,15 @@
     /* comment info on dark scheme */
     color: var(--background-light);
     background-color: var(--gray-darker);
-
-    -webkit-box-shadow: 0px -10px 20px 0px var(--gray-darker);
-    -moz-box-shadow: 0px -10px 20px 0px var(--gray-darker);
-    box-shadow: 0px -10px 20px 0px var(--gray-darker);
   }
 
   #showMore {
     /* scroll down on dark scheme */
     color: var(--background-light);
     background-color: var(--gray-darker);
-
-    -webkit-box-shadow: 0px -10px 20px 0px var(--gray-darker);
-    -moz-box-shadow: 0px -10px 20px 0px var(--gray-darker);
-    box-shadow: 0px -10px 20px 0px var(--gray-darker);
   }
 
   #showMore:hover {
     background-color: var(--gray-darker);
-
-    -webkit-box-shadow: 0px -10px 20px 0px var(--gray-darker);
-    -moz-box-shadow: 0px -10px 20px 0px var(--gray-darker);
-    box-shadow: 0px -10px 20px 0px var(--gray-darker);
   }
 }
