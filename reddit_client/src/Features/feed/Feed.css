@@ -1,3 +1,30 @@
+@keyframes searchAnimation {
+  10% {
+    transform: translate(-270%, 120%);
+  }
+  50% {
+    transform: translate(270%, 120%);
+  }
+  60% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes magnifyForSearch {
+  10% {
+    transform: scale(100%);
+  }
+  20% {
+    transform: scale(120%);
+  }  
+  55% {
+    transform: scale(120%);
+  }
+  60% {
+    transform: scale(100%);
+  }
+}
+
 #feedWrapper {
   position: absolute;
   top: 20vh;

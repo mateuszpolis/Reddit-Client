@@ -36,12 +36,41 @@ export const Feed = () => {
     );
   } else if (failedLoading) {
     return (
-      <div id="feed" style={{ textAlign: "center" }}>
-        <h1 style={{ color: "red" }}>Error: Failed to load data. Try again.</h1>
+      <div id="feedWrapper">
+        <div id="feed" style={{ textAlign: "center" }}>
+          <h1 style={{ color: "red" }}>
+            Error: Failed to load data. Try again.
+          </h1>
+        </div>
       </div>
     );
   } else if (firstLoad) {
-    return <div id="feed"></div>;
+    return (
+      <div id="feedWrapper">
+        <div
+          id="feed"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "350%",
+              margin: "0 0",
+              animation: "searchAnimation 3s linear infinite",
+            }}
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </h1>
+          <h1 style={{ animation: "magnifyForSearch 3s linear infinite" }}>
+            Search for something...
+          </h1>
+        </div>
+      </div>
+    );
   }
   return (
     <div id="feedWrapper">
