@@ -1,15 +1,16 @@
 #postInfo {
   /* postInfo position */
   position: absolute;
-  right: 81%;
-  top: 15%;
+  right: 2%;
+  top: 0;
 
   /* postInfo dimensions */
-  width: 17%;
-  height: 50%;
+  width: 22.5vw;
+  height: 14vh;
+  padding: 1vh 1vw;
 
   /* postInfo background */
-  background-color: transparent;
+  background-color: var(--background-light-darker);
 
   /* postInfo border */
   border-radius: 7px;
@@ -17,147 +18,8 @@
   transition: 200ms;
 }
 
-#postInfo::before {
-  /* Divider position */
-  position: absolute;
-  top: 65%;
-
-  /* Divider display */
-  display: inline-block;
-
-  /* Divider dimensions */
-  height: 3px;
-  width: 100%;
-  border-radius: 7px;
-
-  /* Divider styling */
-  content: "";
-  background-color: var(--accent);
-}
-
-.informationPart {
-  /* informationPart dimensions */
-  height: 50%;
-  width: 100%;
-
-  /* information text */
-  text-align: start;
-  font-weight: bold;
-  font-family: var(--sans-serif-font);
-
-  /* transition */
-  transition: 0.2s;
-}
-
-#subredditNamePlaceholder {
-  text-align: start;
-}
-
-#subredditImgPlaceholder {
-  /* subreddit image position */
-  position: absolute;
-  top: 5%;
-  left: 5%;
-
-  /* subreddit image dimensions */
-  height: 15%;
-  width: 15%;
-  border-radius: 50%;
-}
-
-#subredditImgPlaceholder img {
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-}
-
-#subredditNamePlaceholder {
-  /* subreddit name position */
-  position: absolute;
-  top: 5%;
-  left: 25%;
-
-  /* subreddit name dimensions */
-  height: 15%;
-  width: 70%;
-  border-radius: 7px;
-}
-
-#userNamePlaceholder {
-  /* user name position */
-  position: absolute;
-  top: 25%;
-  left: 5%;
-
-  /* user name dimensions */
-  height: 15%;
-  width: 90%;
-  border-radius: 7px;
-}
-
-#datePlaceholder {
-  /* date position */
-  position: absolute;
-  top: 45%;
-  left: 5%;
-
-  /* date dimensions */
-  height: 15%;
-  width: 90%;
-  border-radius: 7px;
-}
-
-#upvotes {
-  /* upvotes icon position */
-  position: absolute;
-  bottom: 15%;
-  left: 5%;
-
-  /* upvotes icon dimensions */
-  height: 15%;
-  width: 15%;
-  border-radius: 7px;
-
-  color: red;
-}
-
-#downvotes {
-  /* downvotes icon position */
-  position: absolute;
-  bottom: 15%;
-  right: 5%;
-
-  /* downvotes icon dimensions */
-  height: 15%;
-  width: 15%;
-  border-radius: 7px;
-
-  color: var(--background-dark);
-}
-
-#numberOfUpvotesPlaceholder {
-  /* upvotes icon position */
-  position: absolute;
-  bottom: 15%;
-  right: 25%;
-
-  /* upvotes icon dimensions */
-  height: 15%;
-  width: 50%;
-  border-radius: 7px;
-
-  text-align: center;
-}
-
-#postInfo i {
-  /* reaction icons size */
-  font-size: 150%;
-}
-
-.centerText {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+#postInfo h4, #postInfo h5, #postInfo h6 {
+  margin: 0.1vh 0;
 }
 
 @keyframes loading {
@@ -173,7 +35,4 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  #downvotes {
-    color: var(--background-light);
-  }
 }

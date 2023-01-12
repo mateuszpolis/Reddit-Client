@@ -25,10 +25,6 @@
   overflow-wrap: break-word;
 }
 
-.commentUpvote {
-  color: red;
-}
-
 .commentDownvote {
   color: var(--background-dark);
 }
