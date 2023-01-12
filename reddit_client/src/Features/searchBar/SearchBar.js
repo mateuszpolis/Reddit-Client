@@ -5,6 +5,7 @@ import {
   selectSearchTerm,
   selectSortBy,
   setSortBy,
+  clearSearchTerm,
 } from "./searchBarSlice";
 import { loadPosts } from "../feed/feedSlice";
 import "./SearchBar.css";
@@ -65,6 +66,10 @@ export const SearchBar = () => {
     dispatch(loadPosts(data));
   };
 
+  const handleClearSearch = () => {
+    dispatch(clearSearchTerm());
+  };
+
   return (
     <div>
       <div id="sortOptions">
@@ -77,6 +82,24 @@ export const SearchBar = () => {
           <li onClick={handleSelectOption}>New</li>
           <li onClick={handleSelectOption}>Most Comments</li>
         </ul>
+      </div>
+      <div
+        id="cancelButton"
+        style={{
+          position: "absolute",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          top: "2vh",
+          left: "62.5vw",
+          height: "6vh",
+          zIndex: "2",
+        }}
+        onClick={handleClearSearch}
+      >
+        <h3 style={{ margin: "0" }}>
+          <i class="fa-solid fa-xmark"></i>
+        </h3>
       </div>
       <div id="searchBehind">
         <div id="sort" onClick={handleShowSortOptions}>

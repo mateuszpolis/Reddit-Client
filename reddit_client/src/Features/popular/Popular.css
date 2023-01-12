@@ -7,6 +7,8 @@
   height: 18vh;
   width: 46vw;
   left: 25vw;
+
+  border-radius: 7px;
 }
 
 #popularPostsTitle {

@@ -169,6 +169,10 @@ form {
   font-weight: bold;
 }
 
+#cancelButton:hover {
+  cursor: pointer;
+}
+
 @media (prefers-color-scheme: dark) {
   #search {
     border-color: var(--gray);

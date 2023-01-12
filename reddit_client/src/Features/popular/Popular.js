@@ -15,12 +15,8 @@ export const Popular = () => {
   let posts = useSelector(selectPopularPosts);
   const dispatch = useDispatch();
   useEffect(() => {
-    const data = {
-      geoFilter: "US",
-      searchLimit: "10",
-    };
-    dispatch(loadPopular(data));
-  }, []);
+    dispatch(loadPopular());
+  }, [dispatch]);
 
   const handleScrollRight = () => {
     const wrapper = document.getElementById("popularPosts");

@@ -2,10 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const loadPopular = createAsyncThunk(
   "popular/loadPopular",
-  async (data) => {
-    const { geoFilter, searchLimit } = data;
+  async () => {
     const response = await fetch(
-      `https://www.reddit.com/r/popular.json?q=geo_filter=${geoFilter}`
+      `https://www.reddit.com/r/popular.json?`
     );
 
     const json = await response.json();

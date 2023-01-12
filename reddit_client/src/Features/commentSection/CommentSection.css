@@ -30,8 +30,8 @@
   width: 24.5vw;
 
   /* commentsInfo border */
-  border-top-left-radius: 2vh;
-  border-top-right-radius: 2vh;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 
   /* commentsInfo background */
   background-color: var(--background-light-darker);
