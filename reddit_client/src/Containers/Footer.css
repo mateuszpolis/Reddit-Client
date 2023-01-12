@@ -1,9 +1,26 @@
 footer {
-  /* Footer position */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
   position: absolute;
   top: 95vh;
 
-  /* Footer dimensions */
   width: 100%;
   height: 5vh;
+}
+
+footer h5 {
+  margin: 0 2vw;
+}
+
+footer a {
+  color: var(--background-dark);
+  
+}
+
+@media (prefers-color-scheme: dark) {
+  footer a {
+    color: var(--background-light);
+  }
 }
