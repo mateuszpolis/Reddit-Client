@@ -64,7 +64,6 @@
   background-color: rgba(255, 255, 255, 0.2);
 
   /* scroll down text */
-  color: var(--background-dark);
   backdrop-filter: blur(15px);
 
   /* scroll down transition */
@@ -101,16 +100,6 @@
   #commentsInfo {
     /* comment info on dark scheme */
     color: var(--background-light);
-    background-color: var(--gray-darker);
-  }
-
-  #showMore {
-    /* scroll down on dark scheme */
-    color: var(--background-light);
-    background-color: var(--gray-darker);
-  }
-
-  #showMore:hover {
     background-color: var(--gray-darker);
   }
 }

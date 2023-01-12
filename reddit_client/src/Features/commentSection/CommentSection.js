@@ -33,11 +33,13 @@ export const CommentSection = () => {
   const hasLoaded = useSelector(hasLoadedComments);
   const isLoadingContent = useSelector(isLoadingPosts);
 
-  const handleHide = () => {
-    const hideButton = document.getElementById("showMore");
-    const commentsInfo = document.getElementById("commentsInfo");
-    hideButton.setAttribute("isHidden", "true");
-    commentsInfo.setAttribute("isHidden", "true");
+  const handleScrollDown = () => {
+    const wrapper = document.getElementById("comments");
+    wrapper.scroll({
+      top: wrapper.scrollTop + wrapper.offsetHeight / 2,
+      left: 0,
+      behavior: "smooth",
+    });
   };
 
   if (isLoading || isLoadingContent) {
@@ -52,7 +54,7 @@ export const CommentSection = () => {
           </div>
         </div>
         <div id="comments" className="isLoading"></div>
-        <div id="showMore" onClick={handleHide}>
+        <div id="showMore">
           <i className="fa-solid fa-caret-down"></i>
         </div>
       </div>
@@ -82,7 +84,7 @@ export const CommentSection = () => {
             );
           })}
         </div>
-        <div id="showMore" onClick={handleHide}>
+        <div id="showMore" onClick={handleScrollDown}>
           <i className="fa-solid fa-caret-down"></i>
         </div>
       </div>
