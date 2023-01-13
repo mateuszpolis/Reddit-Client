@@ -2,43 +2,42 @@ import React from "react";
 import "./Media.css";
 
 export const Media = (props) => {
-  const { post } = props;
-  const post_id = post.id;
-  const source = post.url;
-  const post_hint = post?.post_hint;
-  console.log(post.url);
+  const { post, onClick } = props;
 
-  if (post_hint === "image") {
+  if (post?.post_hint === "image") {
     return (
-      <div className="postMedia">
-        <img alt={post_id} src={source} />
-      </div>
+      <img
+        className="mediaContent"
+        src={post.url}
+        alt={post.id}
+        onClick={onClick}
+      />
     );
-  } else if (post_hint === "rich:video") {
+  } else if (post?.post_hint === "rich:video") {
     return (
-      <div className="postMedia">
-        <video loop autoPlay controls muted>
-					<source src={post.url} type='video/mp4'></source>
-				</video>
-      </div>
+      <video className="mediaContent" autoPlay controls onClick={onClick}>
+        <source src={post.url} type="video/mp4"></source>
+      </video>
     );
-  } else if (post_hint === "rich:iframe") {
+  } else if (post?.post_hint === "hosted:video" || post?.post_hint === "rich:iframe") {
     return (
-      <div className="postMedia">
-        <iframe src={source} title={post_id} autoPlay muted></iframe>
-      </div>
-    );
-  } else if (post_hint === "hosted:video") {
-    return (
-      <div className="postMedia">
-        <iframe src={post.media.reddit_video.fallback_url} title={post.title} autoPlay muted/>
-      </div>
+      <iframe
+        className="mediaContent"
+        src={post.media.reddit_video.fallback_url}
+        title={post.title}
+        autoPlay
+        controls
+        onClick={onClick}
+      />
     );
   } else {
     return (
-      <div style={{ height: 0 }} className="postMedia">
-        <img />
-      </div>
+      <img
+        className="mediaContent"
+        src={post.url}
+        alt={post.id}
+        onClick={onClick}
+      />
     );
   }
 };

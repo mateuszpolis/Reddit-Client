@@ -8,236 +8,54 @@
 }
 
 .post {
-  /* post position */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: start;
+
   margin: 6% auto;
 
-  /* post dimentions */
   width: 96%;
-  height: 96%;
-  padding: 2%;
+  height: 61vh;
+  padding: 1vh 2%;
 
-  /* post border */
   border-radius: 7px;
   border: 0;
 
   background-color: var(--background-light-darker);
 
-  /* post scrolling snap */
   scroll-snap-align: start;
   scroll-snap-stop: always;
 
-  /* post overflow */
   overflow-y: hidden;
   overflow-x: hidden;
 }
 
-.postText {
-  width: 100%;
-}
-
-.post h3 {
-  margin-top: 20px;
-}
-
-.isSelf h2 {
-  max-height: 20%;
-
-  animation: background-pan 3s linear infinite;
-
-  background: rgb(23, 195, 219);
-  background: linear-gradient(
-    90deg,
-    rgba(23, 195, 219, 1) 0%,
-    rgba(41, 236, 184, 1) 30%,
-    rgba(41, 236, 184, 1) 70%,
-    rgba(23, 195, 219, 1) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200%;
-}
-
-.isSelftext {
-  height: fit-content;
-  max-height: 75%;
-  width: 96%;
-  padding: 0.5% 2%;
-
-  border-radius: 7px;
-
-  overflow-y: hidden;
-
-  transition: 200ms;
-}
-
-.isSelftext:hover {
-  background-color: var(--gray-light);
-  cursor: pointer;
-}
-
-.isImage h2 {
-  max-height: 20%;
-
-  margin: 0;
-
-  animation: background-pan 3s linear infinite;
-
-  background: rgb(210, 23, 219);
-  background: linear-gradient(
-    90deg,
-    rgba(210, 23, 219, 1) 0%,
-    rgba(236, 41, 62, 1) 30%,
-    rgba(236, 41, 62, 1) 70%,
-    rgba(210, 23, 219, 1) 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200%;
-
+.post h2 {
+  height: 16;
+  margin: 2% 0;
   overflow-y: scroll;
 }
 
-.isImageText {
-  height: fit-content;
-  max-height: 15%;
-  width: 96%;
-  padding: 0.5% 2%;
-
-  border-radius: 7px;
-
-  overflow-y: hidden;
-
-  transition: 200ms;
-}
-
-.isImageText:hover {
-  background-color: var(--gray-light);
+.canExpand:hover {
   cursor: pointer;
 }
 
-.imageWrapper {
-  display: flex;
-  justify-content: center;
-
-  margin: 0.5% auto;
-  height: 63%;
-  width: fit-content;
-  padding: 1% 2%;
-  border-radius: 7px;
-
-  transition: 200ms;
-}
-
-.imageWrapper:hover {
-  background-color: var(--gray-light);
-  cursor: pointer;
-}
-
-.imageWrapper img {
+.mediaContent {
   height: 100%;
-  max-width: 98%;
-
-  border-radius: 3px;
+  justify-self: center;
 }
 
-.imageFullWrapper {
+.mediaContentWrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  margin: 0 auto;
-  height: 78%;
-  width: fit-content;
-  padding: 1% 2%;
-  border-radius: 7px;
-
-  transition: 200ms;
-}
-
-.imageFullWrapper img {
-  height: 98%;
-  max-width: 100%;
-
-  border-radius: 3px;
-}
-
-.imageFullWrapper:hover {
-  background-color: var(--gray-light);
-  cursor: pointer;
-}
-
-.isImageFull h2 {
-  max-height: 20%;
-
-  margin: 0;
-
-  animation: background-pan 3s linear infinite;
-
-  background: rgb(58, 161, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(58, 161, 180, 1) 0%,
-    rgba(243, 29, 253, 1) 50%,
-    rgba(58, 161, 180, 1) 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200%;
-
-  overflow-y: scroll;
-}
-
-.isIframe h2 {
-  max-height: 20%;
-
-  margin: 0;
-
-  animation: background-pan 3s linear infinite;
-
-  background: rgb(231, 157, 39);
-  background: linear-gradient(
-    90deg,
-    rgba(231, 157, 39, 1) 0%,
-    rgba(253, 39, 29, 1) 50%,
-    rgba(231, 157, 39, 1) 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200%;
-
-  overflow-y: scroll;
-}
-
-.iframeWrapper {
-  display: flex;
-  justify-content: center;
-
-  margin: 0 auto;
-  height: 78%;
-  width: fit-content;
-  padding: 1% 2%;
-  border-radius: 7px;
-
-  transition: 200ms;
-}
-
-.iframeWrapper iframe {
-  height: 98%;
-  max-width: 100%;
-
-  border: 0px;
-  border-radius: 3px;
-}
-
-.iframeWrapper:hover {
-  background-color: var(--gray-light);
-  cursor: pointer;
+  height: 58%;
+  margin: 2% 0;
+  align-self: center;
 }
 
 [magnified="true"] {
@@ -256,33 +74,9 @@
   z-index: 10;
 }
 
-[magnified="true"]:hover {
-  backdrop-filter: blur(10px);
-  background-color: var(--gray-transparent);
-}
-
 @media (prefers-color-scheme: dark) {
   .post {
     /* post shadow at dark scheme */
     background-color: var(--gray-darker);
-  }
-  .isImageText:hover {
-    background-color: var(--gray);
-  }
-  .isSelftext:hover {
-    background-color: var(--gray);
-  }
-  .imageWrapper:hover {
-    background-color: var(--gray);
-  }
-  .imageFullWrapper:hover {
-    background-color: var(--gray);
-  }
-  .iframeWrapper:hover {
-    background-color: var(--gray);
-  }
-  [magnified="true"]:hover {
-    backdrop-filter: blur(10px);
-    background-color: var(--gray-transparent);
   }
 }
