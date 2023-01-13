@@ -1,5 +1,7 @@
 export const truncateText = (text, limit) => {
-  return text.length > limit ? text.slice(0, limit - 1) + "... (Click to show more)" : text;
+  return text.length > limit
+    ? text.slice(0, limit - 1) + "... (Click to show more)"
+    : text;
 };
 
 export const convertDate = (val) => {
@@ -18,4 +20,14 @@ export const intToString = (value) => {
     shortValue = shortValue.toFixed(1);
   }
   return shortValue + suffixes[suffixNum];
+};
+
+export const htmlDecode = (input) => {
+  if (typeof input === "undefined") {
+    return input;
+  }
+  input = input.replace(/&amp/g, "&");
+  input = input.replace(/&gt/g, ">");
+  input = input.replace(/&lt/g, "<");
+  return input;
 };

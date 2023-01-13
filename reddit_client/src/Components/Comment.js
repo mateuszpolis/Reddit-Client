@@ -1,5 +1,6 @@
 import React from "react";
 import { intToString } from "../helperFunctions/functions";
+import { htmlDecode } from "../helperFunctions/functions";
 import "./Comment.css";
 
 export const Comment = (props) => {
@@ -17,7 +18,7 @@ export const Comment = (props) => {
           <i className="fa-solid fa-heart-crack commentDownvote"></i>
         </div>
         <div className="commentContent">
-          <p>{props.commentContent}</p>
+          <p>{htmlDecode(props.commentContent)}</p>
         </div>
       </div>
     </div>

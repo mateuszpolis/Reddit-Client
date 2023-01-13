@@ -11,6 +11,8 @@
   border-radius: 7px;
 
   z-index: 1;
+
+  transition: 200ms;
 }
 
 #firstLoadPopular {
