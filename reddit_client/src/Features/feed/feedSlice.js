@@ -1,11 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const loadPosts = createAsyncThunk("feed/loadPosts", async (data) => {
-  const { searchTerm, sortBy, searchLimit } = data;
-  const response = await fetch(
-    `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`
-  );
-
+  const { url } = data;
+  console.log(url);
+  const response = await fetch(`http://www.reddit.com/${url}`);
   const json = await response.json();
   return json;
 });

@@ -28,7 +28,8 @@ export const SearchBar = () => {
         sortBy: sortBy,
         searchLimit: "25",
       };
-      dispatch(loadPosts(data));
+      const url = `search.json?q=${data.searchTerm}&sort=${data.sortBy}&limit=${data.searchLimit}`;
+      dispatch(loadPosts(url));
     }
   };
 

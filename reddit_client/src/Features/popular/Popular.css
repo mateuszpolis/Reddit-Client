@@ -18,7 +18,7 @@
 #firstLoadPopular {
   height: 40vh;
   width: 70vw;
-  left: 15vw;
+  left: 25vw;
 }
 
 .popularPostsTitle {
@@ -36,10 +36,12 @@
   color: var(--background-light);
 
   z-index: 2;
+
+  transition: 200ms;
 }
 
 #popularPostsTitleFirstLoad {
-  left: 15vw;
+  left: 25vw;
 }
 
 .popularPostsTitle h5 {
@@ -66,7 +68,7 @@
 #clickToScrollRightFirstLoad {
   height: 40vh;
   width: 3vw;
-  left: 82vw;
+  left: 92vw;
 }
 
 .clickToScrollRight:hover {
