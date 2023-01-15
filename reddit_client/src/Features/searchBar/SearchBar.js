@@ -29,7 +29,7 @@ export const SearchBar = () => {
         searchLimit: "25",
       };
       const url = `search.json?q=${data.searchTerm}&sort=${data.sortBy}&limit=${data.searchLimit}`;
-      dispatch(loadPosts(url));
+      dispatch(loadPosts({ url }));
     }
   };
 
@@ -55,16 +55,17 @@ export const SearchBar = () => {
       }
     }
     e.target.setAttribute("selectedOption", "true");
-    dispatch(setSortBy(newValue));
     if (newValue === "Most Comments") {
       newValue = "comments";
     }
+    dispatch(setSortBy(newValue.toLowerCase()));
     const data = {
       searchTerm: searchTerm,
       sortBy: newValue.toLowerCase(),
       searchLimit: "25",
     };
-    dispatch(loadPosts(data));
+    const url = `search.json?q=${data.searchTerm}&sort=${data.sortBy}&limit=${data.searchLimit}`;
+    dispatch(loadPosts({ url }));
   };
 
   const handleClearSearch = () => {

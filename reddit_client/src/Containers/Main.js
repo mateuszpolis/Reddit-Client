@@ -4,13 +4,13 @@ import { Feed } from "../Features/feed/Feed";
 import { PostInformation } from "../Features/postInformation/PostInformation";
 import { Popular } from "../Features/popular/Popular";
 import "./Main.css";
-import { Topics } from "../Features/topics/Topics";
+import { Subreddits } from "../Features/subreddits/Subreddits";
 
 export const Main = () => {
   return (
     <main>
       <Popular />
-      <Topics />
+      <Subreddits />
       <Feed />
       <PostInformation />
       <CommentSection />
