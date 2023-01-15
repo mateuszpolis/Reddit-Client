@@ -24,7 +24,7 @@ export const commentSectionSlice = createSlice({
       const feedElement = document.getElementById("feed");
       const feedHeight = feedElement.scrollHeight;
       const scrolled = feedElement.scrollTop;
-      const id = Math.floor(scrolled / (feedHeight / 25));
+      const id = Math.floor(scrolled / (feedHeight / action.payload));
       state.commentsForPostId = id;
     },
   },

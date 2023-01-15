@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CommentSection.css";
 import { Comment } from "../../Components/Comment";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +16,7 @@ import {
 } from "./commentSectionSlice";
 import { changeId } from "./commentSectionSlice";
 import { intToString } from "../../helperFunctions/functions";
-import { isLoadingPosts } from "../feed/feedSlice";
+import { isLoadingPosts, selectNumOfPosts } from "../feed/feedSlice";
 
 export const CommentSection = () => {
   const dispatch = useDispatch();
@@ -24,9 +24,10 @@ export const CommentSection = () => {
   const permalink = useSelector(selectPostPermalink);
   const currentId = useSelector(selectCommentsForPostId);
   const newId = useSelector(selectCurrentPostId);
+  const postNumber = useSelector(selectNumOfPosts);
   if (permalink !== null && currentId !== newId) {
+    dispatch(changeId(postNumber));
     dispatch(loadComments(permalink));
-    dispatch(changeId());
   }
   let comments = useSelector(selectComments);
   const isLoading = useSelector(isLoadingComments);
@@ -41,6 +42,8 @@ export const CommentSection = () => {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {}, [dispatch]);
 
   if (isLoading || isLoadingContent) {
     return (

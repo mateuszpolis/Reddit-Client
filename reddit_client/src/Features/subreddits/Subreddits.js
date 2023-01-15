@@ -10,7 +10,7 @@ export const Subreddits = () => {
     let topic = e.target.firstChild.textContent;
     topic = topic.toLowerCase().trim();
     console.log(typeof topic);
-    const url = `${topic}.json`;
+    const url = `${topic}/hot.json?`;
     console.log(url);
     dispatch(loadPosts({ url }));
   };
@@ -57,11 +57,6 @@ export const Subreddits = () => {
         <div className="topic" onClick={handleSelectTopic}>
           <h5>
             r/entertainment <i className="fa-solid fa-tv"></i>
-          </h5>
-        </div>
-        <div className="topic" onClick={handleSelectTopic}>
-          <h5>
-            r/CelebrityBigAss <i className="fa-solid fa-champagne-glasses"></i>
           </h5>
         </div>
         <div className="topic" onClick={handleSelectTopic}>
