@@ -26,8 +26,8 @@ export const htmlDecode = (input) => {
   if (typeof input === "undefined") {
     return input;
   }
-  input = input.replace(/&amp/g, "&");
-  input = input.replace(/&gt/g, ">");
-  input = input.replace(/&lt/g, "<");
+  input = input.replace(/&amp;/g, "&");
+  input = input.replace(/&gt;/g, ">");
+  input = input.replace(/&lt;/g, "<");
   return input;
 };

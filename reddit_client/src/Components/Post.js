@@ -1,7 +1,7 @@
 import React from "react";
 import "./Post.css";
 import { Media } from "./Media";
-import { truncateText } from "../helperFunctions/functions";
+import { htmlDecode, truncateText } from "../helperFunctions/functions";
 
 export const Post = ({ post }) => {
   const handleToggleOverflow = () => {
@@ -12,10 +12,10 @@ export const Post = ({ post }) => {
       pWrapper.style.overflowY === ""
     ) {
       pWrapper.style.overflowY = "scroll";
-      p.innerHTML = post.selftext;
+      p.innerHTML = htmlDecode(post.selftext);
     } else {
       pWrapper.style.overflowY = "hidden";
-      p.innerHTML = truncateText(post.selftext, 850);
+      p.innerHTML = truncateText(htmlDecode(post.selftext), 850);
     }
   };
 
@@ -35,23 +35,23 @@ export const Post = ({ post }) => {
   if (post.is_self) {
     return (
       <div className="post" id={post.id}>
-        <h2>{post.title}</h2>
+        <h2>{htmlDecode(post.title)}</h2>
         <div
           style={{ height: "76%" }}
           id={post.id + "d"}
           onClick={handleToggleOverflow}
           className="canExpand"
         >
-          <p id={post.id + "p"}>{truncateText(post.selftext, 850)} </p>
+          <p id={post.id + "p"}>{truncateText(htmlDecode(post.selftext), 850)} </p>
         </div>
       </div>
     );
   } else {
     return (
       <div className="post" id={post.id}>
-        <h2>{post.title}</h2>
+        <h2>{htmlDecode(post.title)}</h2>
         <p style={{ maxHeigt: "20%", overflowY: "scroll", margin: "0" }}>
-          {post?.selftext}
+          {htmlDecode(post?.selftext)}
         </p>
         <div className="canExpand mediaContentWrapper" id={post.id + "img"}>
           <Media post={post} onClick={mediaToFullScreen} />
