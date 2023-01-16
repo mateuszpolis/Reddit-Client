@@ -29,8 +29,9 @@ export const Subreddits = () => {
         }}
         id="topicsTitle"
       >
-        <h2 style={{ marginLeft: "2vw" }}>
-          Popular Subreddits <i className="fa-solid fa-bookmark"></i>
+        <h2 style={{ marginLeft: "2vw", color: "var(--background-light)" }}>
+          Popular Subreddits{" "}
+          <i className="fa-solid fa-arrow-down-wide-short"></i>
         </h2>
       </div>
       <div id="topics">
@@ -66,7 +67,7 @@ export const Subreddits = () => {
         </div>
         <div className="topic" onClick={handleSelectTopic}>
           <h5>
-            r/Art <i className="fa-solid fa-paint-roller"></i>
+            r/Art <i className="fa-solid fa-palette"></i>
           </h5>
         </div>
         <div className="topic" onClick={handleSelectTopic}>

@@ -1,0 +1,30 @@
+.seeOriginalPost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 67vh;
+  left: 2vw;
+
+  width: 20vw;
+  height: 18vh;
+
+  border-radius: 7px;
+
+  background-color: var(--orange);
+
+  transition: 200ms;
+}
+
+.seeOriginalPost:hover {
+  cursor: pointer;
+}
+
+.seeOriginalPost a {
+  text-decoration: none;
+}
+
+#seeOriginalPostNotLoaded:hover {
+  cursor: not-allowed;
+}

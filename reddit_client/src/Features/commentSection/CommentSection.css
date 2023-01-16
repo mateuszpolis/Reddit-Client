@@ -96,6 +96,10 @@
   overflow-y: scroll;
 }
 
+#comments:nth-last-child(1) {
+  margin-bottom: 2vh;
+}
+
 @media (prefers-color-scheme: dark) {
   #commentsInfo {
     /* comment info on dark scheme */

@@ -7,11 +7,10 @@ header {
   height: 10vh;
 }
 
-header img {
+header h1 {
   /* logo position */
   position: absolute;
   top: 50%;
-  left: 2%;
   transform: translate(0, -50%);
 
   /* logo dimensions */
