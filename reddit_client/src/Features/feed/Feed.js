@@ -7,9 +7,10 @@ import {
   selectPosts,
   failedLoadingPosts,
   hasLoadedPosts,
+  selectNumOfPosts,
 } from "./feedSlice";
-import { findCurrentPost } from "../postInformation/postinformationSlice";
 import { selectCurrentResult } from "../../Features/searchBar/searchBarSlice";
+import { findCurrentPost } from "./feedSlice";
 
 export const Feed = () => {
   const isLoading = useSelector(isLoadingPosts);
@@ -17,10 +18,11 @@ export const Feed = () => {
   const hasLoaded = useSelector(hasLoadedPosts);
   const resultsFor = useSelector(selectCurrentResult);
   let posts = useSelector(selectPosts);
+  const numOfPosts = useSelector(selectNumOfPosts);
   const dispatch = useDispatch();
 
   const findPostId = () => {
-    dispatch(findCurrentPost());
+    dispatch(findCurrentPost(numOfPosts));
   };
 
   useEffect(() => {}, [dispatch]);
@@ -62,7 +64,7 @@ export const Feed = () => {
     posts = posts.data.children.map((post) => {
       return post.data;
     });
-
+    findPostId();
     return (
       <div id="feedWrapper">
         <div id="resultsFor">

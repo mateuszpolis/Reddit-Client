@@ -15,6 +15,17 @@ export const feedSlice = createSlice({
     failedToLoadPosts: false,
     hasLoadedPosts: false,
     numOfPosts: 0,
+    currentPostId: -1,
+  },
+  reducers: {
+    findCurrentPost: (state, action) => {
+      const feedElement = document.getElementById("feed");
+      const feedHeight = feedElement.scrollHeight;
+      const scrolled = feedElement.scrollTop;
+      const id = Math.floor(scrolled / (feedHeight / action.payload));
+      state.currentPostId = id;
+      // console.log(feedHeight, scrolled, id);
+    },
   },
   extraReducers: {
     [loadPosts.pending]: (state, action) => {
@@ -61,5 +72,22 @@ export const selectPosts = (state) => {
 export const selectNumOfPosts = (state) => {
   return state.feed.numOfPosts;
 };
+
+export const selectCurrentPostId = (state) => {
+  return state.feed.currentPostId;
+};
+
+export const selectCurrentPost = (state) => {
+  const id = state.feed.currentPostId;
+  if (id === -1) {
+    return false;
+  }
+  const post = state.feed.posts.data.children.map((post) => {
+    return post.data;
+  })[id];
+  return post;
+};
+
+export const { findCurrentPost } = feedSlice.actions;
 
 export default feedSlice.reducer;
