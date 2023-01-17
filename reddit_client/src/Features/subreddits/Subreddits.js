@@ -2,6 +2,7 @@ import React from "react";
 import "./Subreddits.css";
 import { useDispatch } from "react-redux";
 import { loadPosts } from "../feed/feedSlice";
+import { setCurrentResult } from "../searchBar/searchBarSlice";
 
 export const Subreddits = () => {
   const dispatch = useDispatch();
@@ -9,10 +10,9 @@ export const Subreddits = () => {
   const handleSelectTopic = (e) => {
     let topic = e.target.firstChild.textContent;
     topic = topic.toLowerCase().trim();
-    console.log(typeof topic);
     const url = `${topic}/hot.json?`;
-    console.log(url);
     dispatch(loadPosts({ url }));
+    dispatch(setCurrentResult(topic))
   };
 
   return (

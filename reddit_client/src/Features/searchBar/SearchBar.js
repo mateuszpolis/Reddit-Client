@@ -69,6 +69,8 @@ export const SearchBar = () => {
     if (searchTerm.trim() !== "") {
       const url = `search.json?q=${data.searchTerm}&sort=${data.sortBy}&limit=${data.searchLimit}`;
       dispatch(loadPosts({ url }));
+    } else {
+      console.log("add information, sort only with search term");
     }
   };
 
