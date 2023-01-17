@@ -42,7 +42,25 @@ export const Post = ({ post }) => {
           onClick={handleToggleOverflow}
           className="canExpand"
         >
-          <p id={post.id + "p"}>{truncateText(htmlDecode(post.selftext), 850)} </p>
+          <p id={post.id + "p"}>
+            {truncateText(htmlDecode(post.selftext), 850)}{" "}
+          </p>
+        </div>
+      </div>
+    );
+  } else if (post.is_self === false && !post.hasOwnProperty("post_hint")) {
+    return (
+      <div className="post" id={post.id}>
+        <h2>{htmlDecode(post.title)}</h2>
+        <div
+          style={{ height: "76%" }}
+          id={post.id + "d"}
+          onClick={handleToggleOverflow}
+          className="canExpand"
+        >
+          <a id={post.id + "a"} href={post.url} target="blank">
+            {post.url}{" "}
+          </a>
         </div>
       </div>
     );

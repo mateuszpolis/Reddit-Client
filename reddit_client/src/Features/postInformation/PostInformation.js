@@ -6,13 +6,13 @@ import { hasLoadedPosts, isLoadingPosts } from "../feed/feedSlice";
 import { intToString } from "../../helperFunctions/functions";
 
 export const PostInformation = () => {
-  const dispatch = useDispatch();
   const isLoading = useSelector(isLoadingPosts);
   const hasLoaded = useSelector(hasLoadedPosts);
+  const data = useSelector(selectPostInformation);
+  const dispatch = useDispatch();
   if (hasLoaded) {
     dispatch(findCurrentPost());
   }
-  const data = useSelector(selectPostInformation);
 
   useEffect(() => {}, [dispatch]);
 

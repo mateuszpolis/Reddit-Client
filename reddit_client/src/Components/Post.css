@@ -59,6 +59,10 @@
   align-self: center;
 }
 
+.post a {
+  color: var(--background-dark);
+}
+
 [magnified="true"] {
   position: fixed;
   top: 0;
@@ -77,7 +81,9 @@
 
 @media (prefers-color-scheme: dark) {
   .post {
-    /* post shadow at dark scheme */
     background-color: var(--gray-darker);
+  }
+  .post a {
+    color: var(--background-light);
   }
 }

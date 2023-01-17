@@ -1,15 +1,12 @@
 import React from "react";
 import { SearchBar } from "../Features/searchBar/SearchBar";
 import "./Header.css";
-import redditLogo from "../images/Reddit_logo_new.svg.png";
+import logo from "../../src/images/logo_transparent.png";
 
 export const Header = () => {
   return (
     <header>
-      <h1 style={{margin: "0", marginLeft: "2vw"}}>
-        <i className="fa-brands fa-reddit"></i>
-        Reddit Client
-      </h1>
+      <img src={logo} alt="logo"/>
       <SearchBar />
     </header>
   );
