@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./OriginalPost.css";
-import { useDispatch, useSelector } from "react-redux";
-import { selectPostPermalink } from "../postInformation/postinformationSlice";
+import { useSelector } from "react-redux";
+import { selectPermalink } from "../commentSection/commentSectionSlice";
 
 export const OriginalPost = () => {
-  const permalink = useSelector(selectPostPermalink);
-  const dispatch = useDispatch();
+  const permalink = useSelector(selectPermalink);
 
-  useEffect(() => {}, [dispatch]);
-
-  if (permalink === null) {
+  if (permalink === "") {
     return (
       <div className="seeOriginalPost" id="seeOriginalPostNotLoaded">
         <h2 style={{ color: "var(--background-light)" }}>
