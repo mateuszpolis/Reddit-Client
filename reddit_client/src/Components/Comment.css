@@ -1,18 +1,14 @@
 .comment {
   position: relative;
 
-  /* comment dimensions */
   height: fit-content;
   width: 22.9vw;
   padding: 0.5vw;
 
-  /* comment position */
   margin: 0;
 
-  /* comment background */
   background-color: transparent;
 
-  /* comment border */
   border-bottom-color: var(--gray-light);
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -30,59 +26,48 @@
 }
 
 .commentAuthor h5 {
-  /* image inline with comment author */
   display: inline-block;
   margin-left: 0%;
 }
 
 .commentAuthor {
-  /* commentAuthor position */
   position: relative;
 
-  /* commentAuthor display */
   display: flex;
   align-items: center;
 
-  /* commentAuthor dimensions */
   width: fit-content;
 }
 
 .commentContent {
-  /* commentContent position */
   position: relative;
   left: 0;
   display: inline-block;
 }
 
 .commentUpvoteInfo {
-  /* commentUpvoteInfo position */
   position: relative;
   left: 0;
   width: 2vw;
   display: inline-block;
 
-  /* icons size */
   font-size: 60%;
 }
 
 .commentUpvoteInfo i {
-  /* icon dispaly */
   margin-bottom: 25%;
   margin-top: 10%;
   display: block;
 }
 
 .commentContentWrapper {
-  /* content wrapper display */
   display: grid;
   grid-template-columns: 1fr 8fr;
 }
 
 .commentUpvotesNumber {
-  /* upvotes margin */
   margin-bottom: 25%;
- 
-  /* upvotes dimensions */
+
   height: 2vh;
   width: 60%;
   border-radius: 7px;

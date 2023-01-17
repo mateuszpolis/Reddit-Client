@@ -2,6 +2,12 @@ import React from "react";
 import { getSource } from "../helperFunctions/functions";
 import "./Media.css";
 
+/**
+ * Takes in post object and determines type of media to display in parent component (img, vide, iframe)
+ *
+ * @param {} props Post object and function to determine onClick behaviour
+ * @returns
+ */
 export const Media = (props) => {
   const { post, onClick } = props;
 

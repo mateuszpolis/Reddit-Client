@@ -3,6 +3,12 @@ import "./Post.css";
 import { Media } from "./Media";
 import { htmlDecode, truncateText } from "../helperFunctions/functions";
 
+/**
+ * Takes in post object and returns a post component with content varrying based on post's properties
+ *
+ * @param {*} param0 Post object
+ * @returns
+ */
 export const Post = ({ post }) => {
   const handleToggleOverflow = () => {
     const pWrapper = document.getElementById(post.id + "d");
@@ -54,7 +60,7 @@ export const Post = ({ post }) => {
   ) {
     return (
       <div className="post" id={post.id}>
-        <h2 style={{maxHeight: "40%"}}>{htmlDecode(post.title)}</h2>
+        <h2 style={{ maxHeight: "40%" }}>{htmlDecode(post.title)}</h2>
         <div
           style={{ maxHeight: "40%" }}
           id={post.id + "d"}

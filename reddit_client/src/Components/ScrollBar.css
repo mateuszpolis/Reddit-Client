@@ -1,21 +1,5 @@
 ::-webkit-scrollbar {
-  /* scrollbar dimensions */
+  /* Makes scrollbar virtually invisible */
   width: 0vw;
   height: 0vh;
-}
-
-::-webkit-scrollbar-thumb {
-  /* scrollbar thumb styling */
-  background-color: var(--accent-lighter);
-  border-radius: 7px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  /* scrollbar thumb on hover behaviour */
-  background-color: var(--accent);
-}
-
-::-webkit-scrollbar-track {
-  /* scrollbar track styling */
-  background-color: transparent;
 }

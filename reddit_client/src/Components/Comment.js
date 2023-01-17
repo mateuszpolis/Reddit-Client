@@ -3,6 +3,12 @@ import { intToString } from "../helperFunctions/functions";
 import { htmlDecode } from "../helperFunctions/functions";
 import "./Comment.css";
 
+/**
+ * Takes in information about comment, returns reusable comment div
+ *
+ * @param {} props Information about comment: author, ups, content
+ * @returns
+ */
 export const Comment = (props) => {
   return (
     <div className="comment">

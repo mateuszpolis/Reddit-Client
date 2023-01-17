@@ -3,6 +3,12 @@ import "./PopularPost.css";
 import nsfw from "../images/popularPostNSFWBackground.jpg";
 import selfDefault from "../images/popularPostSelfDefaultBackground.jpg";
 
+/**
+ * Takes in post object and returns popularPost, a simplified version of a Post component
+ *
+ * @param {*} param0 Post object
+ * @returns
+ */
 export const PopularPost = ({ post }) => {
   if (post?.thumbnail === "self") {
     return (
@@ -47,7 +53,7 @@ export const PopularPost = ({ post }) => {
         <img alt={post?.id} src={post?.url} />
         <h3>{post?.subreddit_name_prefixed}</h3>
       </a>
-    );  
+    );
   }
   return (
     <a
