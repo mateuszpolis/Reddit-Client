@@ -1,15 +1,33 @@
+/**
+ * Shortens a text to given limit
+ * 
+ * @param {string} text Text to shorten 
+ * @param {number} limit Maximum number of charachters
+ * @returns {string} Shortened text with (Click to show more) at the end
+ */
 export const truncateText = (text, limit) => {
   return text.length > limit
     ? text.slice(0, limit - 1) + "... (Click to show more)"
     : text;
 };
 
+/**
+ * Takes in number of seconds and returns a formatted date
+ * 
+ * @param {number} val Number of seconds
+ * @returns {date} Formatted date
+ */
 export const convertDate = (val) => {
   const date = new Date(val * 1000);
   return date.toDateString();
 };
 
-// functino from: "https://stackoverflow.com/questions/10599933/convert-long-number-into-abbreviated-string-in-javascript-with-a-special-shortn"
+/**
+ * Formats a number to a shorter version with suffixes
+ * 
+ * @param {number} value Number to format
+ * @returns {string} Formatted number with annotations (k, m, b, t)
+ */
 export const intToString = (value) => {
   let suffixes = ["", "k", "m", "b", "t"];
   let suffixNum = Math.floor((("" + value).length - 1) / 3);
@@ -22,6 +40,12 @@ export const intToString = (value) => {
   return shortValue + suffixes[suffixNum];
 };
 
+/**
+ * Decodes html entities 
+ * 
+ * @param {string} input Text to decode 
+ * @returns {string} Decoded text
+ */
 export const htmlDecode = (input) => {
   if (typeof input === "undefined") {
     return input;
@@ -32,6 +56,12 @@ export const htmlDecode = (input) => {
   return input;
 };
 
+/**
+ * Returns url from embeded iframe
+ * 
+ * @param {string} input Embeded iframe
+ * @returns {string} Embeded url 
+ */
 export const getSource = (input) => {
   let src = input.slice(41);
   for (let i = 0; i < src.length; i++) {
