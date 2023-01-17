@@ -4,7 +4,8 @@ export const searchBarSlice = createSlice({
   name: "searchBar",
   initialState: {
     value: "",
-    sortBy: "relevance"
+    sortBy: "relevance",
+    currentResult: "",
   },
   reducers: {
     setSearchTerm: (state, action) => {
@@ -15,7 +16,10 @@ export const searchBarSlice = createSlice({
     },
     setSortBy: (state, action) => {
       state.sortBy = action.payload;
-    }
+    },
+    setCurrentResult: (state, action) => {
+      state.currentResult = action.payload;
+    },
   },
 });
 
@@ -25,8 +29,13 @@ export const selectSearchTerm = (state) => {
 
 export const selectSortBy = (state) => {
   return state.searchBar.sortBy;
-}
+};
 
-export const { setSearchTerm, clearSearchTerm, setSortBy } = searchBarSlice.actions;
+export const selectCurrentResult = (state) => {
+  return state.searchBar.currentResult;
+};
+
+export const { setSearchTerm, clearSearchTerm, setSortBy, setCurrentResult } =
+  searchBarSlice.actions;
 
 export default searchBarSlice.reducer;

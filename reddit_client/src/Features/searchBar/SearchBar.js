@@ -6,6 +6,7 @@ import {
   selectSortBy,
   setSortBy,
   clearSearchTerm,
+  setCurrentResult,
 } from "./searchBarSlice";
 import { loadPosts } from "../feed/feedSlice";
 import "./SearchBar.css";
@@ -30,6 +31,7 @@ export const SearchBar = () => {
       };
       const url = `search.json?q=${data.searchTerm}&sort=${data.sortBy}&limit=${data.searchLimit}`;
       dispatch(loadPosts({ url }));
+      dispatch(setCurrentResult(searchTerm));
     }
   };
 
@@ -64,8 +66,10 @@ export const SearchBar = () => {
       sortBy: newValue.toLowerCase(),
       searchLimit: "25",
     };
-    const url = `search.json?q=${data.searchTerm}&sort=${data.sortBy}&limit=${data.searchLimit}`;
-    dispatch(loadPosts({ url }));
+    if (searchTerm.trim() !== "") {
+      const url = `search.json?q=${data.searchTerm}&sort=${data.sortBy}&limit=${data.searchLimit}`;
+      dispatch(loadPosts({ url }));
+    }
   };
 
   const handleClearSearch = () => {
