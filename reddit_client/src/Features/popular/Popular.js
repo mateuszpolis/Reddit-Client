@@ -17,6 +17,7 @@ export const Popular = () => {
   const hasLoadedContent = useSelector(hasLoadedPosts);
   let posts = useSelector(selectPopularPosts);
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(loadPopular());
   }, [dispatch]);

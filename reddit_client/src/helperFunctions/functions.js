@@ -31,3 +31,15 @@ export const htmlDecode = (input) => {
   input = input.replace(/&lt;/g, "<");
   return input;
 };
+
+export const getSource = (input) => {
+  let src = input.slice(41);
+  for (let i = 0; i < src.length; i++) {
+    if (src[i] === '"') {
+      src = src.slice(0, i);
+      break;
+    }
+  }
+  src = htmlDecode(src);
+  return src;
+};

@@ -24,7 +24,6 @@ export const feedSlice = createSlice({
       const scrolled = feedElement.scrollTop;
       const id = Math.floor(scrolled / (feedHeight / action.payload));
       state.currentPostId = id;
-      // console.log(feedHeight, scrolled, id);
     },
   },
   extraReducers: {

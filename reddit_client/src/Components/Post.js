@@ -48,12 +48,15 @@ export const Post = ({ post }) => {
         </div>
       </div>
     );
-  } else if (post.is_self === false && !post.hasOwnProperty("post_hint")) {
+  } else if (
+    post.is_self === false &&
+    (!post.hasOwnProperty("post_hint") || post?.post_hint === "link")
+  ) {
     return (
       <div className="post" id={post.id}>
-        <h2>{htmlDecode(post.title)}</h2>
+        <h2 style={{maxHeight: "40%"}}>{htmlDecode(post.title)}</h2>
         <div
-          style={{ height: "76%" }}
+          style={{ maxHeight: "40%" }}
           id={post.id + "d"}
           onClick={handleToggleOverflow}
           className="canExpand"

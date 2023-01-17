@@ -1,4 +1,5 @@
 import React from "react";
+import { getSource } from "../helperFunctions/functions";
 import "./Media.css";
 
 export const Media = (props) => {
@@ -14,10 +15,17 @@ export const Media = (props) => {
       />
     );
   } else if (post?.post_hint === "rich:video") {
+    const src = getSource(post.media_embed.content);
     return (
-      <video className="mediaContent" controls autoPlay muted onClick={onClick}>
-        <source src={post.url} type="mp4/video"></source>
-      </video>
+      <iframe
+        className="mediaContent"
+        src={src}
+        title={post.title}
+        controls
+        autoPlay="autoplay"
+        muted="muted"
+        onClick={onClick}
+      />
     );
   } else if (
     post?.post_hint === "hosted:video" ||
