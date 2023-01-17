@@ -22,7 +22,7 @@ export const PostInformation = () => {
     return (
       <div id="postInfo">
         <div id="subredditNamePlaceholder" style={{ display: "inline-block" }}>
-          <h4>{data.subredditName}</h4>
+          <h4>{data?.subredditName}</h4>
         </div>
         <div
           id="userNamePlaceholder"
@@ -32,18 +32,18 @@ export const PostInformation = () => {
             right: "1vw",
           }}
         >
-          <h4>u/{data.userName}</h4>
+          <h4>u/{data?.userName}</h4>
         </div>
         <div id="numberOfUpvotesPlaceholder" style={{ margin: "2.7vh 0" }}>
           <h4>
             Upvotes: <i id="upvotes" className="fa-solid fa-heart"></i>{" "}
-            {intToString(data.votes)}{" "}
+            {intToString(data?.votes)}{" "}
             <i id="downvotes" className="fa-solid fa-heart-crack"></i>
           </h4>
         </div>
         <div id="datePlaceholder">
           <h5>
-            Added: <u>{data.date}</u>
+            Added: <u>{data?.date}</u>
           </h5>
         </div>
       </div>

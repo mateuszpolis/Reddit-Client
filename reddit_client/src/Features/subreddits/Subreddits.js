@@ -2,7 +2,7 @@ import React from "react";
 import "./Subreddits.css";
 import { useDispatch } from "react-redux";
 import { loadPosts } from "../feed/feedSlice";
-import { setCurrentResult } from "../searchBar/searchBarSlice";
+import { clearSearchTerm, setCurrentResult } from "../searchBar/searchBarSlice";
 
 export const Subreddits = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,7 @@ export const Subreddits = () => {
     const url = `${topic}/hot.json?`;
     dispatch(loadPosts({ url }));
     dispatch(setCurrentResult(topic))
+    dispatch(clearSearchTerm());
   };
 
   return (

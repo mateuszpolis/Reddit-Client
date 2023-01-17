@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./OriginalPost.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectPostPermalink } from "../postInformation/postinformationSlice";
 
 export const OriginalPost = () => {
   const permalink = useSelector(selectPostPermalink);
-  console.log(permalink);
+  const dispatch = useDispatch();
+
+  useEffect(() => {}, [dispatch]);
 
   if (permalink === null) {
     return (
