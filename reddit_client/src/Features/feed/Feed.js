@@ -2,25 +2,22 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Post } from "../../Components/Post";
 import "./Feed.css";
-import { isLoadingPosts, selectPosts, failedLoadingPosts } from "./feedSlice";
-import { truncateText } from "../../helperFunctions/functions";
+import {
+  isLoadingPosts,
+  selectPosts,
+  failedLoadingPosts,
+  hasLoadedPosts,
+} from "./feedSlice";
 import { findCurrentPost } from "../postInformation/postinformationSlice";
-import { selectSearchTerm } from "../../Features/searchBar/searchBarSlice";
+import { selectCurrentResult } from "../../Features/searchBar/searchBarSlice";
 
 export const Feed = () => {
-  const dispatch = useDispatch();
-  let posts = useSelector(selectPosts);
-  let firstLoad = false;
-  if (Object.keys(posts).length === 0) {
-    firstLoad = true;
-  } else {
-    posts = posts.data.children.map((post) => {
-      return post.data;
-    });
-  }
   const isLoading = useSelector(isLoadingPosts);
   const failedLoading = useSelector(failedLoadingPosts);
-  const searchTerm = useSelector(selectSearchTerm);
+  const hasLoaded = useSelector(hasLoadedPosts);
+  const resultsFor = useSelector(selectCurrentResult);
+  let posts = useSelector(selectPosts);
+  const dispatch = useDispatch();
 
   const findPostId = () => {
     dispatch(findCurrentPost());
@@ -28,23 +25,7 @@ export const Feed = () => {
 
   useEffect(() => {}, [dispatch]);
 
-  if (isLoading) {
-    return (
-      <div id="feedWrapper">
-        <div id="feed" className="isLoading"></div>
-      </div>
-    );
-  } else if (failedLoading) {
-    return (
-      <div id="feedWrapper">
-        <div id="feed" style={{ textAlign: "center" }}>
-          <h1 style={{ color: "red" }}>
-            Error: Failed to load data. Try again.
-          </h1>
-        </div>
-      </div>
-    );
-  } else if (firstLoad) {
+  if (!hasLoaded && !isLoading) {
     return (
       <div id="feedWrapper">
         <div
@@ -71,29 +52,41 @@ export const Feed = () => {
         </div>
       </div>
     );
+  } else if (isLoading) {
+    return (
+      <div id="feedWrapper">
+        <div id="feed" className="isLoading"></div>
+      </div>
+    );
+  } else if (hasLoaded) {
+    posts = posts.data.children.map((post) => {
+      return post.data;
+    });
+
+    return (
+      <div id="feedWrapper">
+        <div id="resultsFor">
+          <h5>
+            <i className="fa-solid fa-magnifying-glass"></i> Results for:{" "}
+            <u>{resultsFor}</u>
+          </h5>
+        </div>
+        <div id="feed" onScroll={findPostId}>
+          {posts.map((post) => {
+            return <Post post={post} key={post.id + "_key"} />;
+          })}
+        </div>
+      </div>
+    );
+  } else if (failedLoading) {
+    return (
+      <div id="feedWrapper">
+        <div id="feed" style={{ textAlign: "center" }}>
+          <h1 style={{ color: "red" }}>
+            Error: Failed to load data. Try again.
+          </h1>
+        </div>
+      </div>
+    );
   }
-  return (
-    <div id="feedWrapper">
-      <div id="resultsFor">
-        <h5>
-          <i className="fa-solid fa-magnifying-glass"></i> Results for:{" "}
-          <u>{searchTerm}</u>
-        </h5>
-      </div>
-      <div id="feed" onScroll={findPostId}>
-        {posts.map((post) => {
-          return (
-            <Post
-              header={post.title}
-              text={truncateText(post.selftext, 1500)}
-              link={"https://www.reddit.com" + post.permalink}
-              key={post.id}
-              image_src={post.url_overridden_by_dest}
-              post={post}
-            />
-          );
-        })}
-      </div>
-    </div>
-  );
 };
