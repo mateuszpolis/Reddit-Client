@@ -2,7 +2,6 @@ import React from "react";
 import "./OriginalPost.css";
 import { useSelector } from "react-redux";
 import { selectPostPermalink } from "../postInformation/postinformationSlice";
-import { prefix } from "@fortawesome/free-regular-svg-icons";
 
 export const OriginalPost = () => {
   const permalink = useSelector(selectPostPermalink);
