@@ -1,4 +1,8 @@
 .seeOriginalPost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
   top: 67vh;
   left: 2vw;
@@ -28,6 +32,16 @@
   width: 100%;
 }
 
+#seeOriginalPostNotLoaded {
+  background-color: var(--gray-light);
+}
+
 #seeOriginalPostNotLoaded:hover {
   cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: dark) {
+  #seeOriginalPostNotLoaded {
+    background-color: var(--gray);
+  }
 }
