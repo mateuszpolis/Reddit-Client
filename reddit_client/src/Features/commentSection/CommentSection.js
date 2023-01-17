@@ -3,36 +3,23 @@ import "./CommentSection.css";
 import { Comment } from "../../Components/Comment";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectCurrentPostId,
-  selectNumOfComments,
-  selectPostPermalink,
-} from "../postInformation/postinformationSlice";
-import {
-  selectCommentsForPostId,
-  loadComments,
   selectComments,
   isLoadingComments,
   hasLoadedComments,
+  loadComments,
+  selectPermalink,
 } from "./commentSectionSlice";
-import { changeId } from "./commentSectionSlice";
 import { intToString } from "../../helperFunctions/functions";
-import { isLoadingPosts, selectNumOfPosts } from "../feed/feedSlice";
+import { isLoadingPosts, selectCurrentPost } from "../feed/feedSlice";
 
 export const CommentSection = () => {
-  const dispatch = useDispatch();
-  const numOfComments = useSelector(selectNumOfComments);
-  const permalink = useSelector(selectPostPermalink);
-  const currentId = useSelector(selectCommentsForPostId);
-  const newId = useSelector(selectCurrentPostId);
-  const postNumber = useSelector(selectNumOfPosts);
-  if (permalink !== null && currentId !== newId) {
-    dispatch(changeId(postNumber));
-    dispatch(loadComments(permalink));
-  }
-  let comments = useSelector(selectComments);
   const isLoading = useSelector(isLoadingComments);
   const hasLoaded = useSelector(hasLoadedComments);
   const isLoadingContent = useSelector(isLoadingPosts);
+  const post = useSelector(selectCurrentPost);
+  const permalink = useSelector(selectPermalink);
+  let comments = useSelector(selectComments);
+  const dispatch = useDispatch();
 
   const handleScrollDown = () => {
     const wrapper = document.getElementById("comments");
@@ -43,23 +30,37 @@ export const CommentSection = () => {
     });
   };
 
-  useEffect(() => {}, [dispatch]);
+  useEffect(() => {
+    if (permalink !== "") {
+      dispatch(loadComments(permalink));
+    }
+  }, [dispatch, permalink]);
 
-  if (isLoading || isLoadingContent) {
+  if (isLoadingContent) {
+    return (
+      <div id="postComments">
+        <div id="commentsInfo">
+          <div id="commentsName">
+            <h4>
+              <i className="fa-solid fa-comments"></i> Comments
+            </h4>
+          </div>
+        </div>
+        <div id="comments" className="isLoading"></div>
+      </div>
+    );
+  } else if (isLoading) {
     return (
       <div id="postComments">
         <div id="commentsInfo">
           <div id="commentsName">
             <h4>
               <i className="fa-solid fa-comments"></i>{" "}
-              {intToString(numOfComments)} Comments
+              {intToString(post?.num_comments)} Comments
             </h4>
           </div>
         </div>
         <div id="comments" className="isLoading"></div>
-        <div id="showMore">
-          <i className="fa-solid fa-caret-down"></i>
-        </div>
       </div>
     );
   } else if (hasLoaded) {
@@ -71,7 +72,7 @@ export const CommentSection = () => {
           <div id="commentsName">
             <h4>
               <i className="fa-solid fa-comments"></i>{" "}
-              {intToString(numOfComments)} Comments
+              {intToString(post?.num_comments)} Comments
             </h4>
           </div>
         </div>

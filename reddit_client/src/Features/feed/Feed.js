@@ -8,9 +8,11 @@ import {
   failedLoadingPosts,
   hasLoadedPosts,
   selectNumOfPosts,
+  selectCurrentPost,
 } from "./feedSlice";
 import { selectCurrentResult } from "../../Features/searchBar/searchBarSlice";
 import { findCurrentPost } from "./feedSlice";
+import { setPermalink } from "../commentSection/commentSectionSlice";
 
 export const Feed = () => {
   const isLoading = useSelector(isLoadingPosts);
@@ -18,11 +20,17 @@ export const Feed = () => {
   const hasLoaded = useSelector(hasLoadedPosts);
   const resultsFor = useSelector(selectCurrentResult);
   let posts = useSelector(selectPosts);
+  let currentPost = useSelector(selectCurrentPost);
   const numOfPosts = useSelector(selectNumOfPosts);
   const dispatch = useDispatch();
 
   const findPostId = () => {
     dispatch(findCurrentPost(numOfPosts));
+    dispatch(setPermalink(currentPost.permalink));
+  };
+
+  const handleScroll = () => {
+    findPostId();
   };
 
   useEffect(() => {}, [dispatch]);
@@ -73,7 +81,7 @@ export const Feed = () => {
             <u>{resultsFor}</u>
           </h5>
         </div>
-        <div id="feed" onScroll={findPostId}>
+        <div id="feed" onScroll={handleScroll}>
           {posts.map((post) => {
             return <Post post={post} key={post.id + "_key"} />;
           })}

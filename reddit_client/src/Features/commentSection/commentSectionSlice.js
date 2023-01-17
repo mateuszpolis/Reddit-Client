@@ -14,18 +14,14 @@ export const commentSectionSlice = createSlice({
   name: "commentSection",
   initialState: {
     comments: {},
-    commentsForPostId: -1,
     isLoadingComments: false,
     failedToLoadComments: false,
     hasLoadedComments: false,
+    currentPermalink: "",
   },
   reducers: {
-    changeId: (state, action) => {
-      const feedElement = document.getElementById("feed");
-      const feedHeight = feedElement.scrollHeight;
-      const scrolled = feedElement.scrollTop;
-      const id = Math.floor(scrolled / (feedHeight / action.payload));
-      state.commentsForPostId = id;
+    setPermalink: (state, action) => {
+      state.currentPermalink = action.payload;
     },
   },
   extraReducers: {
@@ -38,7 +34,6 @@ export const commentSectionSlice = createSlice({
       state.failedToLoadComments = false;
       state.hasLoadedComments = true;
       state.comments = action.payload;
-      state.commentsForPostId = -1;
     },
     [loadComments.rejected]: (state, action) => {
       state.isLoadingComments = false;
@@ -63,10 +58,10 @@ export const selectComments = (state) => {
   return state.commentSection.comments;
 };
 
-export const selectCommentsForPostId = (state) => {
-  return state.commentSection.commentsForPostId;
+export const selectPermalink = (state) => {
+  return state.commentSection.currentPermalink;
 };
 
-export const { changeId } = commentSectionSlice.actions;
+export const { setPermalink } = commentSectionSlice.actions;
 
 export default commentSectionSlice.reducer;
