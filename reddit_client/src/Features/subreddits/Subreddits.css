@@ -35,6 +35,14 @@
   border-color: var(--gray-light);
 }
 
+.topic:hover i {
+  transform: translate(20%, 0) rotate(15deg);
+}
+
+.topic i {
+  transition: 100ms;
+}
+
 .topic:nth-child(1) {
   border-top: 0px;
 }

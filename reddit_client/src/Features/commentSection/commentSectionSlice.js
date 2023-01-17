@@ -38,6 +38,7 @@ export const commentSectionSlice = createSlice({
       state.failedToLoadComments = false;
       state.hasLoadedComments = true;
       state.comments = action.payload;
+      state.commentsForPostId = -1;
     },
     [loadComments.rejected]: (state, action) => {
       state.isLoadingComments = false;
