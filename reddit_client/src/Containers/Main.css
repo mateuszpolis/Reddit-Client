@@ -1,13 +1,10 @@
 main {
-  /* Main position */
   position: absolute;
   top: 10vh;
 
-  /* Main dimensions */
   width: 100%;
   height: 85vh;
 
-  /* Main overflow */
   overflow: hidden;
 }
 

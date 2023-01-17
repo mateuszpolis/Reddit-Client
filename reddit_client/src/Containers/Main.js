@@ -7,6 +7,11 @@ import "./Main.css";
 import { Subreddits } from "../Features/subreddits/Subreddits";
 import { OriginalPost } from "../Features/originalPost/OriginalPost";
 
+/**
+ * Main container. Contains Popular, Subreddits, OriginalPost, Feed, Postinformation and CommentSection features
+ * 
+ * @returns 
+ */
 export const Main = () => {
   return (
     <main>

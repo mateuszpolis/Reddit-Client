@@ -3,10 +3,15 @@ import { SearchBar } from "../Features/searchBar/SearchBar";
 import "./Header.css";
 import logo from "../../src/images/logo_transparent.png";
 
+/**
+ * Header container. Contains SearchBar feature and logo
+ *
+ * @returns
+ */
 export const Header = () => {
   return (
     <header>
-      <img src={logo} alt="logo"/>
+      <img src={logo} alt="logo" />
       <SearchBar />
     </header>
   );

@@ -1,6 +1,11 @@
 import React from "react";
 import "./Footer.css";
 
+/**
+ * Footer container. Contains creator links
+ * 
+ * @returns 
+ */
 export const Footer = () => {
   return (
     <footer>
