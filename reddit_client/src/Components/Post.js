@@ -10,6 +10,9 @@ import { htmlDecode, truncateText } from "../helperFunctions/functions";
  * @returns
  */
 export const Post = ({ post }) => {
+  /**
+   * Changes overflow property of post's pWrapper element to make all of the text visible on scroll
+   */
   const handleToggleOverflow = () => {
     const pWrapper = document.getElementById(post.id + "d");
     const p = document.getElementById(post.id + "p");
@@ -25,6 +28,11 @@ export const Post = ({ post }) => {
     }
   };
 
+  /**
+   * Magnifies an element by changing its parent's dimensions and display
+   *
+   * @param {*} e Event target
+   */
   const mediaToFullScreen = (e) => {
     const parent = e.target.parentElement;
     if (parent.hasAttribute("magnified")) {
