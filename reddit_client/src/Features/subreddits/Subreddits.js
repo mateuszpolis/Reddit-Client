@@ -4,15 +4,23 @@ import { useDispatch } from "react-redux";
 import { loadPosts } from "../feed/feedSlice";
 import { clearSearchTerm, setCurrentResult } from "../searchBar/searchBarSlice";
 
+/**
+ * Subreddits feature. Shows popular subreddits (data is static, it is not loaded from Reddit). Allows to load "hot" posts from said subreddits
+ * @returns
+ */
 export const Subreddits = () => {
   const dispatch = useDispatch();
 
+  /**
+   * Dispatches an action to load posts from a subreddit
+   * @param {*} e Event target
+   */
   const handleSelectTopic = (e) => {
     let topic = e.target.firstChild.textContent;
     topic = topic.toLowerCase().trim();
     const url = `${topic}/hot.json?`;
     dispatch(loadPosts({ url }));
-    dispatch(setCurrentResult(topic))
+    dispatch(setCurrentResult(topic));
     dispatch(clearSearchTerm());
   };
 

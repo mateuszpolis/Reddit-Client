@@ -35,19 +35,15 @@
 }
 
 #feed {
-  /* feed position */
   position: absolute;
   top: 2vh;
   left: 0;
 
-  /* feed dimensions */
   height: 63vh;
   width: 46vw;
 
-  /* feed border */
   border-radius: 7px;
 
-  /* feed overflow and scroll snapping */
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;

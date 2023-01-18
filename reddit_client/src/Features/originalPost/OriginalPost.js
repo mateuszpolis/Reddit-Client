@@ -3,6 +3,10 @@ import "./OriginalPost.css";
 import { useSelector } from "react-redux";
 import { selectPermalink } from "../commentSection/commentSectionSlice";
 
+/**
+ * A button to redirect to original post on Reddit of currently displayed post
+ * @returns
+ */
 export const OriginalPost = () => {
   const permalink = useSelector(selectPermalink);
 

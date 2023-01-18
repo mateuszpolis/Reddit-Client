@@ -1,10 +1,18 @@
 import React, { useEffect } from "react";
 import "./PostInformation.css";
 import { useDispatch, useSelector } from "react-redux";
-import { hasLoadedPosts, isLoadingPosts, selectCurrentPost } from "../feed/feedSlice";
+import {
+  hasLoadedPosts,
+  isLoadingPosts,
+  selectCurrentPost,
+} from "../feed/feedSlice";
 import { intToString } from "../../helperFunctions/functions";
 import { convertDate } from "../../helperFunctions/functions";
 
+/**
+ * PostInformation feature. Displays information about currently displayed post (subreddit, user, upvotes, date).
+ * @returns
+ */
 export const PostInformation = () => {
   const isLoading = useSelector(isLoadingPosts);
   const hasLoaded = useSelector(hasLoadedPosts);

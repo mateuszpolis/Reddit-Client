@@ -12,6 +12,11 @@ import {
 import { intToString } from "../../helperFunctions/functions";
 import { isLoadingPosts, selectCurrentPost } from "../feed/feedSlice";
 
+/**
+ * CommentSection feature. Renders Comment components based on what content is currently displayed to the user
+ *
+ * @returns
+ */
 export const CommentSection = () => {
   const isLoading = useSelector(isLoadingComments);
   const hasLoaded = useSelector(hasLoadedComments);
@@ -21,6 +26,15 @@ export const CommentSection = () => {
   let comments = useSelector(selectComments);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    if (permalink !== "") {
+      dispatch(loadComments(permalink));
+    }
+  }, [dispatch, permalink]);
+
+  /**
+   * Function to srcoll down through comments
+   */
   const handleScrollDown = () => {
     const wrapper = document.getElementById("comments");
     wrapper.scroll({
@@ -29,12 +43,6 @@ export const CommentSection = () => {
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    if (permalink !== "") {
-      dispatch(loadComments(permalink));
-    }
-  }, [dispatch, permalink]);
 
   if (isLoadingContent) {
     return (

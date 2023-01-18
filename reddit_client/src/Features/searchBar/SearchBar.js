@@ -11,16 +11,27 @@ import {
 import { loadPosts } from "../feed/feedSlice";
 import "./SearchBar.css";
 
+/**
+ * SearchBar feature. Allows user to input data and search for said content on Reddit. Also allows to specify sort order of posts
+ * @returns
+ */
 export const SearchBar = () => {
   const searchTerm = useSelector(selectSearchTerm);
   const sortBy = useSelector(selectSortBy);
   const dispatch = useDispatch();
 
+  /**
+   * Changes current SearchTerm based on user input
+   * @param {*} e Event target
+   */
   const handleInputChange = (e) => {
     const userInput = e.target.value;
     dispatch(setSearchTerm(userInput));
   };
 
+  /**
+   * Dispatches an action to load posts from Reddit based on current SearchTerm
+   */
   const handleSubmit = () => {
     if (searchTerm === "") {
     } else {
@@ -35,6 +46,9 @@ export const SearchBar = () => {
     }
   };
 
+  /**
+   * Displays sort options
+   */
   const handleShowSortOptions = () => {
     const dropdown = document.getElementById("sortOptions");
     const sort = document.getElementById("sort");
@@ -47,6 +61,10 @@ export const SearchBar = () => {
     }
   };
 
+  /**
+   * Sets a new sortBy parameter and dispatches an action to load posts from Reddit based on current SearchTerm and with new sortBy. If no SearchTerm is provided, doesn't load posts
+   * @param {*} e Event target
+   */
   const handleSelectOption = (e) => {
     let newValue = e.target.innerHTML;
     handleShowSortOptions();
@@ -74,6 +92,9 @@ export const SearchBar = () => {
     }
   };
 
+  /**
+   * Clears input field
+   */
   const handleClearSearch = () => {
     dispatch(clearSearchTerm());
   };

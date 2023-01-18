@@ -10,6 +10,10 @@ import {
 } from "./popularSlice";
 import { hasLoadedPosts, isLoadingPosts } from "../feed/feedSlice";
 
+/**
+ * Popular feature. Displays post currently popular on Reddit and renders PopularPost components which link to said posts on Reddit
+ * @returns
+ */
 export const Popular = () => {
   const isLoading = useSelector(isLoadingPopularPosts);
   const hasLoaded = useSelector(hasLoadedPopularPosts);
@@ -17,11 +21,14 @@ export const Popular = () => {
   const hasLoadedContent = useSelector(hasLoadedPosts);
   let posts = useSelector(selectPopularPosts);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(loadPopular());
   }, [dispatch]);
 
+  /**
+   * Scrolls through popular posts
+   */
   const handleScrollRight = () => {
     const wrapper = document.getElementsByClassName("popularPosts")[0];
     wrapper.scroll({

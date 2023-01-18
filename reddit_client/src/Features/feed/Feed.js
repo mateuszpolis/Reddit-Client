@@ -14,6 +14,11 @@ import { selectCurrentResult } from "../../Features/searchBar/searchBarSlice";
 import { findCurrentPost } from "./feedSlice";
 import { setPermalink } from "../commentSection/commentSectionSlice";
 
+/**
+ * Feed feature. Rendres Post components
+ *
+ * @returns
+ */
 export const Feed = () => {
   const isLoading = useSelector(isLoadingPosts);
   const failedLoading = useSelector(failedLoadingPosts);
@@ -24,13 +29,12 @@ export const Feed = () => {
   const numOfPosts = useSelector(selectNumOfPosts);
   const dispatch = useDispatch();
 
+  /**
+   * Finds id of currently displayed post and sets its permalink in order for commentSection feature to be able to load appropriate comments
+   */
   const findPostId = () => {
     dispatch(findCurrentPost(numOfPosts));
     dispatch(setPermalink(currentPost.permalink));
-  };
-
-  const handleScroll = () => {
-    findPostId();
   };
 
   useEffect(() => {}, [dispatch]);
@@ -81,7 +85,7 @@ export const Feed = () => {
             <u>{resultsFor}</u>
           </h5>
         </div>
-        <div id="feed" onScroll={handleScroll}>
+        <div id="feed" onScroll={findPostId}>
           {posts.map((post) => {
             return <Post post={post} key={post.id + "_key"} />;
           })}
