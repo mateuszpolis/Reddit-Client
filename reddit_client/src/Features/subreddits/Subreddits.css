@@ -36,11 +36,11 @@
 }
 
 .topic:hover i {
-  transform: translate(20%, 0) rotate(15deg);
+  transform: translate(20%, 0);
 }
 
 .topic i {
-  transition: 100ms;
+  transition: 200ms;
 }
 
 .topic:nth-child(1) {
