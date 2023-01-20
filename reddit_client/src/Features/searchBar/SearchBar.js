@@ -112,17 +112,6 @@ export const SearchBar = () => {
       </div>
       <div
         id="cancelButton"
-        style={{
-          position: "absolute",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          top: "2vh",
-          left: "62.5vw",
-          height: "6vh",
-          zIndex: "2",
-          color: "red",
-        }}
         onClick={handleClearSearch}
       >
         <h3 style={{ margin: "0" }}>
