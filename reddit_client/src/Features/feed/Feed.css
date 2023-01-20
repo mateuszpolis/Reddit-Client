@@ -78,7 +78,9 @@
   }
 
   #feed {
-    height: 65vh;
+    top: 1vh;
+
+    height: 67vh;
     width: 90vw;
 
     border-radius: 0px;
