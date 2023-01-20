@@ -13,3 +13,8 @@ header img {
   height: 100%;
 }
 
+@media screen and (max-height: 1200px) {
+  header {
+    height: 8vh;
+  }
+}

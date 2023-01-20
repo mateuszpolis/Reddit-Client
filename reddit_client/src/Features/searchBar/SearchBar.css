@@ -128,6 +128,42 @@ form {
   font-weight: bold;
 }
 
+@media screen and (max-width: 1200px) {
+  #searchBehind {
+    left: 5vw;
+  }
+
+  #search {
+    height: 4vh;
+    width: 76vw;
+
+    font-size: 125%;
+  }
+
+  #submitSearch {
+    height: 4vh;
+    width: 7vw;
+
+    border-top-right-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+
+    font-size: 100%;
+  }
+
+  #sort {
+    height: 4vh;
+    width: 5vw;
+    
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+  }
+
+  #sortOptions {
+    top: 6vh;
+    left: 5vw;
+  }
+}
+
 @media (hover: hover) {
   #cancelButton:hover {
     cursor: pointer;
