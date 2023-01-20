@@ -74,22 +74,22 @@
 @media screen and (max-width: 1200px) {
   .popularPosts {
     height: 15vh;
-    width: 90vw;
-    left: 5vw;
+    width: 85vw;
+    left: 10vw;
   }
 
   #firstLoadPopular {
     height: 15vh;
-    width: 90vw;
-    left: 5vw;
+    width: 85vw;
+    left: 10vw;
   }
 
   .popularPostsTitle {
-    left: 5vw;
+    left: 10vw;
   }
 
   #popularPostsTitleFirstLoad {
-    left: 5vw;
+    left: 10vw;
   }
 
   .clickToScrollRight {

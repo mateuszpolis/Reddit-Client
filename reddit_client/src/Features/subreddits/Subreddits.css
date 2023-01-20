@@ -11,6 +11,16 @@
   background-color: var(--background-light-darker);
 }
 
+#topicsTitle {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--orange);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
 #topics {
   height: 55vh;
 
@@ -44,6 +54,38 @@
 
 .topic h5 {
   margin: 2vh 2vw;
+}
+
+@media screen and (max-width: 1200px) {
+  #topicsWrapper {
+    display: none;
+
+    left: 0vw;
+
+    height: 85vh;
+    width: 30vw;
+
+    z-index: 3;
+  }
+
+  #topicsTitle {
+    height: 5vh;
+    background-color: var(--orange);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+  #topicsTitle h2 {
+    font-size: 70%;
+  }
+
+  #topics {
+    height: 80vh;
+  }
+
+  .topic h5 {
+    font-size: 70%;
+  }
 }
 
 @media (hover: hover) {

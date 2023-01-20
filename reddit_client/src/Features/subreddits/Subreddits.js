@@ -27,15 +27,6 @@ export const Subreddits = () => {
   return (
     <div id="topicsWrapper">
       <div
-        style={{
-          height: "10vh",
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          backgroundColor: "var(--orange)",
-          borderTopLeftRadius: "7px",
-          borderTopRightRadius: "7px",
-        }}
         id="topicsTitle"
       >
         <h2 style={{ marginLeft: "2vw", color: "var(--background-light)" }}>
