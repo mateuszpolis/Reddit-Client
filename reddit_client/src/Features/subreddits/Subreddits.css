@@ -7,8 +7,6 @@
   height: 65vh;
 
   border-radius: 7px;
-
-  background-color: var(--background-light-darker);
 }
 
 #topicsTitle {
@@ -25,6 +23,9 @@
   height: 55vh;
 
   overflow-y: scroll;
+
+  background-color: var(--background-light-darker);
+  backdrop-filter: blur(25px);
 }
 
 .topic {
@@ -70,7 +71,7 @@
 
   #topicsTitle {
     height: 5vh;
-    background-color: var(--orange);
+    backdrop-filter: blur(15px);
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
   }
@@ -81,6 +82,8 @@
 
   #topics {
     height: 80vh;
+
+    background-color: var(--gray-transparent);
   }
 
   .topic h5 {
@@ -100,8 +103,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  #topicsWrapper {
+  #topics {
     background-color: var(--gray-darker);
+  }
+  @media screen and (max-width: 1200px) {
+    #topics {
+      background-color: var(--gray-transparent);
+    }
   }
   @media (hover: hover) {
     .topic:hover {

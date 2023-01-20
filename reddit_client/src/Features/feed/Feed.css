@@ -16,7 +16,7 @@
   }
   20% {
     transform: scale(120%);
-  }  
+  }
   55% {
     transform: scale(120%);
   }
@@ -66,6 +66,27 @@
 
 #resultsFor h5 {
   margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  #feedWrapper {
+    top: 17vh;
+    left: 5vw;
+
+    height: 68vh;
+    width: 90vw;
+  }
+
+  #feed {
+    height: 65vh;
+    width: 90vw;
+
+    border-radius: 0px;
+  }
+
+  #resultsFor {
+    left: 0vw;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
