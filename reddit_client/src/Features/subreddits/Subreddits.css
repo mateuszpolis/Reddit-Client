@@ -30,15 +30,6 @@
   margin: 0 auto;
 }
 
-.topic:hover {
-  cursor: pointer;
-  border-color: var(--gray-light);
-}
-
-.topic:hover i {
-  transform: translate(20%, 0);
-}
-
 .topic i {
   transition: 200ms;
 }
@@ -55,11 +46,24 @@
   margin: 2vh 2vw;
 }
 
+@media (hover: hover) {
+  .topic:hover {
+    cursor: pointer;
+    border-color: var(--gray-light);
+  }
+
+  .topic:hover i {
+    transform: translate(20%, 0);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   #topicsWrapper {
     background-color: var(--gray-darker);
   }
-  .topic:hover {
-    border-color: var(--gray);
+  @media (hover: hover) {
+    .topic:hover {
+      border-color: var(--gray);
+    }
   }
 }

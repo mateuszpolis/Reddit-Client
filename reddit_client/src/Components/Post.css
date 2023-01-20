@@ -39,10 +39,6 @@
   overflow-y: scroll;
 }
 
-.canExpand:hover {
-  cursor: pointer;
-}
-
 .mediaContent {
   height: 100%;
   max-width: 100%;
@@ -77,6 +73,12 @@
   backdrop-filter: blur(10px);
 
   z-index: 10;
+}
+
+@media (hover: hover) {
+  .canExpand:hover {
+    cursor: pointer;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

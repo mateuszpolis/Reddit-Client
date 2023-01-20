@@ -17,10 +17,6 @@
   transition: 200ms;
 }
 
-.seeOriginalPost:hover {
-  cursor: pointer;
-}
-
 .seeOriginalPost a {
   display: flex;
   justify-content: center;
@@ -36,8 +32,13 @@
   background-color: var(--gray-light);
 }
 
-#seeOriginalPostNotLoaded:hover {
-  cursor: not-allowed;
+@media (hover: hover) {
+  #seeOriginalPostNotLoaded:hover {
+    cursor: not-allowed;
+  }
+  .seeOriginalPost:hover {
+    cursor: pointer;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -21,10 +21,6 @@
   transition: 0.2s;
 }
 
-#search:hover {
-  border-color: var(--orange);
-}
-
 #search:focus {
   outline: none;
 
@@ -60,10 +56,6 @@
   transition: 0.2s;
 }
 
-#submitSearch:hover {
-  cursor: pointer;
-}
-
 #submitSearch:active {
   background-color: var(--orange);
 }
@@ -91,20 +83,11 @@ form {
 
 #sort h4 {
   margin: 0;
-} 
+}
 
 #sort i {
   transform: translate(50%);
   transition: 200ms;
-}
-
-#sort:hover i {
-  transform: translate(50%) rotate(-180deg);
-}
-
-#sort:hover {
-  cursor: pointer;
-  background-color: var(--gray);
 }
 
 #sortOptions {
@@ -141,18 +124,36 @@ form {
   transition: 100ms;
 }
 
-#sortOptions li:hover {
-  cursor: pointer;
-  border-bottom: 1px solid var(--background-light);
-  border-top: 1px solid var(--background-light);
-}
-
-#sortOptions li[selectedOption=true] {
+#sortOptions li[selectedOption="true"] {
   font-weight: bold;
 }
 
-#cancelButton:hover {
-  cursor: pointer;
+@media (hover: hover) {
+  #cancelButton:hover {
+    cursor: pointer;
+  }
+  #sortOptions li:hover {
+    cursor: pointer;
+    border-bottom: 1px solid var(--background-light);
+    border-top: 1px solid var(--background-light);
+  }
+
+  #sort:hover i {
+    transform: translate(50%) rotate(-180deg);
+  }
+
+  #sort:hover {
+    cursor: pointer;
+    background-color: var(--gray);
+  }
+
+  #submitSearch:hover {
+    cursor: pointer;
+  }
+
+  #search:hover {
+    border-color: var(--orange);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -163,7 +164,9 @@ form {
   #sort {
     background-color: var(--gray);
   }
-  #sort:hover {
-    background-color: var(--gray-light);
+  @media (hover: hover) {
+    #sort:hover {
+      background-color: var(--gray-light);
+    }
   }
 }

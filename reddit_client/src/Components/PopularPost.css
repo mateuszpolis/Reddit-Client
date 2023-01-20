@@ -12,6 +12,8 @@
 
   background-color: var(--gray-light);
 
+  overflow: hidden;
+
   transition: 200ms;
 }
 
@@ -34,13 +36,14 @@
   color: var(--background-light);
 }
 
-.popularPost:hover {
-  cursor: pointer;
-  background-color: var(--gray);
-}
-
-.popularPost:hover img {
-  filter: brightness(75%);
+@media (hover: hover) {
+  .popularPost:hover img {
+    filter: brightness(75%);
+  }
+  .popularPost:hover {
+    cursor: pointer;
+    background-color: var(--gray);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
