@@ -36,6 +36,20 @@
   color: var(--background-light);
 }
 
+@media screen and (max-width: 1200px) {
+  .popularPost {
+    width: 20%;
+  }
+
+  .popularPost img {
+    filter: brightness(60%);
+  }
+
+  .popularPost h3 {
+    font-size: 90%;
+  }
+}
+
 @media (hover: hover) {
   .popularPost:hover img {
     filter: brightness(75%);

@@ -71,7 +71,43 @@
   left: 92vw;
 }
 
-.clickToScrollRight:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
+@media screen and (max-width: 1200px) {
+  .popularPosts {
+    height: 15vh;
+    width: 90vw;
+    left: 5vw;
+  }
+
+  #firstLoadPopular {
+    height: 15vh;
+    width: 90vw;
+    left: 5vw;
+  }
+
+  .popularPostsTitle {
+    left: 5vw;
+  }
+
+  #popularPostsTitleFirstLoad {
+    left: 5vw;
+  }
+
+  .clickToScrollRight {
+    height: 15vh;
+    width: 2vw;
+    left: 93vw;
+  }
+
+  #clickToScrollRightFirstLoad {
+    height: 15vh;
+    width: 2vw;
+    left: 93vw;
+  }
+}
+
+@media (hover: hover) {
+  .clickToScrollRight:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+  }
 }
