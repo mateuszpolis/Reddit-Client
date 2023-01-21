@@ -73,6 +73,8 @@
 
 @media screen and (max-width: 1200px) {
   #postComments {
+    display: none;
+
     position: absolute;
     left: 5vw;
     top: 25vh;

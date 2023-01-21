@@ -57,7 +57,11 @@ export const SearchBar = () => {
       sort.style.borderBottomLeftRadius = "0";
     } else {
       dropdown.style.display = "none";
-      sort.style.borderBottomLeftRadius = "3vh";
+      if (sort.style.borderTopLeftRadius === "3vh") {
+        sort.style.borderBottomLeftRadius = "3vh";
+      } else {
+        sort.style.borderBottomLeftRadius = "2vh";
+      }
     }
   };
 
@@ -110,10 +114,7 @@ export const SearchBar = () => {
           <li onClick={handleSelectOption}>Most Comments</li>
         </ul>
       </div>
-      <div
-        id="cancelButton"
-        onClick={handleClearSearch}
-      >
+      <div id="cancelButton" onClick={handleClearSearch}>
         <h3 style={{ margin: "0" }}>
           <i className="fa-solid fa-xmark"></i>
         </h3>
