@@ -1,3 +1,15 @@
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #postInfo {
   position: absolute;
   right: 2%;
@@ -15,19 +27,115 @@
   transition: 200ms;
 }
 
-#postInfo h4, #postInfo h5, #postInfo h6 {
+#postInfo h4,
+#postInfo h5,
+#postInfo h6 {
   margin: 0.1vh 0;
 }
 
-@keyframes loading {
-  0% {
-    background-position: 100% 50%;
+#openCommentsButton {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 10vw;
+  height: 10vw;
+
+  font-family: var(--sans-serif-font);
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  
+  transition: 200ms;
+}
+
+#openCommentsButton i {
+  font-size: 9vw;
+}
+
+#upvotesOnMoblie {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 10vh;
+
+  font-family: var(--sans-serif-font);
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+
+  margin-bottom: 2vh;
+
+  transition: 200ms;
+}
+
+#upvotesOnMoblie i {
+  font-size: 9vw;
+}
+
+#subredditNamePlaceholder {
+  display: inline-block;
+}
+
+#userNamePlaceholder {
+  display: inline-block;
+  position: absolute;
+  right: 1vw;
+}
+
+#numberOfUpvotesPlaceholder {
+  margin: 2.7vh 0;
+}
+
+@media screen and (max-width: 1200px) {
+  #postInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 0vw;
+    top: 50vh;
+
+    height: 20vh;
+    width: 10vw;
+    padding: 0;
+
+    z-index: 2;
+
+    background-color: transparent;
   }
-  50% {
-    background-position: 50% 50%;
+
+  #openCommentsButton {
+    display: flex;
   }
-  100% {
-    background-position: 0% 50%;
+
+  #upvotesOnMoblie {
+    display: flex;
+  }
+
+  #subredditNamePlaceholder {
+    display: none;
+  }
+
+  #userNamePlaceholder {
+    display: none;
+  }
+
+  #datePlaceholder {
+    display: none;
+  }
+
+  #numberOfUpvotesPlaceholder {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  #openCommentsButton:hover {
+    cursor: pointer;
   }
 }
 

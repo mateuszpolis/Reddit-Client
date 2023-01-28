@@ -9,6 +9,8 @@
   width: 24.5vw;
 
   border-radius: 7px;
+
+  transition: 200ms;
 }
 
 #commentsInfo {
@@ -73,11 +75,9 @@
 
 @media screen and (max-width: 1200px) {
   #postComments {
-    display: none;
-
     position: absolute;
     left: 5vw;
-    top: 25vh;
+    top: 95vh;
 
     background-color: var(--background-light-darker);
 
@@ -125,6 +125,6 @@
   }
   #commentsInfo {
     color: var(--background-light);
-    background-color: var(--gray-darker);
+    background-color: var(--gray);
   }
 }

@@ -21,25 +21,44 @@ export const PostInformation = () => {
 
   useEffect(() => {}, [dispatch]);
 
+  const handleShowComments = () => {
+    const commentSection = document.getElementById("postComments");
+    const likeIcon = document.getElementById("upvotesOnMoblie");
+    const commentButton = document.getElementById("openCommentsButton");
+    if (
+      commentSection.style.top === "95vh" ||
+      commentSection.style.top === undefined
+    ) {
+      commentSection.style.top = "25vh";
+      likeIcon.style.opacity = "0";
+      commentButton.style.opacity = "0";
+    } else {
+      commentSection.style.top = "95vh";
+      likeIcon.style.opacity = "1";
+      commentButton.style.opacity = "1";
+    }
+  };
+
   if (isLoading) {
     return <div id="postInfo" className="isLoading"></div>;
   } else if (hasLoaded) {
     return (
       <div id="postInfo">
-        <div id="subredditNamePlaceholder" style={{ display: "inline-block" }}>
+        <div id="subredditNamePlaceholder">
           <h4>{post?.subreddit_name_prefixed}</h4>
         </div>
-        <div
-          id="userNamePlaceholder"
-          style={{
-            display: "inline-block",
-            position: "absolute",
-            right: "1vw",
-          }}
-        >
+        <div id="userNamePlaceholder">
           <h4>u/{post?.author}</h4>
         </div>
-        <div id="numberOfUpvotesPlaceholder" style={{ margin: "2.7vh 0" }}>
+        <div id="upvotesOnMoblie">
+          <i id="upvotes" className="fa-solid fa-heart"></i>
+          {intToString(post?.ups)}
+        </div>
+        <div id="openCommentsButton" onClick={handleShowComments}>
+          <i className="fa-solid fa-comment"></i>
+          {intToString(post?.num_comments)}
+        </div>
+        <div id="numberOfUpvotesPlaceholder">
           <h4>
             Upvotes: <i id="upvotes" className="fa-solid fa-heart"></i>{" "}
             {intToString(post?.ups)}{" "}
