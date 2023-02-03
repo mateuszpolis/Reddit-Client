@@ -62,6 +62,9 @@ export const CommentSection = () => {
     return (
       <div id="postComments">
         <div id="commentsInfo">
+          <div id="closeCommentSection" onClick={handleShowComments}>
+            <i className="fa-solid fa-arrow-left"></i>
+          </div>
           <div id="commentsName">
             <h4>
               <i className="fa-solid fa-comments"></i>{" "}

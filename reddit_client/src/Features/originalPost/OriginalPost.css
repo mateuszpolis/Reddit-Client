@@ -35,7 +35,7 @@
 @media screen and (max-width: 1200px) {
   .seeOriginalPost {
     position: fixed;
-    top: 70vh;
+    top: 75vh;
     left: 90vw;
 
     width: 10vw;

@@ -99,6 +99,8 @@
     border-top-right-radius: 0px;
 
     background-color: var(--gray-light);
+
+    z-index: 4;
   }
 
   #showMore {
