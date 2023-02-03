@@ -1,7 +1,7 @@
 /**
  * Shortens a text to given limit
- * 
- * @param {string} text Text to shorten 
+ *
+ * @param {string} text Text to shorten
  * @param {number} limit Maximum number of charachters
  * @returns {string} Shortened text with (Click to show more) at the end
  */
@@ -13,7 +13,7 @@ export const truncateText = (text, limit) => {
 
 /**
  * Takes in number of seconds and returns a formatted date
- * 
+ *
  * @param {number} val Number of seconds
  * @returns {date} Formatted date
  */
@@ -24,7 +24,7 @@ export const convertDate = (val) => {
 
 /**
  * Formats a number to a shorter version with suffixes
- * 
+ *
  * @param {number} value Number to format
  * @returns {string} Formatted number with annotations (k, m, b, t)
  */
@@ -41,9 +41,9 @@ export const intToString = (value) => {
 };
 
 /**
- * Decodes html entities 
- * 
- * @param {string} input Text to decode 
+ * Decodes html entities
+ *
+ * @param {string} input Text to decode
  * @returns {string} Decoded text
  */
 export const htmlDecode = (input) => {
@@ -58,9 +58,9 @@ export const htmlDecode = (input) => {
 
 /**
  * Returns url from embeded iframe
- * 
+ *
  * @param {string} input Embeded iframe
- * @returns {string} Embeded url 
+ * @returns {string} Embeded url
  */
 export const getSource = (input) => {
   let src = input.slice(41);
@@ -78,6 +78,7 @@ export const handleShowComments = () => {
   const commentSection = document.getElementById("postComments");
   const likeIcon = document.getElementById("upvotesOnMoblie");
   const commentButton = document.getElementById("openCommentsButton");
+  const oPost = document.getElementsByClassName("seeOriginalPost")[0];
   if (
     commentSection.style.top === "95vh" ||
     commentSection.style.top === undefined
@@ -85,9 +86,11 @@ export const handleShowComments = () => {
     commentSection.style.top = "25vh";
     likeIcon.style.opacity = "0";
     commentButton.style.opacity = "0";
+    oPost.style.opacity = "0";
   } else {
     commentSection.style.top = "95vh";
     likeIcon.style.opacity = "1";
     commentButton.style.opacity = "1";
+    oPost.style.opacity = "1";
   }
 };

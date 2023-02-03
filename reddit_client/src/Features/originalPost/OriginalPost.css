@@ -32,6 +32,47 @@
   background-color: var(--gray-light);
 }
 
+@media screen and (max-width: 1200px) {
+  .seeOriginalPost {
+    position: fixed;
+    top: 70vh;
+    left: 90vw;
+
+    width: 10vw;
+    height: 10vw;
+
+    border-radius: 0px;
+
+    background-color: transparent;
+
+    z-index: 2;
+  }
+
+  .seeOriginalPost a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seeOriginalPost h2 {
+    margin: 0;
+  }
+
+  .seeOriginalPost i {
+    font-size: 9vw;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  }
+
+  #seeOriginalPostNotLoaded {
+    opacity: 0;
+    z-index: -3;
+  }
+
+  #originalPostText {
+    display: none;
+  }
+}
+
 @media (hover: hover) {
   #seeOriginalPostNotLoaded:hover {
     cursor: not-allowed;

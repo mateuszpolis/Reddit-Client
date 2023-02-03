@@ -14,7 +14,7 @@ export const OriginalPost = () => {
     return (
       <div className="seeOriginalPost" id="seeOriginalPostNotLoaded">
         <h2 style={{ color: "var(--background-light)" }}>
-          Original Post{" "}
+          <span id="originalPostText">Original Post </span>
           <i className="fa-solid fa-arrow-up-right-from-square"></i>
         </h2>
       </div>
@@ -25,7 +25,7 @@ export const OriginalPost = () => {
     <div className="seeOriginalPost">
       <a href={"https://www.reddit.com" + permalink} target="blank">
         <h2 style={{ color: "var(--background-light)" }}>
-          Original Post{" "}
+          <span id="originalPostText">Original Post </span>
           <i className="fa-solid fa-arrow-up-right-from-square"></i>
         </h2>
       </a>
