@@ -73,6 +73,11 @@
   overflow-y: scroll;
 }
 
+#closeCommentSection {
+  display: none;
+  margin-right: 20%;
+}
+
 @media screen and (max-width: 1200px) {
   #postComments {
     position: absolute;
@@ -105,11 +110,19 @@
 
     border-radius: 0px;
   }
+
+  #closeCommentSection {
+    display: inline-block;
+  }
 }
 
 @media (hover: hover) {
   #showMore:hover {
     background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+  }
+
+  #closeCommentSection:hover {
     cursor: pointer;
   }
 }

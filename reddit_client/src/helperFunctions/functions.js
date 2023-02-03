@@ -73,3 +73,21 @@ export const getSource = (input) => {
   src = htmlDecode(src);
   return src;
 };
+
+export const handleShowComments = () => {
+  const commentSection = document.getElementById("postComments");
+  const likeIcon = document.getElementById("upvotesOnMoblie");
+  const commentButton = document.getElementById("openCommentsButton");
+  if (
+    commentSection.style.top === "95vh" ||
+    commentSection.style.top === undefined
+  ) {
+    commentSection.style.top = "25vh";
+    likeIcon.style.opacity = "0";
+    commentButton.style.opacity = "0";
+  } else {
+    commentSection.style.top = "95vh";
+    likeIcon.style.opacity = "1";
+    commentButton.style.opacity = "1";
+  }
+};

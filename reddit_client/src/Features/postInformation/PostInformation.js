@@ -8,6 +8,7 @@ import {
 } from "../feed/feedSlice";
 import { intToString } from "../../helperFunctions/functions";
 import { convertDate } from "../../helperFunctions/functions";
+import { handleShowComments } from "../../helperFunctions/functions";
 
 /**
  * PostInformation feature. Displays information about currently displayed post (subreddit, user, upvotes, date).
@@ -20,24 +21,6 @@ export const PostInformation = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {}, [dispatch]);
-
-  const handleShowComments = () => {
-    const commentSection = document.getElementById("postComments");
-    const likeIcon = document.getElementById("upvotesOnMoblie");
-    const commentButton = document.getElementById("openCommentsButton");
-    if (
-      commentSection.style.top === "95vh" ||
-      commentSection.style.top === undefined
-    ) {
-      commentSection.style.top = "25vh";
-      likeIcon.style.opacity = "0";
-      commentButton.style.opacity = "0";
-    } else {
-      commentSection.style.top = "95vh";
-      likeIcon.style.opacity = "1";
-      commentButton.style.opacity = "1";
-    }
-  };
 
   if (isLoading) {
     return <div id="postInfo" className="isLoading"></div>;
