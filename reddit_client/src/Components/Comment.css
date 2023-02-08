@@ -2,8 +2,8 @@
   position: relative;
 
   height: fit-content;
-  width: 22.9vw;
   padding: 0.5vw;
+  width: calc(100% - 1vw);
 
   margin: 0;
 
@@ -14,142 +14,37 @@
   border-bottom-style: solid;
 }
 
-.comment h5,
-.comment p {
-  margin: 0;
-  width: 20.7vw;
-  overflow-wrap: break-word;
-}
+.commentInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-.commentDownvote {
-  color: var(--background-dark);
-}
-
-.commentAuthor h5 {
-  display: inline-block;
-  margin-left: 0%;
+  width: 100%;
 }
 
 .commentAuthor {
-  position: relative;
-
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-
-  width: fit-content;
 }
 
-.commentContent {
-  position: relative;
-  left: 0;
-  display: inline-block;
+.commentUps {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.commentUpvoteInfo {
-  position: relative;
-  left: 0;
-  width: 2vw;
-  display: inline-block;
-
-  font-size: 60%;
+.comment h5 {
+  margin: 0;
 }
 
-.commentUpvoteInfo i {
-  margin-bottom: 25%;
-  margin-top: 10%;
-  display: block;
-}
-
-.commentContentWrapper {
-  display: grid;
-  grid-template-columns: 1fr 8fr;
-}
-
-.commentUpvotesNumber {
-  margin-bottom: 25%;
-
-  height: 2vh;
-  width: 60%;
-  border-radius: 7px;
-
-  font-size: 0.7rem;
-  font-weight: bold;
-  font-family: var(--sans-serif-font);
+.comment p {
+  width: 100%;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 1200px) {
-  .comment {
-    width: 83vw;
-    padding-left: 5vw;
-    padding-right: 2vw;
-  }
-
-  .comment h5,
-  .comment p {
-    margin: 0;
-    width: 80vw;
-    overflow-wrap: break-word;
-  }
-
-  .commentDownvote {
-    color: var(--background-dark);
-  }
-
-  .commentAuthor h5 {
-    display: inline-block;
-    margin-left: 0%;
-  }
-
-  .commentAuthor {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    width: fit-content;
-  }
-
-  .commentContent {
-    position: relative;
-    left: 0;
-    display: inline-block;
-  }
-
-  .commentUpvoteInfo {
-    position: relative;
-    left: 0;
-    width: 2vw;
-    display: inline-block;
-
-    font-size: 60%;
-  }
-
-  .commentUpvoteInfo i {
-    margin-bottom: 25%;
-    margin-top: 10%;
-    display: block;
-  }
-
-  .commentContentWrapper {
-    display: grid;
-    grid-template-columns: 1fr 8fr;
-  }
-
-  .commentUpvotesNumber {
-    margin-bottom: 25%;
-
-    height: 2vh;
-    width: 60%;
-    border-radius: 7px;
-
-    font-size: 0.7rem;
-    font-weight: bold;
-    font-family: var(--sans-serif-font);
-  }
 }
 
 @media (prefers-color-scheme: dark) {
-  .commentDownvote {
-    color: var(--background-light);
-  }
+  
 }

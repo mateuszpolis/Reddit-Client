@@ -3,7 +3,7 @@
   right: 2%;
   top: 18vh;
 
-  background-color: transparent;
+  background-color: var(--background-light-darker);
 
   height: 67vh;
   width: 24.5vw;
@@ -27,7 +27,7 @@
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 
-  background-color: var(--background-light-darker);
+  background-color: var(--gray-light);
 
   text-align: center;
   color: var(--background-dark);
@@ -84,8 +84,6 @@
     left: 5vw;
     top: 95vh;
 
-    background-color: var(--background-light-darker);
-
     height: 60vh;
     width: 90vw;
 
@@ -130,16 +128,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  @media screen and (max-width: 1200px) {
-    #postComments {
-      background-color: var(--gray-darker);
-    }
-    #commentsInfo {
-      background-color: var(--gray);
-    }
-  }
   #commentsInfo {
     color: var(--background-light);
     background-color: var(--gray);
+  }
+
+  #postComments {
+    background-color: var(--gray-darker);
   }
 }

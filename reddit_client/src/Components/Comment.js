@@ -9,23 +9,23 @@ import "./Comment.css";
  * @param {} props Information about comment: author, ups, content
  * @returns
  */
-export const Comment = (props) => {
+export const Comment = ({ comment }) => {
   return (
     <div className="comment">
-      <div className="commentAuthor">
-        <h5>u/{props.author}</h5>
+      <div className="commentInfo">
+        <div className="commentAuthor">
+          <h5>u/{comment.data.author}</h5>
+        </div>
+        <div className="commentUps">
+          <h5>
+            <i className="fa-solid fa-heart"></i>{" "}
+            {intToString(comment.data.ups)}{" "}
+            <i class="fa-solid fa-heart-crack"></i>
+          </h5>
+        </div>
       </div>
-      <div className="commentContentWrapper">
-        <div className="commentUpvoteInfo">
-          <i className="fa-solid fa-heart commentUpvote"></i>
-          <div className="commentUpvotesNumber canLoad">
-            {intToString(props.upvotesNumber)}
-          </div>
-          <i className="fa-solid fa-heart-crack commentDownvote"></i>
-        </div>
-        <div className="commentContent">
-          <p>{htmlDecode(props.commentContent)}</p>
-        </div>
+      <div className="commentContent">
+        <p>{htmlDecode(comment.data.body)}</p>
       </div>
     </div>
   );

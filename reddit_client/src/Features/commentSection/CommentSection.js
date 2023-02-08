@@ -93,14 +93,7 @@ export const CommentSection = () => {
         </div>
         <div id="comments">
           {comments.map((comment) => {
-            return (
-              <Comment
-                author={comment.data.author}
-                upvotesNumber={comment.data.ups}
-                commentContent={comment.data.body}
-                key={comment.data.id}
-              />
-            );
+            return <Comment comment={comment} key={comment.data.id} />;
           })}
         </div>
         <div id="showMore" onClick={handleScrollDown}>
