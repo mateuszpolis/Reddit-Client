@@ -34,7 +34,7 @@
   background-color: var(--gray-light);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .seeOriginalPost {
     position: fixed;
     top: 75vh;

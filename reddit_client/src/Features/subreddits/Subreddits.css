@@ -61,7 +61,7 @@
   margin-top: calc(var(--vh, 1vh) * 2);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   #topicsWrapper {
     display: none;
 
@@ -113,7 +113,7 @@
   #topics {
     background-color: var(--gray-darker);
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: var(--tablet)) {
     #topics {
       background-color: var(--gray-transparent);
     }

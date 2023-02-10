@@ -10,7 +10,7 @@ main {
   overflow: hidden;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   main {
     top: 8vh;
     top: calc(var(--vh, 1vh) * 8);

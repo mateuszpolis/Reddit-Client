@@ -95,6 +95,7 @@ export const CommentSection = () => {
           {comments.map((comment) => {
             return <Comment comment={comment} key={comment.data.id} />;
           })}
+          <div id="spaceUnderComments"></div>
         </div>
         <div id="showMore" onClick={handleScrollDown}>
           <i className="fa-solid fa-caret-down"></i>

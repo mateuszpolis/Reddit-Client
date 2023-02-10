@@ -42,7 +42,7 @@
   word-wrap: break-word;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
 }
 
 @media (prefers-color-scheme: dark) {

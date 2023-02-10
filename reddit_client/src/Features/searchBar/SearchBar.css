@@ -155,7 +155,15 @@ form {
   z-index: 2;
 }
 
-@media screen and (max-width: 1200px) {
+input {
+  border-radius: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+@media screen and (max-width: 1024px) {
   #searchBehind {
     left: 5vw;
   }
@@ -196,7 +204,7 @@ form {
 
   #sortOptions {
     top: 6vh;
-    top: calc(var(--vh, 1vh) * 95);
+    top: calc(var(--vh, 1vh) * 6);
     left: 5vw;
   }
 

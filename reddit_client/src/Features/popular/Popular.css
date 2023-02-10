@@ -76,7 +76,7 @@
   left: 92vw;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .popularPosts {
     height: 15vh;
     height: calc(var(--vh, 1vh) * 15);

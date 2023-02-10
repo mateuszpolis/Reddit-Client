@@ -14,7 +14,7 @@ header img {
   height: 100%;
 }
 
-@media screen and (max-height: 1200px) {
+@media screen and (max-height: 1024px) {
   header {
     height: 8vh;
     height: calc(var(--vh, 1vh) * 8);

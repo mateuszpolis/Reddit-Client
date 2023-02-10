@@ -32,7 +32,7 @@
 
   /* Animations */
   --loading-animation: loading 2s ease infinite;
-}
+} 
 
 body {
   min-height: 100vh;
