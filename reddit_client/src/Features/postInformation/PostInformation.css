@@ -23,7 +23,6 @@
 
   background-color: var(--orange);
   color: var(--background-light);
-  opacity: 0.8;
 
   border-radius: 7px;
 
@@ -114,6 +113,8 @@
     width: 8vh;
     width: calc(var(--vh, 1vh) * 8);
     padding: 0;
+
+    opacity: 0.8;
 
     z-index: 2;
 

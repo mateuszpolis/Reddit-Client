@@ -20,7 +20,7 @@ export const Comment = ({ comment }) => {
           <h5>
             <i className="fa-solid fa-heart"></i>{" "}
             {intToString(comment.data.ups)}{" "}
-            <i class="fa-solid fa-heart-crack"></i>
+            <i className="fa-solid fa-heart-crack"></i>
           </h5>
         </div>
       </div>

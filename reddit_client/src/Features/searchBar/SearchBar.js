@@ -51,17 +51,10 @@ export const SearchBar = () => {
    */
   const handleShowSortOptions = () => {
     const dropdown = document.getElementById("sortOptions");
-    const sort = document.getElementById("sort");
     if (dropdown.style.display === "none" || dropdown.style.display === "") {
       dropdown.style.display = "block";
-      sort.style.borderBottomLeftRadius = "0";
     } else {
       dropdown.style.display = "none";
-      if (sort.style.borderTopLeftRadius === "3vh") {
-        sort.style.borderBottomLeftRadius = "3vh";
-      } else {
-        sort.style.borderBottomLeftRadius = "2vh";
-      }
     }
   };
 
@@ -115,9 +108,7 @@ export const SearchBar = () => {
         </ul>
       </div>
       <div id="cancelButton" onClick={handleClearSearch}>
-        <h3 style={{ margin: "0" }}>
           <i className="fa-solid fa-xmark"></i>
-        </h3>
       </div>
       <div id="searchBehind">
         <div id="sort" onClick={handleShowSortOptions}>
@@ -133,6 +124,7 @@ export const SearchBar = () => {
         />
         <div id="submitSearch" onClick={handleSubmit}>
           <h4>Search</h4>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </div>
       </div>
     </div>
