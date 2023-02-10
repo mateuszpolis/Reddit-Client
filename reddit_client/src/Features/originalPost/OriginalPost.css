@@ -5,10 +5,12 @@
 
   position: absolute;
   top: 67vh;
+  top: calc(var(--vh, 1vh) * 67);
   left: 2vw;
 
   width: 20vw;
   height: 18vh;
+  height: calc(var(--vh, 1vh) * 18);
 
   border-radius: 7px;
 
@@ -36,6 +38,7 @@
   .seeOriginalPost {
     position: fixed;
     top: 75vh;
+    top: calc(var(--vh, 1vh) * 75);
     left: 90vw;
 
     width: 10vw;

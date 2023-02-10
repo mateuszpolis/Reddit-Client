@@ -1,11 +1,13 @@
 #searchBehind {
   position: absolute;
   top: 2vh;
+  top: calc(var(--vh, 1vh) * 2);
   left: 25vw;
 }
 
 #search {
   height: 6vh;
+  height: calc(var(--vh, 1vh) * 6);
   width: 35vw;
 
   border-width: 2px;
@@ -37,12 +39,15 @@
   align-items: center;
 
   height: 6vh;
+  height: calc(var(--vh, 1vh) * 6);
   width: 6vw;
 
   vertical-align: top;
 
   border-top-right-radius: 3vh;
+  border-top-right-radius: calc(var(--vh, 1vh) * 3);
   border-bottom-right-radius: 3vh;
+  border-bottom-right-radius: calc(var(--vh, 1vh) * 3);
   border-width: 0px;
   border-style: solid;
   border-color: var(--gray-light);
@@ -71,11 +76,14 @@ form {
   vertical-align: top;
 
   height: 6vh;
+  height: calc(var(--vh, 1vh) * 6);
   width: 3vw;
   padding: 0 1vw;
 
   border-top-left-radius: 3vh;
+  border-top-left-radius: calc(var(--vh, 1vh) * 3);
   border-bottom-left-radius: 3vh;
+  border-bottom-left-radius: calc(var(--vh, 1vh) * 3);
 
   background-color: var(--gray-light);
   color: var(--background-light);
@@ -95,6 +103,7 @@ form {
 
   position: absolute;
   top: 8vh;
+  top: calc(var(--vh, 1vh) * 8);
   left: 25vw;
 
   background-color: rgba(0, 0, 0, 0.2);
@@ -131,6 +140,7 @@ form {
 #cancelButton {
   position: absolute;
   top: 2vh;
+  top: calc(var(--vh, 1vh) * 2);
   left: 62.5vw;
 
   display: flex;
@@ -138,6 +148,7 @@ form {
   align-items: center;
 
   height: 6vh;
+  height: calc(var(--vh, 1vh) * 6);
 
   color: red;
 
@@ -151,6 +162,7 @@ form {
 
   #search {
     height: 4vh;
+    height: calc(var(--vh, 1vh) * 4);
     width: 76vw;
 
     font-size: 100%;
@@ -158,26 +170,33 @@ form {
 
   #submitSearch {
     height: 4vh;
+    height: calc(var(--vh, 1vh) * 4);
     width: 7vw;
 
     border-top-right-radius: 2vh;
+    border-top-right-radius: calc(var(--vh, 1vh) * 2);
     border-bottom-right-radius: 2vh;
+    border-bottom-right-radius: calc(var(--vh, 1vh) * 2);
 
     font-size: 1.3vw;
   }
 
   #sort {
     height: 4vh;
+    height: calc(var(--vh, 1vh) * 4);
     width: 5vw;
 
     border-top-left-radius: 2vh;
+    border-top-left-radius: calc(var(--vh, 1vh) * 2);
     border-bottom-left-radius: 2vh;
+    border-bottom-left-radius: calc(var(--vh, 1vh) * 2);
 
     font-size: 1.4vw;
   }
 
   #sortOptions {
     top: 6vh;
+    top: calc(var(--vh, 1vh) * 95);
     left: 5vw;
   }
 
@@ -185,6 +204,7 @@ form {
     left: 84.5vw;
 
     height: 4vh;
+    height: calc(var(--vh, 1vh) * 4);
   }
 }
 

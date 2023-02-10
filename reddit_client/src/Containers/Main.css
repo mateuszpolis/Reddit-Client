@@ -1,9 +1,11 @@
 main {
   position: absolute;
   top: 10vh;
+  top: calc(var(--vh, 1vh) * 10);
 
   width: 100%;
   height: 85vh;
+  height: calc(var(--vh, 1vh) * 85);
 
   overflow: hidden;
 }
@@ -11,6 +13,8 @@ main {
 @media screen and (max-width: 1200px) {
   main {
     top: 8vh;
+    top: calc(var(--vh, 1vh) * 8);
     height: 87vh;
+    height: calc(var(--vh, 1vh) * 87);
   }
 }

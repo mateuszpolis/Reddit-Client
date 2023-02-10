@@ -2,10 +2,12 @@
   position: absolute;
   right: 2%;
   top: 18vh;
+  top: calc(var(--vh, 1vh) * 18);
 
   background-color: var(--background-light-darker);
 
   height: 67vh;
+  height: calc(var(--vh, 1vh) * 67);
   width: 24.5vw;
 
   border-radius: 7px;
@@ -22,6 +24,7 @@
   top: 0;
 
   height: 4vh;
+  height: calc(var(--vh, 1vh) * 4);
   width: 24.5vw;
 
   border-top-left-radius: 7px;
@@ -48,6 +51,7 @@
   bottom: 0;
 
   height: 4vh;
+  height: calc(var(--vh, 1vh) * 4);
   width: 24.5vw;
 
   background-color: rgba(255, 255, 255, 0.2);
@@ -68,6 +72,7 @@
   position: absolute;
 
   height: 63vh;
+  height: calc(var(--vh, 1vh) * 63);
   width: 100%;
 
   overflow-y: scroll;
@@ -83,8 +88,10 @@
     position: absolute;
     left: 5vw;
     top: 95vh;
+    top: calc(var(--vh, 1vh) * 95);
 
     height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
     width: 90vw;
 
     z-index: 4;
@@ -107,6 +114,7 @@
 
   #comments {
     height: 56vh;
+    height: calc(var(--vh, 1vh) * 56);
 
     border-radius: 0px;
   }

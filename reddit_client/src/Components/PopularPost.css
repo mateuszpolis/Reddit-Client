@@ -30,7 +30,7 @@
 
 .popularPost h3 {
   position: absolute;
-  bottom: 0vh;
+  bottom: 0;
   left: 1vw;
 
   color: var(--background-light);

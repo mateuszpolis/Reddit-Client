@@ -28,18 +28,22 @@
 #feedWrapper {
   position: absolute;
   top: 20vh;
+  top: calc(var(--vh, 1vh) * 20);
   left: 25vw;
 
   height: 65vh;
+  height: calc(var(--vh, 1vh) * 65);
   width: 46vw;
 }
 
 #feed {
   position: absolute;
   top: 2vh;
+  top: calc(var(--vh, 1vh) * 2);
   left: 0;
 
   height: 63vh;
+  height: calc(var(--vh, 1vh) * 63);
   width: 46vw;
 
   border-radius: 7px;
@@ -53,9 +57,12 @@
 #resultsFor {
   position: absolute;
   height: 2vh;
+  height: calc(var(--vh, 1vh) * 2);
   top: -2vh;
+  top: calc(var(--vh, 1vh) * -2);
 
   padding: 0.6vh 0;
+  padding-top: calc(var(--vh, 1vh) * 0.6);
 
   background-color: transparent;
 
@@ -71,16 +78,20 @@
 @media screen and (max-width: 1200px) {
   #feedWrapper {
     top: 17vh;
+    top: calc(var(--vh, 1vh) * 17);
     left: 5vw;
 
     height: 70vh;
+    height: calc(var(--vh, 1vh) * 70);
     width: 90vw;
   }
 
   #feed {
     top: 1vh;
+    top: calc(var(--vh, 1vh) * 1);
 
     height: 69vh;
+    height: calc(var(--vh, 1vh) * 69);
     width: 90vw;
 
     border-radius: 0px;
