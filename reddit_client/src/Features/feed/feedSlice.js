@@ -44,6 +44,14 @@ export const feedSlice = createSlice({
           return post.data;
         })
       );
+      if (
+        state.posts.data.children.map((post) => {
+          return post.data;
+        }).length === 0
+      ) {
+        state.failedToLoadPosts = true;
+        state.hasLoadedPosts = false;
+      }
     },
     [loadPosts.rejected]: (state, action) => {
       state.isLoadingPosts = false;

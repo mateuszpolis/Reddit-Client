@@ -10,8 +10,13 @@ import {
   selectPermalink,
 } from "./commentSectionSlice";
 import { intToString } from "../../helperFunctions/functions";
-import { isLoadingPosts, selectCurrentPost } from "../feed/feedSlice";
+import {
+  failedLoadingPosts,
+  isLoadingPosts,
+  selectCurrentPost,
+} from "../feed/feedSlice";
 import { handleShowComments } from "../../helperFunctions/functions";
+import { failedLoadingComments } from "./commentSectionSlice";
 
 /**
  * CommentSection feature. Renders Comment components based on what content is currently displayed to the user
@@ -21,7 +26,9 @@ import { handleShowComments } from "../../helperFunctions/functions";
 export const CommentSection = () => {
   const isLoading = useSelector(isLoadingComments);
   const hasLoaded = useSelector(hasLoadedComments);
+  const failedLoading = useSelector(failedLoadingComments);
   const isLoadingContent = useSelector(isLoadingPosts);
+  const failedToLoadContent = useSelector(failedLoadingPosts);
   const post = useSelector(selectCurrentPost);
   const permalink = useSelector(selectPermalink);
   let comments = useSelector(selectComments);
@@ -45,7 +52,29 @@ export const CommentSection = () => {
     });
   };
 
-  if (isLoadingContent) {
+  if (failedToLoadContent) {
+    return <div></div>;
+  } else if (failedLoading) {
+    return (
+      <div id="postComments">
+        <div id="commentsInfo">
+          <div id="closeCommentSection" onClick={handleShowComments}>
+            <i className="fa-solid fa-arrow-left"></i>
+          </div>
+          <div id="commentsName">
+            <h4>
+              <i className="fa-solid fa-comments"></i> Comments
+            </h4>
+          </div>
+        </div>
+        <div id="comments">
+          <h1 style={{ color: "red", margin: "auto 2vw" }}>
+            Error: Failed to load comments.
+          </h1>
+        </div>
+      </div>
+    );
+  } else if (isLoadingContent) {
     return (
       <div id="postComments">
         <div id="commentsInfo">

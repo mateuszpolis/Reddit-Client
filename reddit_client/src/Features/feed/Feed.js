@@ -39,7 +39,25 @@ export const Feed = () => {
 
   useEffect(() => {}, [dispatch]);
 
-  if (!hasLoaded && !isLoading) {
+  if (failedLoading) {
+    return (
+      <div id="feedWrapper">
+        <div
+          id="feed"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <h1 style={{ color: "red" }}>
+            Error: Failed to load data. Try again.
+          </h1>
+        </div>
+      </div>
+    );
+  } else if (!hasLoaded && !isLoading) {
     return (
       <div id="feedWrapper">
         <div
@@ -89,16 +107,6 @@ export const Feed = () => {
           {posts.map((post) => {
             return <Post post={post} key={post.id + "_key"} />;
           })}
-        </div>
-      </div>
-    );
-  } else if (failedLoading) {
-    return (
-      <div id="feedWrapper">
-        <div id="feed" style={{ textAlign: "center" }}>
-          <h1 style={{ color: "red" }}>
-            Error: Failed to load data. Try again.
-          </h1>
         </div>
       </div>
     );
