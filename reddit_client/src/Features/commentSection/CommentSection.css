@@ -48,7 +48,8 @@
 
 #showMore {
   position: absolute;
-  bottom: 0;
+  top: 63.1vh;
+  top: calc(var(--vh, 1vh) * 63.1);
 
   height: 4vh;
   height: calc(var(--vh, 1vh) * 4);
