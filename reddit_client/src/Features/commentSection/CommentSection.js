@@ -105,6 +105,9 @@ export const CommentSection = () => {
       </div>
     );
   } else if (hasLoaded) {
+    if (!comments[1]?.data) {
+      return <div></div>;
+    }
     comments = comments[1].data.children;
 
     return (

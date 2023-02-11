@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const loadPosts = createAsyncThunk("feed/loadPosts", async (data) => {
   const { url } = data;
-  const response = await fetch(`http://www.reddit.com/${url}`);
+  const response = await fetch(`https://www.reddit.com/${url}`);
   const json = await response.json();
   return json;
 });
@@ -39,11 +39,6 @@ export const feedSlice = createSlice({
       state.numOfPosts = state.posts.data.children.map((post) => {
         return post.data;
       }).length;
-      console.log(
-        state.posts.data.children.map((post) => {
-          return post.data;
-        })
-      );
       if (
         state.posts.data.children.map((post) => {
           return post.data;
