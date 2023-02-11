@@ -61,6 +61,10 @@
   color: var(--background-dark);
 }
 
+.post p {
+  word-wrap: break-word;
+}
+
 [magnified="true"] {
   position: fixed;
   top: 0;

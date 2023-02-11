@@ -3,15 +3,18 @@ import "./Footer.css";
 
 /**
  * Footer container. Contains creator links
- * 
- * @returns 
+ *
+ * @returns
  */
 export const Footer = () => {
   return (
     <footer>
       <h5>
         made by:{" "}
-        <a href="https://www.linkedin.com/in/mateusz-polis-65618223a/">
+        <a
+          href="https://www.linkedin.com/in/mateusz-polis-65618223a/"
+          target="blank"
+        >
           Mateusz Polis <i className="fa-brands fa-linkedin"></i>
         </a>{" "}
         <a href="mailto:polismateusz@gmail.com">

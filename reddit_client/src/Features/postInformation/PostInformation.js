@@ -28,10 +28,24 @@ export const PostInformation = () => {
     return (
       <div id="postInfo">
         <div id="subredditNamePlaceholder">
-          <h4>{post?.subreddit_name_prefixed}</h4>
+          <h4>
+            <a
+              href={"https://www.reddit.com/" + post?.subreddit_name_prefixed}
+              target="blank"
+            >
+              {post?.subreddit_name_prefixed}
+            </a>
+          </h4>
         </div>
         <div id="userNamePlaceholder">
-          <h4>u/{post?.author}</h4>
+          <h4>
+            <a
+              href={"https://www.reddit.com/user/" + post?.author}
+              target="blank"
+            >
+              u/{post?.author}
+            </a>
+          </h4>
         </div>
         <div id="upvotesOnMoblie">
           <i id="upvotes" className="fa-solid fa-heart"></i>
@@ -51,6 +65,24 @@ export const PostInformation = () => {
         <div id="datePlaceholder">
           <h5>
             Added: <u>{convertDate(post?.created)}</u>
+          </h5>
+        </div>
+        <div id="infoOnMobile">
+          <h5>
+            Added on <u>{convertDate(post?.created)}</u> by{" "}
+            <a
+              href={"https://www.reddit.com/user/" + post?.author}
+              target="blank"
+            >
+              u/{post?.author}
+            </a>{" "}
+            to{" "}
+            <a
+              href={"https://www.reddit.com/" + post?.subreddit_name_prefixed}
+              target="blank"
+            >
+              {post?.subreddit_name_prefixed}
+            </a>
           </h5>
         </div>
       </div>

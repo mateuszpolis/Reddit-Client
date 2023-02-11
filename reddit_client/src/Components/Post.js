@@ -51,13 +51,13 @@ export const Post = ({ post }) => {
       <div className="post" id={post.id}>
         <h2>{htmlDecode(post.title)}</h2>
         <div
-          style={{ height: "76%" }}
+          style={{ height: "76%", width: "100%" }}
           id={post.id + "d"}
           onClick={handleToggleOverflow}
           className="canExpand"
         >
           <p id={post.id + "p"}>
-            {truncateText(htmlDecode(post.selftext), 850)}{" "}
+            {truncateText(htmlDecode(post.selftext), 830)}{" "}
           </p>
         </div>
       </div>

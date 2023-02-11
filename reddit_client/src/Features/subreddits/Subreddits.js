@@ -29,7 +29,7 @@ export const Subreddits = () => {
       <div
         id="topicsTitle"
       >
-        <h2 style={{ marginLeft: "2vw", color: "var(--background-light)" }}>
+        <h2 style={{color: "var(--background-light)" }}>
           Popular Subreddits{" "}
           <i className="fa-solid fa-arrow-down-wide-short"></i>
         </h2>

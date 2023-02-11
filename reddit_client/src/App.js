@@ -20,7 +20,7 @@ function App() {
     const commentButton = document.getElementById("openCommentsButton");
     const oPost = document.getElementsByClassName("seeOriginalPost")[0];
     let vw = window.innerWidth;
-    if (vw >= 1024) {
+    if (vw > 1024) {
       if (!document.getElementById("seeOriginalPostNotLoaded")) {
         commentSection.style.top = "18vh";
         commentSection.style.top = "calc(var(--vh, 1vh) * 18)";
