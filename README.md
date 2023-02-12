@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/77580875/218271663-1d3974de-1985-4669-
 https://user-images.githubusercontent.com/77580875/218271670-82fdff34-fa9a-4321-8460-6569850b53d2.MP4
 
 ## Contact
-> [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/MateuszPolis/)
+> My Linkedin profile: [![Mateusz Polis](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/MateuszPolis/)
 >
 > Email address: polismateusz@gmail.com
 
